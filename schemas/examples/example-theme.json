@@ -1,0 +1,23 @@
+{
+    "name": "theme",
+    "type": "registry:theme",
+    "dependencies": [
+        "@phosphor-icons/react"
+    ],
+    "cssVars": { //aka global.css
+        "light": {
+            "primary": "222.2 83.2% 53.3%"
+        }
+    },
+    "registryDependencies": [
+        "phosphor",
+        "popover",
+        "command"
+    ],
+    "files": [
+        {
+            "path": "components/font-selector.tsx",
+            "type": "registry:component"
+        }
+    ]
+}
