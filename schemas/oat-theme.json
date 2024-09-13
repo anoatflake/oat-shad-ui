@@ -39,8 +39,12 @@
       "destructive-foreground": "210 40% 98%"
     }
   },
-  "dependencies": ["lucide-react"],
-  "registryDependencies": ["lucide"],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "lucide"
+  ],
   "files": [
     {
       "path": "components/ui/button.tsx",
