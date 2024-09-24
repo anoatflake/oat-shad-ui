@@ -1,4 +1,9 @@
 /* https://ui.ewgenius.me/themes/radix/jade-tomato-iris */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer base {
   :root {
     --base-1: 160.00000000000017 60.00000000000023% 99.01960784313727%;

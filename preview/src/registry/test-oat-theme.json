@@ -1,0 +1,50 @@
+{
+  "name": "theme",
+  "type": "registry:theme",
+  "cssVars": {
+    "light": {
+      "background": "163 100% 50%",
+      "foreground": "222.2 84% 4.9%",
+      "card": "163 100% 50%",
+      "card-forground": "222.2 84% 4.9%",
+      "popover": "163 100% 50%",
+      "popover-foreground": "222.2 84% 4.9%",
+      "primary": "222.2 47.4% 11.2%",
+      "primary-foreground": "210 40% 98%",
+      "secondary": "168 100% 43%",
+      "secondary-foreground": "222.2 47.4% 11.2%",
+      "muted": "168 100% 43%",
+      "muted-foreground": "215.4 16.3% 46.9%",
+      "accent": "168 100% 43%",
+      "accent-foreground": "222.2 47.4% 11.2%",
+      "destructive": "0 84.2% 60.2%",
+      "destructive-foreground": "210 40% 98%"
+    },
+    "dark": {
+      "background": "222.2 84% 4.9%",
+      "foreground": "210 40% 98%",
+      "card": "222.2 84% 4.9%",
+      "card-forground": "210 40% 98%",
+      "popover": "163 100% 50%",
+      "popover-foreground": "222.2 84% 4.9%",
+      "primary": "222.2 47.4% 11.2%",
+      "primary-foreground": "210 40% 98%",
+      "secondary": "168 100% 43%",
+      "secondary-foreground": "222.2 47.4% 11.2%",
+      "muted": "168 100% 43%",
+      "muted-foreground": "215.4 16.3% 46.9%",
+      "accent": "168 100% 43%",
+      "accent-foreground": "222.2 47.4% 11.2%",
+      "destructive": "0 84.2% 60.2%",
+      "destructive-foreground": "210 40% 98%"
+    }
+  },
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["lucide"],
+  "files": [
+    {
+      "path": "components/ui/button.tsx",
+      "type": "registry:component"
+    }
+  ]
+}
