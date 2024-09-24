@@ -1,4 +1,4 @@
-// https://github.com/shadcn-ui/ui/blob/shadcn%402.0.7/apps/www/registry/schema.ts
+// https://github.com/shadcn-ui/ui/blob/shadcn%402.0.8/apps/www/registry/schema.ts
 import { z } from "zod";
 
 export const blockChunkSchema = z.object({
