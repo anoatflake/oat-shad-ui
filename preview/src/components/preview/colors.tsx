@@ -62,6 +62,20 @@ const ColorPreview = () => {
           <span className="h-8 w-16 bg-evergreen-900"></span>
           <span className="h-8 w-16 bg-evergreen-950"></span>
         </div>
+        <h3 className="w-full text-left">fall green</h3>
+        <div className="flex gap-4">
+          <span className="bg-fall_green-50 h-8 w-16"></span>
+          <span className="bg-fall_green-100 h-8 w-16"></span>
+          <span className="bg-fall_green-200 h-8 w-16"></span>
+          <span className="bg-fall_green-300 h-8 w-16"></span>
+          <span className="bg-fall_green-400 h-8 w-16"></span>
+          <span className="bg-fall_green-500 h-8 w-16"></span>
+          <span className="bg-fall_green-600 h-8 w-16"></span>
+          <span className="bg-fall_green-700 h-8 w-16"></span>
+          <span className="bg-fall_green-800 h-8 w-16"></span>
+          <span className="bg-fall_green-900 h-8 w-16"></span>
+          <span className="bg-fall_green-950 h-8 w-16"></span>
+        </div>
         <h3 className="w-full text-left">gold</h3>
         <div className="flex gap-4">
           <span className="h-8 w-16 bg-gold-50"></span>
@@ -75,6 +89,20 @@ const ColorPreview = () => {
           <span className="h-8 w-16 bg-gold-800"></span>
           <span className="h-8 w-16 bg-gold-900"></span>
           <span className="h-8 w-16 bg-gold-950"></span>
+        </div>
+        <h3 className="w-full text-left">mustard</h3>
+        <div className="flex gap-4">
+          <span className="bg-mustard-50 h-8 w-16"></span>
+          <span className="bg-mustard-100 h-8 w-16"></span>
+          <span className="bg-mustard-200 h-8 w-16"></span>
+          <span className="bg-mustard-300 h-8 w-16"></span>
+          <span className="bg-mustard-400 h-8 w-16"></span>
+          <span className="bg-mustard-500 h-8 w-16"></span>
+          <span className="bg-mustard-600 h-8 w-16"></span>
+          <span className="bg-mustard-700 h-8 w-16"></span>
+          <span className="bg-mustard-800 h-8 w-16"></span>
+          <span className="bg-mustard-900 h-8 w-16"></span>
+          <span className="bg-mustard-950 h-8 w-16"></span>
         </div>
         <h3 className="w-full text-left">apricot</h3>
         <div className="flex gap-4">
@@ -118,6 +146,34 @@ const ColorPreview = () => {
           <span className="h-8 w-16 bg-blood_shot_eyes-900"></span>
           <span className="h-8 w-16 bg-blood_shot_eyes-950"></span>
         </div>
+        <h3 className="w-full text-left">cotton candy</h3>
+        <div className="flex gap-4">
+          <span className="bg-cotton_candy-50 h-8 w-16"></span>
+          <span className="bg-cotton_candy-100 h-8 w-16"></span>
+          <span className="bg-cotton_candy-200 h-8 w-16"></span>
+          <span className="bg-cotton_candy-300 h-8 w-16"></span>
+          <span className="bg-cotton_candy-400 h-8 w-16"></span>
+          <span className="bg-cotton_candy-500 h-8 w-16"></span>
+          <span className="bg-cotton_candy-600 h-8 w-16"></span>
+          <span className="bg-cotton_candy-700 h-8 w-16"></span>
+          <span className="bg-cotton_candy-800 h-8 w-16"></span>
+          <span className="bg-cotton_candy-900 h-8 w-16"></span>
+          <span className="bg-cotton_candy-950 h-8 w-16"></span>
+        </div>
+        <h3 className="w-full text-left">hopbush</h3>
+        <div className="flex gap-4">
+          <span className="bg-hopbush-50 h-8 w-16"></span>
+          <span className="bg-hopbush-100 h-8 w-16"></span>
+          <span className="bg-hopbush-200 h-8 w-16"></span>
+          <span className="bg-hopbush-300 h-8 w-16"></span>
+          <span className="bg-hopbush-400 h-8 w-16"></span>
+          <span className="bg-hopbush-500 h-8 w-16"></span>
+          <span className="bg-hopbush-600 h-8 w-16"></span>
+          <span className="bg-hopbush-700 h-8 w-16"></span>
+          <span className="bg-hopbush-800 h-8 w-16"></span>
+          <span className="bg-hopbush-900 h-8 w-16"></span>
+          <span className="bg-hopbush-950 h-8 w-16"></span>
+        </div>
         <h3 className="w-full text-left">eva danger</h3>
         <div className="flex gap-4">
           <span className="h-8 w-16 bg-eva_danger-50"></span>
@@ -131,6 +187,34 @@ const ColorPreview = () => {
           <span className="h-8 w-16 bg-eva_danger-800"></span>
           <span className="h-8 w-16 bg-eva_danger-900"></span>
           <span className="h-8 w-16 bg-eva_danger-950"></span>
+        </div>
+        <h3 className="w-full text-left">royal purple</h3>
+        <div className="flex gap-4">
+          <span className="bg-royal_purple-50 h-8 w-16"></span>
+          <span className="bg-royal_purple-100 h-8 w-16"></span>
+          <span className="bg-royal_purple-200 h-8 w-16"></span>
+          <span className="bg-royal_purple-300 h-8 w-16"></span>
+          <span className="bg-royal_purple-400 h-8 w-16"></span>
+          <span className="bg-royal_purple-500 h-8 w-16"></span>
+          <span className="bg-royal_purple-600 h-8 w-16"></span>
+          <span className="bg-royal_purple-700 h-8 w-16"></span>
+          <span className="bg-royal_purple-800 h-8 w-16"></span>
+          <span className="bg-royal_purple-900 h-8 w-16"></span>
+          <span className="bg-royal_purple-950 h-8 w-16"></span>
+        </div>
+        <h3 className="w-full text-left">blue chill</h3>
+        <div className="flex gap-4">
+          <span className="bg-blue_chill-50 h-8 w-16"></span>
+          <span className="bg-blue_chill-100 h-8 w-16"></span>
+          <span className="bg-blue_chill-200 h-8 w-16"></span>
+          <span className="bg-blue_chill-300 h-8 w-16"></span>
+          <span className="bg-blue_chill-400 h-8 w-16"></span>
+          <span className="bg-blue_chill-500 h-8 w-16"></span>
+          <span className="bg-blue_chill-600 h-8 w-16"></span>
+          <span className="bg-blue_chill-700 h-8 w-16"></span>
+          <span className="bg-blue_chill-800 h-8 w-16"></span>
+          <span className="bg-blue_chill-900 h-8 w-16"></span>
+          <span className="bg-blue_chill-950 h-8 w-16"></span>
         </div>
         <h3 className="w-full text-left">skin</h3>
         <div className="flex gap-4">
