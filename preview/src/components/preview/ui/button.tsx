@@ -1,16 +1,14 @@
-import { Button, buttonVariants } from "../../ui/button";
-import { type VariantProps } from "class-variance-authority";
+import {
+  Button,
+  type ButtonHue,
+  type ButtonSize,
+  type ButtonVariant,
+} from "../../ui/button";
 import { type TuplifyUnion } from "../tuplify-union.type";
 import { Sun } from "lucide-react";
 
-type ButtonVariants = NonNullable<
-  VariantProps<typeof buttonVariants>["variant"]
->;
-type ButtonHues = NonNullable<VariantProps<typeof buttonVariants>["hue"]>;
-type ButtonSizes = NonNullable<VariantProps<typeof buttonVariants>["size"]>;
-
 const ButtonPreview = () => {
-  const variants: TuplifyUnion<ButtonVariants> = [
+  const variants: TuplifyUnion<ButtonVariant> = [
     "primary",
     "secondary",
     "destructive",
@@ -18,7 +16,7 @@ const ButtonPreview = () => {
     "link",
     "outline",
   ];
-  const hues: TuplifyUnion<ButtonHues> = [
+  const hues: TuplifyUnion<ButtonHue> = [
     "none",
     "teal",
     "blue",
@@ -26,22 +24,16 @@ const ButtonPreview = () => {
     "red",
     "yellow",
   ];
-  const sizes: TuplifyUnion<ButtonSizes> = [
-    "xs",
-    "sm",
-    "default",
-    "lg",
-    "icon",
-  ];
+  const sizes: TuplifyUnion<ButtonSize> = ["xs", "sm", "default", "lg", "icon"];
 
   return (
     <>
-      <div className="flex flex-col gap-2 rounded border p-4">
+      <div className="flex flex-col gap-2 rounded-lg border p-4">
         <h2>Button</h2>
-        <div className="flex gap-4">
+        <div className="flex justify-center gap-4">
           <div className="flex flex-col gap-2">
             <h3>Variants</h3>
-            {variants.map((variant: ButtonVariants) => {
+            {variants.map((variant) => {
               return (
                 <Button variant={variant} key={variant}>
                   variant: {variant}
@@ -51,7 +43,7 @@ const ButtonPreview = () => {
           </div>
           <div className="flex flex-col gap-2">
             <h3>Sizes</h3>
-            {sizes.map((size: ButtonSizes) => {
+            {sizes.map((size) => {
               if (size === "icon") {
                 return (
                   <Button variant="primary" size="icon" key={size}>
@@ -69,7 +61,7 @@ const ButtonPreview = () => {
           <div className="flex flex-col gap-2">
             <h3>Hue</h3>
             <span className="flex gap-2">
-              {hues.map((hue: ButtonHues) => {
+              {hues.map((hue) => {
                 return (
                   <Button variant="primary" hue={hue} key={hue}>
                     hue: {hue}
@@ -78,7 +70,7 @@ const ButtonPreview = () => {
               })}
             </span>
             <span className="flex gap-2">
-              {hues.map((hue: ButtonHues) => {
+              {hues.map((hue) => {
                 return (
                   <Button variant="secondary" hue={hue} key={hue}>
                     hue: {hue}
@@ -87,7 +79,7 @@ const ButtonPreview = () => {
               })}
             </span>
             <span className="flex gap-2">
-              {hues.map((hue: ButtonHues) => {
+              {hues.map((hue) => {
                 return (
                   <Button variant="destructive" hue={hue} key={hue}>
                     hue: {hue}
@@ -96,7 +88,7 @@ const ButtonPreview = () => {
               })}
             </span>
             <span className="flex gap-2">
-              {hues.map((hue: ButtonHues) => {
+              {hues.map((hue) => {
                 return (
                   <Button variant="ghost" hue={hue} key={hue}>
                     hue: {hue}
@@ -105,7 +97,7 @@ const ButtonPreview = () => {
               })}
             </span>
             <span className="flex gap-2">
-              {hues.map((hue: ButtonHues) => {
+              {hues.map((hue) => {
                 return (
                   <Button variant="link" hue={hue} key={hue}>
                     hue: {hue}
@@ -114,7 +106,7 @@ const ButtonPreview = () => {
               })}
             </span>
             <span className="flex gap-2">
-              {hues.map((hue: ButtonHues) => {
+              {hues.map((hue) => {
                 return (
                   <Button variant="outline" hue={hue} key={hue}>
                     hue: {hue}

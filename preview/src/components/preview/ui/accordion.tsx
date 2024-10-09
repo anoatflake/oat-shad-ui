@@ -7,7 +7,7 @@ import {
 
 const AccordionPreview = () => {
   return (
-    <div className="flex flex-col gap-2 rounded border p-4">
+    <div className="flex flex-col gap-2 rounded-lg border p-4">
       <h2>Accordion</h2>
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">

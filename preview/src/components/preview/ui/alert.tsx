@@ -13,7 +13,7 @@ const AlertPreview = () => {
   const variants: TuplifyUnion<AlertVariants> = ["default", "destructive"];
 
   return (
-    <div className="flex flex-col gap-2 rounded border p-4">
+    <div className="flex flex-col gap-2 rounded-lg border p-4">
       <h2>Alert</h2>
       {variants.map((variant) => {
         return (

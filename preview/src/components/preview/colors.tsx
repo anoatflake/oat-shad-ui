@@ -1,23 +1,23 @@
 const ColorPreview = () => {
-  const colorNames = [
-    "teal_background",
-    "aqua_green",
-    "evergreen",
-    "gold",
-    "apricot",
-    "rust",
-    "blood_shot_eyes",
-    "eva_danger",
-    "skin",
-    "periwinkle",
-    "cornflower",
-    "charcoal",
-    "outer_space",
-    "slate",
-  ];
+  // const colorNames = [
+  //   "teal_background",
+  //   "aqua_green",
+  //   "evergreen",
+  //   "gold",
+  //   "apricot",
+  //   "rust",
+  //   "blood_shot_eyes",
+  //   "eva_danger",
+  //   "skin",
+  //   "periwinkle",
+  //   "cornflower",
+  //   "charcoal",
+  //   "outer_space",
+  //   "slate",
+  // ];
 
   return (
-    <div className="flex flex-col gap-2 rounded border p-4">
+    <div className="flex flex-col gap-2 rounded-lg border p-4">
       <h2>Color Palatte</h2>
       <div className="flex flex-col items-center gap-4 px-12">
         <h3 className="w-full text-left">teal background</h3>
@@ -64,17 +64,17 @@ const ColorPreview = () => {
         </div>
         <h3 className="w-full text-left">fall green</h3>
         <div className="flex gap-4">
-          <span className="bg-fall_green-50 h-8 w-16"></span>
-          <span className="bg-fall_green-100 h-8 w-16"></span>
-          <span className="bg-fall_green-200 h-8 w-16"></span>
-          <span className="bg-fall_green-300 h-8 w-16"></span>
-          <span className="bg-fall_green-400 h-8 w-16"></span>
-          <span className="bg-fall_green-500 h-8 w-16"></span>
-          <span className="bg-fall_green-600 h-8 w-16"></span>
-          <span className="bg-fall_green-700 h-8 w-16"></span>
-          <span className="bg-fall_green-800 h-8 w-16"></span>
-          <span className="bg-fall_green-900 h-8 w-16"></span>
-          <span className="bg-fall_green-950 h-8 w-16"></span>
+          <span className="h-8 w-16 bg-fall_green-50"></span>
+          <span className="h-8 w-16 bg-fall_green-100"></span>
+          <span className="h-8 w-16 bg-fall_green-200"></span>
+          <span className="h-8 w-16 bg-fall_green-300"></span>
+          <span className="h-8 w-16 bg-fall_green-400"></span>
+          <span className="h-8 w-16 bg-fall_green-500"></span>
+          <span className="h-8 w-16 bg-fall_green-600"></span>
+          <span className="h-8 w-16 bg-fall_green-700"></span>
+          <span className="h-8 w-16 bg-fall_green-800"></span>
+          <span className="h-8 w-16 bg-fall_green-900"></span>
+          <span className="h-8 w-16 bg-fall_green-950"></span>
         </div>
         <h3 className="w-full text-left">gold</h3>
         <div className="flex gap-4">
@@ -92,17 +92,17 @@ const ColorPreview = () => {
         </div>
         <h3 className="w-full text-left">mustard</h3>
         <div className="flex gap-4">
-          <span className="bg-mustard-50 h-8 w-16"></span>
-          <span className="bg-mustard-100 h-8 w-16"></span>
-          <span className="bg-mustard-200 h-8 w-16"></span>
-          <span className="bg-mustard-300 h-8 w-16"></span>
-          <span className="bg-mustard-400 h-8 w-16"></span>
-          <span className="bg-mustard-500 h-8 w-16"></span>
-          <span className="bg-mustard-600 h-8 w-16"></span>
-          <span className="bg-mustard-700 h-8 w-16"></span>
-          <span className="bg-mustard-800 h-8 w-16"></span>
-          <span className="bg-mustard-900 h-8 w-16"></span>
-          <span className="bg-mustard-950 h-8 w-16"></span>
+          <span className="h-8 w-16 bg-mustard-50"></span>
+          <span className="h-8 w-16 bg-mustard-100"></span>
+          <span className="h-8 w-16 bg-mustard-200"></span>
+          <span className="h-8 w-16 bg-mustard-300"></span>
+          <span className="h-8 w-16 bg-mustard-400"></span>
+          <span className="h-8 w-16 bg-mustard-500"></span>
+          <span className="h-8 w-16 bg-mustard-600"></span>
+          <span className="h-8 w-16 bg-mustard-700"></span>
+          <span className="h-8 w-16 bg-mustard-800"></span>
+          <span className="h-8 w-16 bg-mustard-900"></span>
+          <span className="h-8 w-16 bg-mustard-950"></span>
         </div>
         <h3 className="w-full text-left">apricot</h3>
         <div className="flex gap-4">
@@ -148,31 +148,31 @@ const ColorPreview = () => {
         </div>
         <h3 className="w-full text-left">cotton candy</h3>
         <div className="flex gap-4">
-          <span className="bg-cotton_candy-50 h-8 w-16"></span>
-          <span className="bg-cotton_candy-100 h-8 w-16"></span>
-          <span className="bg-cotton_candy-200 h-8 w-16"></span>
-          <span className="bg-cotton_candy-300 h-8 w-16"></span>
-          <span className="bg-cotton_candy-400 h-8 w-16"></span>
-          <span className="bg-cotton_candy-500 h-8 w-16"></span>
-          <span className="bg-cotton_candy-600 h-8 w-16"></span>
-          <span className="bg-cotton_candy-700 h-8 w-16"></span>
-          <span className="bg-cotton_candy-800 h-8 w-16"></span>
-          <span className="bg-cotton_candy-900 h-8 w-16"></span>
-          <span className="bg-cotton_candy-950 h-8 w-16"></span>
+          <span className="h-8 w-16 bg-cotton_candy-50"></span>
+          <span className="h-8 w-16 bg-cotton_candy-100"></span>
+          <span className="h-8 w-16 bg-cotton_candy-200"></span>
+          <span className="h-8 w-16 bg-cotton_candy-300"></span>
+          <span className="h-8 w-16 bg-cotton_candy-400"></span>
+          <span className="h-8 w-16 bg-cotton_candy-500"></span>
+          <span className="h-8 w-16 bg-cotton_candy-600"></span>
+          <span className="h-8 w-16 bg-cotton_candy-700"></span>
+          <span className="h-8 w-16 bg-cotton_candy-800"></span>
+          <span className="h-8 w-16 bg-cotton_candy-900"></span>
+          <span className="h-8 w-16 bg-cotton_candy-950"></span>
         </div>
         <h3 className="w-full text-left">hopbush</h3>
         <div className="flex gap-4">
-          <span className="bg-hopbush-50 h-8 w-16"></span>
-          <span className="bg-hopbush-100 h-8 w-16"></span>
-          <span className="bg-hopbush-200 h-8 w-16"></span>
-          <span className="bg-hopbush-300 h-8 w-16"></span>
-          <span className="bg-hopbush-400 h-8 w-16"></span>
-          <span className="bg-hopbush-500 h-8 w-16"></span>
-          <span className="bg-hopbush-600 h-8 w-16"></span>
-          <span className="bg-hopbush-700 h-8 w-16"></span>
-          <span className="bg-hopbush-800 h-8 w-16"></span>
-          <span className="bg-hopbush-900 h-8 w-16"></span>
-          <span className="bg-hopbush-950 h-8 w-16"></span>
+          <span className="h-8 w-16 bg-hopbush-50"></span>
+          <span className="h-8 w-16 bg-hopbush-100"></span>
+          <span className="h-8 w-16 bg-hopbush-200"></span>
+          <span className="h-8 w-16 bg-hopbush-300"></span>
+          <span className="h-8 w-16 bg-hopbush-400"></span>
+          <span className="h-8 w-16 bg-hopbush-500"></span>
+          <span className="h-8 w-16 bg-hopbush-600"></span>
+          <span className="h-8 w-16 bg-hopbush-700"></span>
+          <span className="h-8 w-16 bg-hopbush-800"></span>
+          <span className="h-8 w-16 bg-hopbush-900"></span>
+          <span className="h-8 w-16 bg-hopbush-950"></span>
         </div>
         <h3 className="w-full text-left">eva danger</h3>
         <div className="flex gap-4">
@@ -190,31 +190,31 @@ const ColorPreview = () => {
         </div>
         <h3 className="w-full text-left">royal purple</h3>
         <div className="flex gap-4">
-          <span className="bg-royal_purple-50 h-8 w-16"></span>
-          <span className="bg-royal_purple-100 h-8 w-16"></span>
-          <span className="bg-royal_purple-200 h-8 w-16"></span>
-          <span className="bg-royal_purple-300 h-8 w-16"></span>
-          <span className="bg-royal_purple-400 h-8 w-16"></span>
-          <span className="bg-royal_purple-500 h-8 w-16"></span>
-          <span className="bg-royal_purple-600 h-8 w-16"></span>
-          <span className="bg-royal_purple-700 h-8 w-16"></span>
-          <span className="bg-royal_purple-800 h-8 w-16"></span>
-          <span className="bg-royal_purple-900 h-8 w-16"></span>
-          <span className="bg-royal_purple-950 h-8 w-16"></span>
+          <span className="h-8 w-16 bg-royal_purple-50"></span>
+          <span className="h-8 w-16 bg-royal_purple-100"></span>
+          <span className="h-8 w-16 bg-royal_purple-200"></span>
+          <span className="h-8 w-16 bg-royal_purple-300"></span>
+          <span className="h-8 w-16 bg-royal_purple-400"></span>
+          <span className="h-8 w-16 bg-royal_purple-500"></span>
+          <span className="h-8 w-16 bg-royal_purple-600"></span>
+          <span className="h-8 w-16 bg-royal_purple-700"></span>
+          <span className="h-8 w-16 bg-royal_purple-800"></span>
+          <span className="h-8 w-16 bg-royal_purple-900"></span>
+          <span className="h-8 w-16 bg-royal_purple-950"></span>
         </div>
         <h3 className="w-full text-left">blue chill</h3>
         <div className="flex gap-4">
-          <span className="bg-blue_chill-50 h-8 w-16"></span>
-          <span className="bg-blue_chill-100 h-8 w-16"></span>
-          <span className="bg-blue_chill-200 h-8 w-16"></span>
-          <span className="bg-blue_chill-300 h-8 w-16"></span>
-          <span className="bg-blue_chill-400 h-8 w-16"></span>
-          <span className="bg-blue_chill-500 h-8 w-16"></span>
-          <span className="bg-blue_chill-600 h-8 w-16"></span>
-          <span className="bg-blue_chill-700 h-8 w-16"></span>
-          <span className="bg-blue_chill-800 h-8 w-16"></span>
-          <span className="bg-blue_chill-900 h-8 w-16"></span>
-          <span className="bg-blue_chill-950 h-8 w-16"></span>
+          <span className="h-8 w-16 bg-blue_chill-50"></span>
+          <span className="h-8 w-16 bg-blue_chill-100"></span>
+          <span className="h-8 w-16 bg-blue_chill-200"></span>
+          <span className="h-8 w-16 bg-blue_chill-300"></span>
+          <span className="h-8 w-16 bg-blue_chill-400"></span>
+          <span className="h-8 w-16 bg-blue_chill-500"></span>
+          <span className="h-8 w-16 bg-blue_chill-600"></span>
+          <span className="h-8 w-16 bg-blue_chill-700"></span>
+          <span className="h-8 w-16 bg-blue_chill-800"></span>
+          <span className="h-8 w-16 bg-blue_chill-900"></span>
+          <span className="h-8 w-16 bg-blue_chill-950"></span>
         </div>
         <h3 className="w-full text-left">skin</h3>
         <div className="flex gap-4">
