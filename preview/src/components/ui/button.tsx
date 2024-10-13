@@ -10,16 +10,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-white text-black shadow-[5px_5px_rgb(0,0,0,1)] hover:shadow-[3px_3px_rgb(0,0,0,1)] border-2 border-black dark:border-[rgb(50,50,50,1)] dark:bg-black dark:text-white dark:shadow-[5px_5px_rgb(50,50,50,1)] dark:hover:shadow-[3px_3px_rgb(50,50,50,1)]",
+          "bg-white text-black shadow-[5px_5px_rgb(0,0,0,1)] hover:shadow-[3px_3px_rgb(0,0,0,1)] border-2 border-black dark:border-[rgb(50,50,50,1)] dark:bg-black dark:text-white dark:shadow-[5px_5px_rgb(50,50,50,1)] dark:hover:shadow-[3px_3px_rgb(50,50,50,1)] transition-shadow",
         secondary:
-          "text-secondary-foreground hover:bg-secondary/80 shadow-[3px_3px_rgb(0,0,0,1)] hover:shadow-[5px_5px_rgb(0,0,0,1)] border-2 border-black",
+          "text-secondary-foreground hover:bg-secondary/80 shadow-[3px_3px_rgb(0,0,0,1)] hover:shadow-[5px_5px_rgb(0,0,0,1)] border-2 border-black transition-shadow",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline:
-          "border-2 border-primary bg-background hover:bg-teal_background-300",
+        outline: "border-2 border-primary bg-background hover:bg-accent",
         ghost:
           "border-2 border-background hover:border-[rgb(100,100,100,0.5)] hover:shadow-[3px_3px_rgb(100,100,100,0.5)]",
-        link: "underline-offset-4 hover:underline decoration-dashed decoration-2",
+        link: "underline-offset-4 hover:underline decoration-dashed decoration-2 transition-shadow",
       },
       hue: {
         none: "",
@@ -56,7 +55,8 @@ const buttonVariants = cva(
       {
         variant: "secondary",
         hue: ["none", "teal", "blue", "pink", "red", "yellow"],
-        className: "text-primary border-primary",
+        className:
+          "text-primary border-primary dark:border-[rgb(50,50,50,1)] bg-transparent",
       },
       {
         variant: "destructive",
@@ -108,4 +108,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 Button.displayName = "Button";
 
+type ButtonVariant = NonNullable<
+  VariantProps<typeof buttonVariants>["variant"]
+>;
+type ButtonHue = NonNullable<VariantProps<typeof buttonVariants>["hue"]>;
+type ButtonSize = NonNullable<VariantProps<typeof buttonVariants>["size"]>;
+
 export { Button, buttonVariants };
+export type { ButtonVariant, ButtonHue, ButtonSize };
