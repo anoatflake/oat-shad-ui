@@ -16,9 +16,9 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border-2 border-primary bg-background hover:bg-teal_background-300",
+          "border-2 border-primary bg-transparent hover:bg-teal_background-300",
         ghost:
-          "border-2 border-background hover:border-[rgb(100,100,100,0.5)] hover:shadow-[3px_3px_rgb(100,100,100,0.5)]",
+          "border-2 border-transparent hover:border-[rgb(100,100,100,0.5)] hover:shadow-[3px_3px_rgb(100,100,100,0.5)]",
         link: "underline-offset-4 hover:underline decoration-dashed decoration-2",
       },
       hue: {
@@ -66,18 +66,18 @@ const buttonVariants = cva(
       {
         variant: "outline",
         hue: ["none", "teal", "blue", "pink", "red", "yellow"],
-        className: "border-2 bg-background",
+        className: "border-2 bg-transparent",
       },
       {
         variant: "ghost",
         hue: ["none", "teal", "blue", "pink", "red", "yellow"],
         className:
-          "text-primary border-background bg-background hover:bg-background",
+          "text-primary border-transparent bg-transparent hover:bg-transparent",
       },
       {
         variant: "link",
         hue: ["none", "teal", "blue", "pink", "red", "yellow"],
-        className: "text-primary bg-background hover:bg-background",
+        className: "text-primary bg-transparent hover:bg-transparent",
       },
     ],
     defaultVariants: {

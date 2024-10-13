@@ -20,7 +20,7 @@ function Calendar({
       showOutsideDays={showOutsideDays}
       className={cn("relative p-3", className)}
       classNames={{
-        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-0 sm:space-y-0",
+        months: "flex flex-col sm:flex-row space-y-4 sm:space-y-0",
         month: "space-y-4",
         month_caption: "flex justify-center pt-1 relative items-center",
         caption_label: "text-sm font-medium",
@@ -38,30 +38,31 @@ function Calendar({
         weekday:
           "text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]",
         week: "flex w-full mt-2",
-        day: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].range-end)]:rounded-r-md [&:has([aria-selected].outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
+        day: "h-8 w-8 text-center text-sm p-0 relative [&:has([aria-selected].range-end)]:rounded-r-md [&:has([aria-selected].outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20 mx-1",
         day_button: cn(
           buttonVariants({ variant: "ghost" }),
-          "h-9 w-9 p-0 font-normal aria-selected:opacity-100",
-          "h-9 w-9 p-0 font-normal aria-selected:opacity-100",
+          "h-8 w-8 p-0 font-normal aria-selected:opacity-100",
         ),
         range_end: "range-end",
-        selected:
-          "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground rounded-md",
-        today: "bg-accent text-accent-foreground rounded-md",
+        selected: cn(
+          buttonVariants({ variant: "primary" }),
+          "h-8 w-8 p-0 hover:opacity-100 rounded-sm",
+        ),
+        today: "bg-accent text-accent-foreground rounded-sm",
         outside:
           "outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
         disabled: "text-muted-foreground opacity-50",
         range_middle:
-          "aria-selected:bg-accent aria-selected:text-accent-foreground rounded-none",
+          "aria-selected:bg-accent aria-selected:text-accent-foreground rounded-sm",
         hidden: "invisible",
         ...classNames,
       }}
       components={{
         Chevron: (props) => {
           if (props.orientation === "left") {
-            return <ArrowLeft {...props} className="h-4 w-4" />;
+            return <ArrowLeft strokeWidth={3} {...props} className="h-4 w-4" />;
           }
-          return <ArrowRight {...props} className="h-4 w-4" />;
+          return <ArrowRight strokeWidth={3} {...props} className="h-4 w-4" />;
         },
       }}
       {...props}
