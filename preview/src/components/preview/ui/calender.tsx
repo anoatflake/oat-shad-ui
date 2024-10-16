@@ -16,7 +16,7 @@ const CalenderPreview = () => {
   return (
     <div className="flex flex-col gap-2 rounded-lg border p-4">
       <h2>Calender</h2>
-      <div className="flex flex-row justify-center gap-4">
+      <div className="flex flex-row flex-wrap items-center justify-center gap-4 md:flex-row">
         <Calendar
           mode="single"
           selected={singleDate}

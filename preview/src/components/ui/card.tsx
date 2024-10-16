@@ -3,19 +3,17 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
 
-//TODO: define different card backgrounds
-
 const cardVariants = cva(
-  "rounded-md border-2 border-black bg-card text-card-foreground shadow-[7px_7px_rgb(0,0,0,1)]",
+  "rounded-md border-2 border-black bg-card text-card-foreground shadow-[7px_7px_rgb(0,0,0,1)] dark:border-[rgb(50,50,50,1)] dark:shadow-[7px_7px_rgb(50,50,50,1)]",
   {
     variants: {
       hue: {
         none: "bg-card",
-        white: "bg-white",
-        lightblue: "bg-blue_chill-300",
-        blue: "bg-blue_chill-500",
-        aqua: "bg-aqua_green-600",
-        greenish: "bg-evergreen-300",
+        white: "bg-white dark:bg-black",
+        lightblue: "bg-blue_chill-300 dark:bg-blue_chill-700",
+        blue: "bg-blue_chill-500 dark:bg-blue_chill-900",
+        aqua: "bg-aqua_green-600 dark:bg-aqua_green-900",
+        greenish: "bg-evergreen-300 dark:bg-evergreen-700",
         pollen: "bg-gold-300",
         yellow: "bg-gold-500",
         apricot: "bg-apricot-400",

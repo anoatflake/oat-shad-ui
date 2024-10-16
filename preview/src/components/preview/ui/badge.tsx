@@ -53,7 +53,9 @@ const BadgePreview = () => {
       </div>
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
-          <AccordionTrigger>other badge colors</AccordionTrigger>
+          <AccordionTrigger>
+            <h3>other badge colors</h3>
+          </AccordionTrigger>
           <AccordionContent className="flex flex-col gap-2">
             <div className="flex flex-row flex-wrap gap-2">
               <Badge className="bg-teal_background-200">color test</Badge>

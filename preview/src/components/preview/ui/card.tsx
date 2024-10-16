@@ -23,26 +23,26 @@ const CardPreview = () => {
     "none",
     "white",
     "lightblue",
-    // "blue",
+    "blue",
     "aqua",
     "greenish",
     "pollen",
-    // "yellow",
+    "yellow",
     "apricot",
     "orange",
-    // "rust",
+    "rust",
     "blush",
-    // "pink",
+    "pink",
     "periwinkle",
   ];
 
   return (
     <div className="flex flex-col gap-2 rounded-lg border p-4">
       <h2>Card</h2>
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap justify-center gap-4 md:gap-8">
         {hues.map((hue) => {
           return (
-            <Card className="w-[350px]" hue={hue}>
+            <Card className="w-max lg:w-[350px]" hue={hue}>
               <CardHeader>
                 <CardTitle>Color: {hue}</CardTitle>
                 <CardDescription>

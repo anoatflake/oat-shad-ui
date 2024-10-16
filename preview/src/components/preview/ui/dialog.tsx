@@ -41,7 +41,7 @@ const DialogPreview = () => {
                   Color: {hue}
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px]" hue={hue}>
+              <DialogContent className="md:max-w-[425px]" hue={hue}>
                 <DialogHeader>
                   <DialogTitle>Edit profile</DialogTitle>
                   <DialogDescription>
