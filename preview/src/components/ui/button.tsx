@@ -15,7 +15,7 @@ const buttonVariants = cva(
           "text-secondary-foreground hover:bg-secondary/80 shadow-[3px_3px_rgb(0,0,0,1)] hover:shadow-[5px_5px_rgb(0,0,0,1)] border-2 border-black transition-shadow",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border-2 border-primary bg-background hover:bg-accent",
+        outline: "border-2 border-primary bg-transparent hover:bg-accent",
         ghost:
           "border-2 border-background hover:border-[rgb(100,100,100,0.5)] hover:shadow-[3px_3px_rgb(100,100,100,0.5)]",
         link: "underline-offset-4 hover:underline decoration-dashed decoration-2 transition-shadow",
@@ -66,7 +66,7 @@ const buttonVariants = cva(
       {
         variant: "outline",
         hue: ["none", "teal", "blue", "pink", "red", "yellow"],
-        className: "border-2 bg-background",
+        className: "border-2 bg-transparent",
       },
       {
         variant: "ghost",
