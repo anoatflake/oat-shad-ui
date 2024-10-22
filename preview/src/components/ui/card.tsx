@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
 
 const cardVariants = cva(
-  "rounded-md border-2 border-black bg-card text-card-foreground shadow-[7px_7px_rgb(0,0,0,1)] dark:border-[rgb(50,50,50,1)] dark:shadow-[7px_7px_rgb(50,50,50,1)]",
+  "relative rounded-md border-2 border-black bg-card text-card-foreground shadow-[7px_7px_rgb(0,0,0,1)] dark:border-[rgb(50,50,50,1)] dark:shadow-[7px_7px_rgb(50,50,50,1)]",
   {
     variants: {
       hue: {
@@ -36,11 +36,10 @@ export interface CardProps
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, hue, ...props }: CardProps, ref) => (
-    <div
-      ref={ref}
-      className={cn(cardVariants({ hue }), className)}
-      {...props}
-    />
+    <div className={cn(cardVariants({ hue }), className)}>
+      <div ref={ref} {...props} />
+      <div className="absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#4f4f4f2e_2px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_2px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+    </div>
   ),
 );
 Card.displayName = "Card";
