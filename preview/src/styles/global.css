@@ -19,9 +19,10 @@
     --accent: 230.13 59.4% 73.92%;
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 210 40% 98%; /* TODO: THIS WHITE WITH THIS RED IS NOT A11Y */
     --border: 168 100% 43%;
     --input: 168 100% 43%;
+    --outline: 222.2 84% 4.9%;
     --ring: 222.2 84% 4.9%;
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
@@ -260,24 +261,24 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 168.89 52.94% 4.9%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --card: 168.89 52.94% 4.9% --card-foreground: 210 40% 98%;
+    --popover: 168 36.08% 19.02%;
     --popover-foreground: 210 40% 98%;
     --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
+    --primary-foreground: 168.89 52.94% 4.9%;
+    --secondary: 168 36.08% 19.02%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
+    --muted: 168 36.08% 19.02%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 168 36.08% 19.02%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --border: 168 36.08% 19.02%;
+    --input: 168 36.08% 19.02%;
+    --outline: 212.7 26.8% 83.9%;
     --ring: 212.7 26.8% 83.9%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
@@ -380,6 +381,18 @@
       900: "#7A1770"
       950: "#4F106a"
     },
+
+
+    adobe color wheel: 
+    #03ff0c #03ff62 #02ffb7 #03f2ff #03a2ff
+    #58ffd0
+
+    #9be5f2 #9bc9f2 #9baef1 #a49bf2 #c19bf2
+    #c8d1f2
+
+    #fab6c6 #fabeb6 #fbc9b6 #fad5b6 #fae0b6
+    #facbb8
+
 
 
     image color picker
@@ -692,6 +705,295 @@ https://www.tints.dev
     --royal_purple-900: #64247f;
     --royal_purple-950: #4f106a;
 
+// Complementary Colors according to canvas
+'mandy': {
+    '50: #fef2f3;
+    '100: #fde6e7;
+    '200: #fbd0d5;
+    '300: #f7aab2;
+    '400: #f27a8a;
+    '500: #ea546c;
+    '600: #d5294d;
+    '700: #b31d3f;
+    '800: #961b3c;
+    '900: #811a39;
+    '950: #48091a;
+},
+
+'aquamarine': {
+    '50: #e7fff7;
+    '100: #c6ffea;
+    '200: #92ffdb;
+    '300: #4dffcc;
+    '400: #02ffb7;
+    '500: #00e8a4;
+    '600: #00be87;
+    '700: #009871;
+    '800: #00785b;
+    '900: #00624c;
+    '950: #00382c;
+},
+
+'red-ribbon': { 
+    '50: #ffeff1;
+    '100: #ffe0e5;
+    '200: #ffc6d2;
+    '300: #ff97ac;
+    '400: #ff5d81;
+    '500: #ff245a;
+    '600: #fd0048; --> complementary to #02ffb7 
+    '700: #d7003d;
+    '800: #b4003c;
+    '900: #99023a;
+    '950: #57001a;
+},
+'red-ribbon': {
+    '50: #ffeff1;
+    '100: #ffe0e5;
+    '200: #ffc6d2;
+    '300: #ff97ac;
+    '400: #ff5d81;
+    '500: #ff245a;
+    '600: #ff024a;--> complementary to #02ffb7 
+    '700: #d7003d;
+    '800: #b4003c;
+    '900: #99023a;
+    '950: #57001a;
+},
+
+'caribbean-green': {
+    '50: #eafff6;
+    '100: #cdfee7;
+    '200: #a0fad5;
+    '300: #63f2bf;
+    '400: #25e2a5;
+    '500: #00ce93; --> monocromatic
+    '600: #00a475;
+    '700: #008362;
+    '800: #00674f;
+    '900: #005542;
+    '950: #003026;
+},
+
+'malibu': {
+    '50: #effbff;
+    '100: #def5ff;
+    '200: #b6eeff;
+    '300: #75e3ff;
+    '400: #2cd6ff;
+    '500: #02c9ff; --> analogus
+    '600: #009dd4;
+    '700: #007dab;
+    '800: #00698d;
+    '900: #065774;
+    '950: #04374d;
+},
+'green': {
+    '50: #e4ffe7;
+    '100: #c4ffcb;
+    '200: #90ffa0;
+    '300: #50ff6f;
+    '400: #02ff38; --> analogus
+    '500: #00e637;
+    '600: #00b831;
+    '700: #008b25;
+    '800: #076d23;
+    '900: #0b5c23;
+    '950: #003411;
+},
+
+'purple-pizzazz': {
+        '50: #fff0fd',
+        '100: #ffe3fd',
+        '200: #ffc6fc',
+        '300: #ff98f8',
+        '400: #ff58ef',
+        '500: #ff27e2',
+        '600: #ff02c8', --> split (figma)
+        '700: #df00a2',
+        '800: #b80086',
+        '900: #980371',
+        '950: #5f0041',
+    },
+    'scarlet': {
+        '50: #fff5ec',
+        '100: #ffe7d3',
+        '200: #ffcba5',
+        '300: #ffa76d',
+        '400: #ff7732',
+        '500: #ff510a',
+        '600: #ff3802', --> split (figma)
+        '700: #cc2302',
+        '800: #a11d0b',
+        '900: #821b0c',
+        '950: #460904',
+    },
+    
+
+'electric-violet': {
+    '50: #fcf3ff;
+    '100: #f8e3ff;
+    '200: #f2cdff;
+    '300: #e8a5ff;
+    '400: #db6cff;
+    '500: #cd35ff;
+    '600: #c00fff;
+    '700: #b702ff;   --> triadic
+    '800: #9006c3;
+    '900: #76079c;
+    '950: #520076;
+},
+'selective-yellow': {
+    '50: #fffeea;
+    '100: #fff9c5;
+    '200: #fff485;
+    '300: #ffe746;
+    '400: #ffd71b;
+    '500: #ffb702; --> triadic
+    '600: #e28c00;
+    '700: #bb6202;
+    '800: #984c08;
+    '900: #7c3e0b;
+    '950: #481f00;
+},
+
+
+'blue': {
+    '50: #f0f0ff;
+    '100: #e5e4ff;
+    '200: #cecdff;
+    '300: #aba6ff;
+    '400: #8273ff;
+    '500: #5b3bff;
+    '600: #4914ff;
+    '700: #3802ff; --> tetradic
+    '800: #2e01d6;
+    '900: #2803af;
+    '950: #140077;
+},
+'red-ribbon': {
+    '50: #ffeff1;
+    '100: #ffe0e5;
+    '200: #ffc6d2;
+    '300: #ff97ac;
+    '400: #ff5d81;
+    '500: #ff245a;
+    '600: #ff024a;--> tetradic
+    '700: #d7003d;
+    '800: #b4003c;
+    '900: #99023a;
+    '950: #57001a;
+},
+'electric-lime': {
+    '50: #fcffe4;
+    '100: #f8ffc4;
+    '200: #efff90;
+    '300: #dfff50;
+    '400: #c8ff02; --> tetradic
+    '500: #aee600;
+    '600: #87b800;
+    '700: #658b00;
+    '800: #506d07;
+    '900: #445c0b;
+    '950: #223400;
+},
+
+
+
+'sisal': {
+    '50: #f8f7f4;
+    '100: #efede5;
+    '200: #d7d0c0;
+    '300: #c8bea9;
+    '400: #b1a086;
+    '500: #a18b6e;
+    '600: #947b62;
+    '700: #7c6552;
+    '800: #665346;
+    '900: #53453b;
+    '950: #2c231e;
+},
+
+'parchment': {
+    '50: #f9f6ed;
+    '100: #f0e9d1;
+    '200: #e2d3a6;
+    '300: #d2b572;
+    '400: #c49a4b;
+    '500: #b4863e;
+    '600: #9b6a33;
+    '700: #7c502c;
+    '800: #69422a;
+    '900: #5a3929;
+    '950: #341d14;
+},
+
+// uicolors.app  predefined
+'wewak': {
+        '50: #fdf3f4',
+        '100: #fbe8eb',
+        '200: #f6d5da',
+        '300: #ea9daa',
+        '400: #e58799',
+        '500: #d75c77',
+        '600: #c13d60',
+        '700: #a22e4f',
+        '800: #882947',
+        '900: #752642',
+        '950: #411020',
+    },
+'contessa': {
+    '50: #fbf6f5;
+    '100: #f6ecea;
+    '200: #f0dcd8;
+    '300: #e4c3bd;
+    '400: #d3a096;
+    '500: #ba7264;
+    '600: #aa6558;
+    '700: #8e5347;
+    '800: #77463d;
+    '900: #643f38;
+    '950: #351e1a;
+'jade': {
+    '50: #effef7;
+    '100: #dafeef;
+    '200: #b8fadd;
+    '300: #81f4c3;
+    '400: #43e5a0;
+    '500: #1acd81;
+    '600: #0fa968;
+    '700: #108554;
+    '800: #126945;
+    '900: #11563a;
+    '950: #03301f;
+},
+'mantis': {
+    '50: #f6faf3;
+    '100: #e9f5e3;
+    '200: #d3eac8;
+    '300: #afd89d;
+    '400: #82bd69;
+    '500: #61a146;
+    '600: #4c8435;
+    '700: #3d692c;
+    '800: #345427;
+    '900: #2b4522;
+    '950: #13250e;
+},
+'waikawa-gray': {
+    '50: #f2f7fb;
+    '100: #e7f0f8;
+    '200: #d3e2f2;
+    '300: #b9cfe8;
+    '400: #9cb6dd;
+    '500: #839dd1;
+    '600: #6a7fc1;
+    '700: #6374ae;
+    '800: #4a5989;
+    '900: #414e6e;
+    '950: #262c40;
+},
+
 */
   }
 }
@@ -702,5 +1004,15 @@ https://www.tints.dev
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  .scalloped {
+    --mask: linear-gradient(#000 0 0) 50% / calc(100% - 22.2px)
+        calc(100% - 22.2px) no-repeat,
+      radial-gradient(farthest-side, #000 98%, #0000) 0 0/24px 24px round;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    background-color: white; /* or any other color */
+    box-shadow: 0 0 0 2px white inset;
   }
 }
