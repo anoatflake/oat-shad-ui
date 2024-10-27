@@ -64,6 +64,8 @@ function App() {
             <CheckboxPreview />
 
             <DialogPreview />
+            <InputPreview />
+            <PopoverPreview />
             <SelectPreview />
             <SonnerPreview />
             <ToastPreview />
