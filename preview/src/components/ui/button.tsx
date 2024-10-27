@@ -5,20 +5,20 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-sm text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 font-bold",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-sm text-sm font-medium ring-offset-background transition-colors focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50 font-bold",
   {
     variants: {
       variant: {
         primary:
           "bg-white text-black shadow-[5px_5px_rgb(0,0,0,1)] hover:shadow-[3px_3px_rgb(0,0,0,1)] border-2 border-black dark:border-[rgb(50,50,50,1)] dark:bg-black dark:text-white dark:shadow-[5px_5px_rgb(50,50,50,1)] dark:hover:shadow-[3px_3px_rgb(50,50,50,1)] transition-shadow",
         secondary:
-          "text-secondary-foreground hover:bg-secondary/80 shadow-[3px_3px_rgb(0,0,0,1)] hover:shadow-[5px_5px_rgb(0,0,0,1)] border-2 border-black transition-shadow",
+          "text-secondary-foreground hover:bg-secondary/80 shadow-[3px_3px_rgb(0,0,0,1)] hover:shadow-[5px_5px_rgb(0,0,0,1)] dark:shadow-[3px_3px_rgb(50,50,50,1)] dark:hover:shadow-[5px_5px_rgb(50,50,50,1)] border-2 border-black transition-shadow",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border-2 border-primary bg-transparent hover:bg-accent",
         ghost:
           "border-2 border-background hover:border-[rgb(100,100,100,0.5)] hover:shadow-[3px_3px_rgb(100,100,100,0.5)]",
-        link: "underline-offset-4 hover:underline decoration-dashed decoration-2 transition-shadow",
+        link: "underline-offset-4 hover:underline focus-visible:underline decoration-dashed decoration-2 transition-shadow",
       },
       hue: {
         none: "",
@@ -66,18 +66,19 @@ const buttonVariants = cva(
       {
         variant: "outline",
         hue: ["none", "teal", "blue", "pink", "red", "yellow"],
-        className: "border-2 bg-transparent",
+        className: "text-primary border-2 bg-transparent",
       },
       {
         variant: "ghost",
         hue: ["none", "teal", "blue", "pink", "red", "yellow"],
         className:
-          "text-primary border-background bg-background hover:bg-background",
+          "text-primary border-background bg-background hover:bg-background focus-visible:-outline-offset-2",
       },
       {
         variant: "link",
         hue: ["none", "teal", "blue", "pink", "red", "yellow"],
-        className: "text-primary bg-background hover:bg-background",
+        className:
+          "text-primary bg-background hover:bg-background focus-visible:-outline-offset-2",
       },
     ],
     defaultVariants: {
