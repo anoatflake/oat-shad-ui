@@ -13,6 +13,10 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xs: "", //TODO:
+      },
+      backdropBlur: {
+        xs: "2px",
       },
       colors: {
         background: "hsl(var(--background))",
@@ -47,6 +51,7 @@ export default {
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
+        outline: "hsl(var(--outline))",
         ring: "hsl(var(--ring))",
         chart: {
           1: "hsl(var(--chart-1))",
@@ -67,6 +72,8 @@ export default {
           800: "hsl(var(--blood_shot_eyes-800))",
           900: "hsl(var(--blood_shot_eyes-900))",
           950: "hsl(var(--blood_shot_eyes-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         eva_danger: {
           50: "hsl(var(--eva_danger-50))",
@@ -80,6 +87,8 @@ export default {
           800: "hsl(var(--eva_danger-800))",
           900: "hsl(var(--eva_danger-900))",
           950: "hsl(var(--eva_danger-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         teal_background: {
           50: "hsl(var(--teal_background-50))",
@@ -93,6 +102,8 @@ export default {
           800: "hsl(var(--teal_background-800))",
           900: "hsl(var(--teal_background-900))",
           950: "hsl(var(--teal_background-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         skin: {
           50: "hsl(var(--skin-50))",
@@ -106,6 +117,8 @@ export default {
           800: "hsl(var(--skin-800))",
           900: "hsl(var(--skin-900))",
           950: "hsl(var(--skin-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         gold: {
           50: "hsl(var(--gold-50))",
@@ -119,6 +132,8 @@ export default {
           800: "hsl(var(--gold-800))",
           900: "hsl(var(--gold-900))",
           950: "hsl(var(--gold-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         aqua_green: {
           50: "hsl(var(--aqua_green-50))",
@@ -132,6 +147,8 @@ export default {
           800: "hsl(var(--aqua_green-800))",
           900: "hsl(var(--aqua_green-900))",
           950: "hsl(var(--aqua_green-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         evergreen: {
           50: "hsl(var(--evergreen-50))",
@@ -145,6 +162,8 @@ export default {
           800: "hsl(var(--evergreen-800))",
           900: "hsl(var(--evergreen-900))",
           950: "hsl(var(--evergreen-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         periwinkle: {
           50: "hsl(var(--periwinkle-50))",
@@ -158,6 +177,8 @@ export default {
           800: "hsl(var(--periwinkle-800))",
           900: "hsl(var(--periwinkle-900))",
           950: "hsl(var(--periwinkle-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         cornflower: {
           50: "hsl(var(--cornflower-50))",
@@ -171,6 +192,8 @@ export default {
           800: "hsl(var(--cornflower-800))",
           900: "hsl(var(--cornflower-900))",
           950: "hsl(var(--cornflower-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         apricot: {
           50: "hsl(var(--apricot-50))",
@@ -184,6 +207,8 @@ export default {
           800: "hsl(var(--apricot-800))",
           900: "hsl(var(--apricot-900))",
           950: "hsl(var(--apricot-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         rust: {
           50: "hsl(var(--rust-50))",
@@ -197,6 +222,8 @@ export default {
           800: "hsl(var(--rust-800))",
           900: "hsl(var(--rust-900))",
           950: "hsl(var(--rust-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         outer_space: {
           50: "hsl(var(--outer_space-50))",
@@ -210,6 +237,8 @@ export default {
           800: "hsl(var(--outer_space-800))",
           900: "hsl(var(--outer_space-900))",
           950: "hsl(var(--outer_space-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         charcoal: {
           50: "hsl(var(--charcoal-50))",
@@ -223,6 +252,8 @@ export default {
           800: "hsl(var(--charcoal-800))",
           900: "hsl(var(--charcoal-900))",
           950: "hsl(var(--charcoal-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         fall_green: {
           50: "hsl(var(--fall_green-50))",
@@ -236,6 +267,8 @@ export default {
           800: "hsl(var(--fall_green-800))",
           900: "hsl(var(--fall_green-900))",
           950: "hsl(var(--fall_green-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         mustard: {
           50: "hsl(var(--mustard-50))",
@@ -249,6 +282,8 @@ export default {
           800: "hsl(var(--mustard-800))",
           900: "hsl(var(--mustard-900))",
           950: "hsl(var(--mustard-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         blue_chill: {
           50: "hsl(var(--blue_chill-50))",
@@ -262,6 +297,8 @@ export default {
           800: "hsl(var(--blue_chill-800))",
           900: "hsl(var(--blue_chill-900))",
           950: "hsl(var(--blue_chill-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         cotton_candy: {
           50: "hsl(var(--cotton_candy-50))",
@@ -275,6 +312,8 @@ export default {
           800: "hsl(var(--cotton_candy-800))",
           900: "hsl(var(--cotton_candy-900))",
           950: "hsl(var(--cotton_candy-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         hopbush: {
           50: "hsl(var(--hopbush-50))",
@@ -288,6 +327,8 @@ export default {
           800: "hsl(var(--hopbush-800))",
           900: "hsl(var(--hopbush-900))",
           950: "hsl(var(--hopbush-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
         royal_purple: {
           50: "hsl(var(--royal_purple-50))",
@@ -301,6 +342,8 @@ export default {
           800: "hsl(var(--royal_purple-800))",
           900: "hsl(var(--royal_purple-900))",
           950: "hsl(var(--royal_purple-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
         },
       },
       keyframes: {
