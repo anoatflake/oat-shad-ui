@@ -29,20 +29,37 @@ const SheetOverlay = React.forwardRef<
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
 const sheetVariants = cva(
-  "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+  "m-4 fixed z-50 gap-4 border-2 border-outline rounded-md p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 shadow-[5px_5px_rgb(0,0,0,1)]",
   {
     variants: {
       side: {
-        top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
+        top: "inset-x-0 top-0 data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
         bottom:
-          "inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
-        left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
+          "inset-x-0 bottom-0 data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
+        left: "inset-y-0 left-0 h-full w-3/4 data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
         right:
-          "inset-y-0 right-0 h-full w-3/4  border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+          "inset-y-0 right-0 min-h-max w-3/4 data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+      },
+      hue: {
+        none: "bg-background",
+        white: "bg-white",
+        lightblue: "bg-blue_chill-300",
+        blue: "bg-blue_chill-500",
+        aqua: "bg-aqua_green-600",
+        greenish: "bg-evergreen-300",
+        pollen: "bg-gold-300",
+        yellow: "bg-gold-500",
+        apricot: "bg-apricot-400",
+        orange: "bg-apricot-500",
+        rust: "bg-rust-500",
+        blush: "bg-cotton_candy-300",
+        pink: "bg-cotton_candy-400",
+        periwinkle: "bg-periwinkle-400",
       },
     },
     defaultVariants: {
       side: "right",
+      hue: "none",
     },
   },
 );
@@ -54,12 +71,12 @@ interface SheetContentProps
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   SheetContentProps
->(({ side = "right", className, children, ...props }, ref) => (
+>(({ side = "right", className, children, hue, ...props }, ref) => (
   <SheetPortal>
-    <SheetOverlay />
+    <SheetOverlay className="backdrop-blur-xs" />
     <SheetPrimitive.Content
       ref={ref}
-      className={cn(sheetVariants({ side }), className)}
+      className={cn(sheetVariants({ side, hue }), className)}
       {...props}
     >
       {children}
@@ -124,6 +141,8 @@ const SheetDescription = React.forwardRef<
 ));
 SheetDescription.displayName = SheetPrimitive.Description.displayName;
 
+type SheetHue = NonNullable<VariantProps<typeof sheetVariants>["hue"]>;
+
 export {
   Sheet,
   SheetPortal,
@@ -137,3 +156,4 @@ export {
   SheetDescription,
   sheetVariants,
 };
+export type { SheetHue };
