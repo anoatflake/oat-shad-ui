@@ -34,7 +34,7 @@ const DropdownMenuPreview = () => {
   return (
     <div className="flex flex-col gap-2 rounded-lg border p-4">
       <h2>Dropdown Menu</h2>
-      <div className="flex justify-center gap-4">
+      <div className="flex flex-row flex-wrap justify-center gap-4">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline">Open</Button>

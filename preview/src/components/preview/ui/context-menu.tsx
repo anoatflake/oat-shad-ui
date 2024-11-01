@@ -18,7 +18,7 @@ const ContextMenuPreview = () => {
   return (
     <div className="flex flex-col gap-2 rounded-lg border p-4">
       <h2>ContextMenu</h2>
-      <div className="flex justify-center gap-4">
+      <div className="flex flex-row flex-wrap justify-center gap-4">
         <ContextMenu>
           <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm">
             Right click here

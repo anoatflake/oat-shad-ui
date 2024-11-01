@@ -19,14 +19,22 @@ import { ThemeProvider } from "./components/theme-provider";
 import { ThemeToggle } from "./components/theme-toggle";
 import { Button } from "./components/ui/button";
 import InputPreview from "./components/preview/ui/input";
+import CommandPreview from "./components/preview/ui/command";
+import ContextMenuPreview from "./components/preview/ui/context-menu";
+import DropdownMenuPreview from "./components/preview/ui/dropdown-menu";
+import DrawerPreview from "./components/preview/ui/drawer";
+import HoverCardPreview from "./components/preview/ui/hover-card";
+import { Toaster } from "./components/ui/toaster";
+import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import SheetPreview from "./components/preview/ui/sheet";
 
 function App() {
   return (
     <>
       <ThemeProvider defaultTheme="dark" storageKey="oat-shad-ui-theme">
         <div className="flex flex-col items-center">
-          <header className="flex w-full max-w-screen-lg flex-row items-center justify-between p-4">
-            <h1 className="rounded-lg border-2 border-black bg-white px-4 py-2 text-2xl font-semibold text-black shadow-[5px_5px_rgb(0,0,0,1)] transition-colors hover:bg-accent dark:border-[rgb(50,50,50,1)] dark:bg-black dark:text-white dark:shadow-[5px_5px_rgb(50,50,50,1)] dark:hover:bg-accent md:px-8">
+          <header className="flex w-full max-w-screen-lg flex-row items-center justify-between p-4 md:px-8">
+            <h1 className="rounded-lg border-2 border-outline bg-white px-4 py-2 text-2xl font-semibold text-black shadow-[5px_5px_rgb(0,0,0,1)] transition-colors hover:bg-accent dark:border-[rgb(50,50,50,1)] dark:bg-black dark:shadow-[5px_5px_rgb(50,50,50,1)] dark:hover:bg-accent md:px-8">
               oat
               <span aria-hidden>🌾</span>
               shad
@@ -51,7 +59,7 @@ function App() {
               <ThemeToggle />
             </span>
           </header>
-          <main className="flex flex-col flex-wrap gap-4 px-4 md:px-8">
+          <main className="flex w-full flex-col flex-wrap gap-4 p-4 md:p-8">
             <ColorPreview />
             <AccordionPreview />
             <AlertPreview />
@@ -60,18 +68,25 @@ function App() {
             <CalenderPreview />
             <CardPreview />
             <ChartPreview />
-
             <CheckboxPreview />
+            <CommandPreview />
+            <ContextMenuPreview />
 
             <DialogPreview />
+            <DrawerPreview />
+            <DropdownMenuPreview />
+            <HoverCardPreview />
             <InputPreview />
             <PopoverPreview />
             <SelectPreview />
+            <SheetPreview />
             <SonnerPreview />
             <ToastPreview />
             <TogglePreview />
             <TooltipPreview />
           </main>
+          <Toaster />
+          <SonnerToaster />
         </div>
       </ThemeProvider>
     </>

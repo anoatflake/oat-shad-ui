@@ -11,7 +11,7 @@ const HoverCardPreview = () => {
   return (
     <div className="flex flex-col gap-2 rounded-lg border p-4">
       <h2>Hover Card</h2>
-      <div className="flex justify-center gap-4">
+      <div className="flex flex-row flex-wrap justify-center gap-4">
         <HoverCard>
           <HoverCardTrigger asChild>
             <Button variant="link">@nextjs</Button>
