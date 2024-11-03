@@ -29,20 +29,39 @@ const BadgePreview = () => {
     "periwinkle",
     "greenish",
   ];
+  const textArr: string[] = [
+    "New",
+    "Sale",
+    "Featured",
+    "Exclusive",
+    "Limited Edition",
+    "Trending",
+    "Hot",
+    "Coming Soon",
+    "Just Arrived",
+    "Member Only",
+    "Top Rated",
+    "Special Offer",
+    "In Stock",
+    "Limited Time",
+    "New In",
+  ];
 
   return (
     <div className="flex flex-col gap-2 rounded-lg border p-4">
       <h2>Badge</h2>
       <div className="flex flex-row flex-wrap gap-2">
+        <h3>Variants</h3>
         {variants.map((variant) => {
           return (
-            <Badge variant={variant} key={variant}>
+            <Badge variant={variant} key={variant} hue="none">
               variant: {variant}
             </Badge>
           );
         })}
       </div>
       <div className="flex flex-row flex-wrap gap-2">
+        <h3>Hues</h3>
         {hues.map((hue) => {
           return (
             <Badge hue={hue} key={hue}>
@@ -215,6 +234,12 @@ const BadgePreview = () => {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
+      <div className="flex flex-row flex-wrap gap-2">
+        <h3>Generated Hues based on string</h3>
+        {textArr.map((text) => {
+          return <Badge key={text}>{text}</Badge>;
+        })}
+      </div>
     </div>
   );
 };

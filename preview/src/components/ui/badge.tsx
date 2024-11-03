@@ -44,6 +44,9 @@ export interface BadgeProps
     VariantProps<typeof badgeVariants> {}
 
 function Badge({ className, variant, hue, ...props }: BadgeProps) {
+  if (hue == null) {
+    hue = determineHue(props.children!.toString());
+  }
   return (
     <div
       className={cn(badgeVariants({ variant, hue }), className)}
@@ -57,7 +60,7 @@ type BadgeHue = NonNullable<VariantProps<typeof badgeVariants>["hue"]>;
 
 function determineHue(text: string): BadgeHue {
   const hash = generateHash(text);
-  switch (hash % 10) {
+  switch (hash % 13) {
     case 0:
       return "blue";
     case 1:
@@ -78,6 +81,12 @@ function determineHue(text: string): BadgeHue {
       return "pink";
     case 9:
       return "rust";
+    case 10:
+      return "blush";
+    case 11:
+      return "lightblue";
+    case 12:
+      return "none";
     default:
       return "none";
   }
