@@ -10,15 +10,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-white text-black shadow-[5px_5px_rgb(0,0,0,1)] hover:shadow-[3px_3px_rgb(0,0,0,1)] border-2 border-black dark:border-[rgb(50,50,50,1)] dark:bg-black dark:text-white dark:shadow-[5px_5px_rgb(50,50,50,1)] dark:hover:shadow-[3px_3px_rgb(50,50,50,1)] transition-shadow",
+          "bg-white text-black shadow-[5px_5px_rgb(0,0,0,1)] hover:shadow-[3px_3px_rgb(0,0,0,1)] border-2 border-outline dark:border-[rgb(50,50,50,1)] dark:bg-black dark:text-white dark:shadow-[5px_5px_rgb(50,50,50,1)] dark:hover:shadow-[3px_3px_rgb(50,50,50,1)] transition-shadow",
         secondary:
-          "text-secondary-foreground hover:bg-secondary/80 shadow-[3px_3px_rgb(0,0,0,1)] hover:shadow-[5px_5px_rgb(0,0,0,1)] dark:shadow-[3px_3px_rgb(50,50,50,1)] dark:hover:shadow-[5px_5px_rgb(50,50,50,1)] border-2 border-black transition-shadow",
+          "text-secondary-foreground hover:bg-secondary/80 shadow-[3px_3px_rgb(0,0,0,1)] hover:shadow-[5px_5px_rgb(0,0,0,1)] dark:shadow-[3px_3px_rgb(50,50,50,1)] dark:hover:shadow-[5px_5px_rgb(50,50,50,1)] border-2 border-outline transition-shadow",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
           "border-2 border-primary bg-transparent hover:bg-teal_background-300",
         ghost:
-          "border-2 border-background hover:border-[rgb(100,100,100,0.5)] hover:shadow-[3px_3px_rgb(100,100,100,0.5)]",
+          "border-2 border-transparent hover:border-[rgb(100,100,100,0.5)] hover:shadow-[3px_3px_rgb(100,100,100,0.5)]",
         link: "underline-offset-4 hover:underline focus-visible:underline decoration-dashed decoration-2 transition-shadow",
       },
       hue: {
@@ -73,13 +73,13 @@ const buttonVariants = cva(
         variant: "ghost",
         hue: ["none", "teal", "blue", "pink", "red", "yellow"],
         className:
-          "text-primary border-background bg-background hover:bg-background focus-visible:-outline-offset-2",
+          "text-primary border-transparent bg-transparent hover:bg-transparent focus-visible:-outline-offset-2",
       },
       {
         variant: "link",
         hue: ["none", "teal", "blue", "pink", "red", "yellow"],
         className:
-          "text-primary bg-background hover:bg-background focus-visible:-outline-offset-2",
+          "text-primary bg-transparent hover:bg-transparent focus-visible:-outline-offset-2",
       },
     ],
     defaultVariants: {
