@@ -3,31 +3,38 @@ import { useState } from "react";
 import { DateRange } from "react-day-picker";
 
 const CalenderPreview = () => {
-  const [singleDate, setSingleDate] = useState<Date | undefined>(new Date());
-  const [multipleDates, setMultipleDates] = useState<Date[] | undefined>([
+  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [multiDate, setMultiDate] = useState<Date[] | undefined>([
     new Date(),
-    new Date("10-01-2024"),
+    new Date("10-08-2024"),
   ]);
   const [dateRange, setDateRange] = useState<DateRange | undefined>({
     from: new Date("10-01-2024"),
     to: new Date(),
   });
+  const [dateRange2, setDateRange2] = useState<DateRange | undefined>({
+    from: new Date(2022, 0, 20),
+    to: new Date(2022, 0, 20),
+  });
 
   return (
     <div className="flex flex-col gap-2 rounded-lg border p-4">
       <h2>Calender</h2>
-      <div className="flex flex-row flex-wrap items-center justify-center gap-4 md:flex-row">
-        <Calendar
-          mode="single"
-          selected={singleDate}
-          onSelect={setSingleDate}
-        />
+      <div className="flex flex-row flex-wrap justify-center gap-4">
+        <Calendar mode="single" selected={date} onSelect={setDate} />
         <Calendar
           mode="multiple"
-          selected={multipleDates}
-          onSelect={setMultipleDates}
+          selected={multiDate}
+          onSelect={setMultiDate}
         />
         <Calendar mode="range" selected={dateRange} onSelect={setDateRange} />
+        <Calendar
+          mode="range"
+          defaultMonth={dateRange2?.from}
+          selected={dateRange2}
+          onSelect={setDateRange2}
+          numberOfMonths={2}
+        />
       </div>
     </div>
   );
