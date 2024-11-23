@@ -10,9 +10,9 @@ const TooltipPreview = () => {
   return (
     <div className="flex flex-col gap-2 rounded-lg border p-4">
       <h2>Tooltip</h2>
-      <div className="flex justify-center gap-4">
+      <div className="flex flex-row flex-wrap justify-center gap-4">
         <TooltipProvider>
-          <Tooltip open={true}>
+          <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="secondary" className="max-w-min">
                 Hover (side left)
@@ -23,17 +23,17 @@ const TooltipPreview = () => {
               <p>Add to library</p>
             </TooltipContent>
           </Tooltip>
-          <Tooltip open={true}>
+          <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="secondary" className="max-w-min">
                 Hover (side top)
               </Button>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent side="top">
               <p>Add to library</p>
             </TooltipContent>
           </Tooltip>
-          <Tooltip open={true}>
+          <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="secondary" className="max-w-min">
                 Hover (side bottom)
@@ -41,16 +41,16 @@ const TooltipPreview = () => {
             </TooltipTrigger>
             <TooltipContent side="bottom">
               <p>Add to library</p>
+              <p>Add to library</p>
             </TooltipContent>
           </Tooltip>
-          <Tooltip open={true}>
+          <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="secondary" className="max-w-min">
                 Hover (side right)
               </Button>
             </TooltipTrigger>
             <TooltipContent side="right">
-              <p>Add to library</p>
               <p>Add to library</p>
             </TooltipContent>
           </Tooltip>
