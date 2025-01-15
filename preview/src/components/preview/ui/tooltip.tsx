@@ -8,7 +8,7 @@ import {
 
 const TooltipPreview = () => {
   return (
-    <div className="flex flex-col gap-2 rounded-lg border p-4">
+    <div className="mb-8 flex flex-col gap-2 rounded-lg border p-4">
       <h2>Tooltip</h2>
       <div className="flex flex-row flex-wrap justify-center gap-4">
         <TooltipProvider>
