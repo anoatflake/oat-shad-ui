@@ -4,6 +4,7 @@ import { X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
+import { hueVariants } from "@/lib/hue-variants";
 
 const Dialog = DialogPrimitive.Root;
 
@@ -15,29 +16,6 @@ const DialogClose = DialogPrimitive.Close;
 
 const dialogVariants = cva(
   "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border-2 border-black bg-background p-6 shadow-[7px_7px_rgb(0,0,0,1)] duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg",
-  {
-    variants: {
-      hue: {
-        none: "bg-background",
-        white: "bg-white",
-        lightblue: "bg-blue_chill-300",
-        blue: "bg-blue_chill-500",
-        aqua: "bg-aqua_green-600",
-        greenish: "bg-evergreen-300",
-        pollen: "bg-gold-300",
-        yellow: "bg-gold-500",
-        apricot: "bg-apricot-400",
-        orange: "bg-apricot-500",
-        rust: "bg-rust-500",
-        blush: "bg-cotton_candy-300",
-        pink: "bg-cotton_candy-400",
-        periwinkle: "bg-periwinkle-400",
-      },
-    },
-    defaultVariants: {
-      hue: "none",
-    },
-  },
 );
 
 const DialogOverlay = React.forwardRef<
@@ -57,17 +35,18 @@ DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
 export interface DialogProps
   extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>,
-    VariantProps<typeof dialogVariants> {}
+    VariantProps<typeof dialogVariants>,
+    VariantProps<typeof hueVariants> {}
 
 const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   DialogProps
->(({ className, children, hue, ...props }, ref) => (
+>(({ className, children, hue = "background", ...props }, ref) => (
   <DialogPortal>
     <DialogOverlay />
     <DialogPrimitive.Content
       ref={ref}
-      className={cn(dialogVariants({ hue }), className)}
+      className={cn(dialogVariants(), hueVariants({ hue }), className)}
       {...props}
     >
       {children}
@@ -135,7 +114,7 @@ const DialogDescription = React.forwardRef<
 ));
 DialogDescription.displayName = DialogPrimitive.Description.displayName;
 
-type DialogHue = NonNullable<VariantProps<typeof dialogVariants>["hue"]>;
+type DialogHue = NonNullable<VariantProps<typeof hueVariants>["hue"]>;
 
 export {
   Dialog,

@@ -4,6 +4,7 @@ const hueVariants = cva("", {
   variants: {
     hue: {
       none: "bg-transparent",
+      background: "bg-background",
       white: "bg-white dark:bg-black",
       lightblue: "bg-blue_chill-300 dark:bg-blue_chill-700",
       blue: "bg-blue_chill-500 dark:bg-blue_chill-900",
@@ -28,6 +29,7 @@ const hueChildVariants = cva("", {
   variants: {
     hue: {
       none: "*:bg-transparent",
+      background: "*:bg-background",
       white: "*:bg-white dark:bg-black",
       lightblue: "*:bg-blue_chill-300 *:dark:bg-blue_chill-700",
       blue: "*:bg-blue_chill-500 *:dark:bg-blue_chill-900",

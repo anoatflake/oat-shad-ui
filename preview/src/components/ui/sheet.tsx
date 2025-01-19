@@ -4,6 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { hueVariants } from "@/lib/hue-variants";
 
 const Sheet = SheetPrimitive.Root;
 
@@ -40,53 +41,42 @@ const sheetVariants = cva(
         right:
           "inset-y-0 right-0 min-h-max w-3/4 data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
       },
-      hue: {
-        none: "bg-background",
-        white: "bg-white",
-        lightblue: "bg-blue_chill-300",
-        blue: "bg-blue_chill-500",
-        aqua: "bg-aqua_green-600",
-        greenish: "bg-evergreen-300",
-        pollen: "bg-gold-300",
-        yellow: "bg-gold-500",
-        apricot: "bg-apricot-400",
-        orange: "bg-apricot-500",
-        rust: "bg-rust-500",
-        blush: "bg-cotton_candy-300",
-        pink: "bg-cotton_candy-400",
-        periwinkle: "bg-periwinkle-400",
-      },
     },
     defaultVariants: {
       side: "right",
-      hue: "none",
     },
   },
 );
 
 interface SheetContentProps
   extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
-    VariantProps<typeof sheetVariants> {}
+    VariantProps<typeof sheetVariants>,
+    VariantProps<typeof hueVariants> {}
 
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   SheetContentProps
->(({ side = "right", className, children, hue, ...props }, ref) => (
-  <SheetPortal>
-    <SheetOverlay className="backdrop-blur-xs" />
-    <SheetPrimitive.Content
-      ref={ref}
-      className={cn(sheetVariants({ side, hue }), className)}
-      {...props}
-    >
-      {children}
-      <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
-        <X className="h-4 w-4" />
-        <span className="sr-only">Close</span>
-      </SheetPrimitive.Close>
-    </SheetPrimitive.Content>
-  </SheetPortal>
-));
+>(
+  (
+    { side = "right", className, children, hue = "background", ...props },
+    ref,
+  ) => (
+    <SheetPortal>
+      <SheetOverlay className="backdrop-blur-xs" />
+      <SheetPrimitive.Content
+        ref={ref}
+        className={cn(sheetVariants({ side }), hueVariants({ hue }), className)}
+        {...props}
+      >
+        {children}
+        <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+          <X className="h-4 w-4" />
+          <span className="sr-only">Close</span>
+        </SheetPrimitive.Close>
+      </SheetPrimitive.Content>
+    </SheetPortal>
+  ),
+);
 SheetContent.displayName = SheetPrimitive.Content.displayName;
 
 const SheetHeader = ({
@@ -141,7 +131,7 @@ const SheetDescription = React.forwardRef<
 ));
 SheetDescription.displayName = SheetPrimitive.Description.displayName;
 
-type SheetHue = NonNullable<VariantProps<typeof sheetVariants>["hue"]>;
+type SheetHue = NonNullable<VariantProps<typeof hueVariants>["hue"]>;
 
 export {
   Sheet,

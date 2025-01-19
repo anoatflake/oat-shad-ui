@@ -3,32 +3,10 @@ import { Drawer as DrawerPrimitive } from "vaul";
 
 import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
+import { hueVariants } from "@/lib/hue-variants";
 
 const drawerVariants = cva(
   "nobs-t pt-8 fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-lg border-0 border-outline bg-background",
-  {
-    variants: {
-      hue: {
-        none: "bg-card",
-        white: "bg-white dark:bg-black",
-        lightblue: "bg-blue_chill-300 dark:bg-blue_chill-700",
-        blue: "bg-blue_chill-500 dark:bg-blue_chill-900",
-        aqua: "bg-aqua_green-600 dark:bg-aqua_green-900",
-        greenish: "bg-evergreen-300 dark:bg-evergreen-700",
-        pollen: "bg-gold-300",
-        yellow: "bg-gold-500",
-        apricot: "bg-apricot-400",
-        orange: "bg-apricot-500",
-        rust: "bg-rust-500",
-        blush: "bg-cotton_candy-300",
-        pink: "bg-cotton_candy-400",
-        periwinkle: "bg-periwinkle-400",
-      },
-    },
-    defaultVariants: {
-      hue: "none",
-    },
-  },
 );
 
 const Drawer = ({
@@ -62,16 +40,17 @@ DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
 export interface DrawerProps
   extends React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>,
-    VariantProps<typeof drawerVariants> {}
+    VariantProps<typeof drawerVariants>,
+    VariantProps<typeof hueVariants> {}
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
   DrawerProps
->(({ className, children, hue, ...props }, ref) => (
+>(({ className, children, hue = "background", ...props }, ref) => (
   <DrawerPortal>
     <DrawerOverlay />
     <DrawerPrimitive.Content
       ref={ref}
-      className={cn(drawerVariants({ hue }), className)}
+      className={cn(drawerVariants(), hueVariants({ hue }), className)}
       {...props}
     >
       <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-foreground/30" />
@@ -130,7 +109,7 @@ const DrawerDescription = React.forwardRef<
 ));
 DrawerDescription.displayName = DrawerPrimitive.Description.displayName;
 
-type DrawerHue = NonNullable<VariantProps<typeof drawerVariants>["hue"]>;
+type DrawerHue = NonNullable<VariantProps<typeof hueVariants>["hue"]>;
 
 export {
   Drawer,

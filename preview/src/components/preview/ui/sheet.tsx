@@ -15,7 +15,6 @@ import {
 
 const SheetPreview = () => {
   const hues: SheetHue[] = [
-    "none",
     "white",
     "lightblue",
     "blue",
@@ -34,6 +33,40 @@ const SheetPreview = () => {
     <div className="flex flex-col gap-2 rounded-lg border p-4">
       <h2>Sheet</h2>
       <div className="flex flex-row flex-wrap justify-center gap-4">
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="outline" className="max-w-min">
+              Color: default
+            </Button>
+          </SheetTrigger>
+          <SheetContent>
+            <SheetHeader>
+              <SheetTitle>Edit profile</SheetTitle>
+              <SheetDescription>
+                Make changes to your profile here. Click save when you're done.
+              </SheetDescription>
+            </SheetHeader>
+            <div className="grid gap-4 py-4">
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="name" className="text-right">
+                  Name
+                </Label>
+                <Input id="name" value="Pedro Duarte" className="col-span-3" />
+              </div>
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="username" className="text-right">
+                  Username
+                </Label>
+                <Input id="username" value="@peduarte" className="col-span-3" />
+              </div>
+            </div>
+            <SheetFooter>
+              <SheetClose asChild>
+                <Button type="submit">Save changes</Button>
+              </SheetClose>
+            </SheetFooter>
+          </SheetContent>
+        </Sheet>
         {hues.map((hue) => {
           return (
             <Sheet>
