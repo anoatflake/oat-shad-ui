@@ -27,6 +27,7 @@ import HoverCardPreview from "./components/preview/ui/hover-card";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import SheetPreview from "./components/preview/ui/sheet";
+import InputOTPPreview from "./components/preview/ui/input-otp";
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
       <ThemeProvider defaultTheme="dark" storageKey="oat-shad-ui-theme">
         <div className="flex flex-col items-center">
           <header className="flex w-full max-w-screen-lg flex-row items-center justify-between p-4 md:px-8">
-            <h1 className="border-outline rounded-lg border-2 bg-white px-4 py-2 text-2xl font-semibold text-black shadow-[5px_5px_rgb(0,0,0,1)] transition-colors hover:bg-accent dark:border-[rgb(50,50,50,1)] dark:bg-black dark:shadow-[5px_5px_rgb(50,50,50,1)] dark:hover:bg-accent md:px-8">
+            <h1 className="rounded-lg border-2 border-outline bg-white px-4 py-2 text-2xl font-semibold text-black text-foreground shadow-[5px_5px_rgb(0,0,0,1)] transition-colors hover:bg-accent dark:border-[rgb(50,50,50,1)] dark:bg-black dark:shadow-[5px_5px_rgb(50,50,50,1)] dark:hover:bg-accent md:px-8">
               oat
               <span aria-hidden>🌾</span>
               shad
@@ -60,7 +61,6 @@ function App() {
             </span>
           </header>
           <main className="flex w-full flex-col flex-wrap gap-4 p-4 md:p-8">
-            <CalenderPreview />
             <ColorPreview />
             <AccordionPreview />
             <AlertPreview />
@@ -78,13 +78,14 @@ function App() {
             <DropdownMenuPreview />
             <HoverCardPreview />
             <InputPreview />
+            <InputOTPPreview />
             <PopoverPreview />
             <SelectPreview />
             <SheetPreview />
             <SonnerPreview />
             <ToastPreview />
-            <TogglePreview />
             <TooltipPreview />
+            <TogglePreview />
           </main>
           <Toaster />
           <SonnerToaster />
