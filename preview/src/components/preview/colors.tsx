@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/components/ui-brutal/accordion";
 
 const ColorPreview = () => {
   // const colorNames = [
@@ -325,6 +325,104 @@ const ColorPreview = () => {
                 <span className="h-8 w-6 bg-slate-800 sm:w-12 lg:w-16"></span>
                 <span className="h-8 w-6 bg-slate-900 sm:w-12 lg:w-16"></span>
                 <span className="h-8 w-6 bg-slate-950 sm:w-12 lg:w-16"></span>
+              </div>
+              <h3 className="w-full text-left">spring green</h3>
+              <div className="flex gap-1 lg:gap-4">
+                <span className="bg-spring_green-50 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-spring_green-100 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-spring_green-200 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-spring_green-300 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-spring_green-400 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-spring_green-500 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-spring_green-600 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-spring_green-700 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-spring_green-800 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-spring_green-900 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-spring_green-950 h-8 w-6 sm:w-12 lg:w-16"></span>
+              </div>
+              <h3 className="w-full text-left">aquamarine</h3>
+              <div className="flex gap-1 lg:gap-4">
+                <span className="bg-aquamarine-50 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-aquamarine-100 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-aquamarine-200 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-aquamarine-300 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-aquamarine-400 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-aquamarine-500 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-aquamarine-600 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-aquamarine-700 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-aquamarine-800 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-aquamarine-900 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-aquamarine-950 h-8 w-6 sm:w-12 lg:w-16"></span>
+              </div>
+              <h3 className="w-full text-left">turquoise blue</h3>
+              <div className="flex gap-1 lg:gap-4">
+                <span className="bg-turquoise_blue-50 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-turquoise_blue-100 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-turquoise_blue-200 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-turquoise_blue-300 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-turquoise_blue-400 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-turquoise_blue-500 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-turquoise_blue-600 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-turquoise_blue-700 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-turquoise_blue-800 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-turquoise_blue-900 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-turquoise_blue-950 h-8 w-6 sm:w-12 lg:w-16"></span>
+              </div>
+              <h3 className="w-full text-left">picton blue</h3>
+              <div className="flex gap-1 lg:gap-4">
+                <span className="bg-picton_blue-50 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-picton_blue-100 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-picton_blue-200 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-picton_blue-300 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-picton_blue-400 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-picton_blue-500 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-picton_blue-600 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-picton_blue-700 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-picton_blue-800 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-picton_blue-900 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-picton_blue-950 h-8 w-6 sm:w-12 lg:w-16"></span>
+              </div>
+              <h3 className="w-full text-left">royal blue</h3>
+              <div className="flex gap-1 lg:gap-4">
+                <span className="bg-royal_blue-50 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-royal_blue-100 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-royal_blue-200 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-royal_blue-300 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-royal_blue-400 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-royal_blue-500 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-royal_blue-600 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-royal_blue-700 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-royal_blue-800 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-royal_blue-900 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-royal_blue-950 h-8 w-6 sm:w-12 lg:w-16"></span>
+              </div>
+              <h3 className="w-full text-left">outragous orange</h3>
+              <div className="flex gap-1 lg:gap-4">
+                <span className="bg-outrageous_orange-50 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-outrageous_orange-100 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-outrageous_orange-200 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-outrageous_orange-300 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-outrageous_orange-400 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-outrageous_orange-500 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-outrageous_orange-600 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-outrageous_orange-700 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-outrageous_orange-800 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-outrageous_orange-900 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-outrageous_orange-950 h-8 w-6 sm:w-12 lg:w-16"></span>
+              </div>
+              <h3 className="w-full text-left">sea buckthorn</h3>
+              <div className="flex gap-1 lg:gap-4">
+                <span className="bg-sea_buckthorn-50 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-sea_buckthorn-100 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-sea_buckthorn-200 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-sea_buckthorn-300 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-sea_buckthorn-400 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-sea_buckthorn-500 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-sea_buckthorn-600 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-sea_buckthorn-700 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-sea_buckthorn-800 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-sea_buckthorn-900 h-8 w-6 sm:w-12 lg:w-16"></span>
+                <span className="bg-sea_buckthorn-950 h-8 w-6 sm:w-12 lg:w-16"></span>
               </div>
             </div>
           </AccordionContent>

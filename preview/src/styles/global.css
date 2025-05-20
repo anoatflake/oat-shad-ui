@@ -15,10 +15,10 @@
     --secondary: 230.13 59.4% 73.92%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 168 100% 43%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 189.23 13.98% 36.47% /*215.4 16.3% 46.9%*/;
     --accent: 230.13 59.4% 73.92%;
     --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84.2% 60.2%; /*0 72.22% 50.59%*/
     --destructive-foreground: 210 40% 98%; /* TODO: THIS WHITE WITH THIS RED IS NOT A11Y */
     --border: 168 100% 43%;
     --input: 168 100% 43%;
@@ -258,23 +258,109 @@
     --royal_purple-800: 281.22 57.21% 39.41%;
     --royal_purple-900: 282.2 55.83% 31.96%;
     --royal_purple-950: 282 73.77% 23.92%;
+
+    --color-spring-green-50: 146 100% 97%;
+    --color-spring-green-100: 146 100% 91%;
+    --color-spring-green-200: 146 100% 87%;
+    --color-spring-green-300: 146 97% 73%;
+    --color-spring-green-400: 146 89% 59%;
+    --color-spring-green-500: 146 89% 45%;
+    --color-spring-green-600: 146 96% 38%;
+    --color-spring-green-700: 146 87% 29%;
+    --color-spring-green-800: 146 80% 23%;
+    --color-spring-green-900: 146 74% 22%;
+    --color-spring-green-950: 146 100% 10%;
+
+    --color-aquamarine-50: 162 100% 96%;
+    --color-aquamarine-100: 162 100% 87%;
+    --color-aquamarine-200: 162 100% 78%;
+    --color-aquamarine-300: 162 95% 68%;
+    --color-aquamarine-400: 162 70% 59%;
+    --color-aquamarine-500: 162 100% 43%;
+    --color-aquamarine-600: 162 100% 35%;
+    --color-aquamarine-700: 162 100% 28%;
+    --color-aquamarine-800: 162 100% 22%;
+    --color-aquamarine-900: 162 100% 18%;
+    --color-aquamarine-950: 162 100% 10%;
+
+    --color-turquoise-blue-50: 180 100% 98%;
+    --color-turquoise-blue-100: 182 100% 90%;
+    --color-turquoise-blue-200: 183 95% 83%;
+    --color-turquoise-blue-300: 183 89% 70%;
+    --color-turquoise-blue-400: 185 77% 59%;
+    --color-turquoise-blue-500: 185 96% 43%;
+    --color-turquoise-blue-600: 186 94% 41%;
+    --color-turquoise-blue-700: 187 85% 32%;
+    --color-turquoise-blue-800: 189 74% 28%;
+    --color-turquoise-blue-900: 191 74% 25%;
+    --color-turquoise-blue-950: 196 82% 16%;
+
+    --color-picton-blue-50: 208 100% 98%;
+    --color-picton-blue-100: 208 77% 95%;
+    --color-picton-blue-200: 206 85% 89%;
+    --color-picton-blue-300: 204 86% 74%;
+    --color-picton-blue-400: 204 87% 59%;
+    --color-picton-blue-500: 205 82% 48%;
+    --color-picton-blue-600: 206 87% 39%;
+    --color-picton-blue-700: 207 86% 33%;
+    --color-picton-blue-800: 208 80% 28%;
+    --color-picton-blue-900: 210 74% 24%;
+    --color-picton-blue-950: 212 70% 16%;
+
+    --color-royal-blue-50: 215 100% 97%;
+    --color-royal-blue-100: 215 77% 94%;
+    --color-royal-blue-200: 215 74% 88%;
+    --color-royal-blue-300: 215 82% 77%;
+    --color-royal-blue-400: 217 87% 64%;
+    --color-royal-blue-500: 221 80% 57%;
+    --color-royal-blue-600: 224 77% 53%;
+    --color-royal-blue-700: 227 73% 47%;
+    --color-royal-blue-800: 229 68% 41%;
+    --color-royal-blue-900: 230 62% 33%;
+    --color-royal-blue-950: 233 54% 21%;
+
+    --color-outrageous-orange-50: 18 87% 98%;
+    --color-outrageous-orange-100: 20 85% 93%;
+    --color-outrageous-orange-200: 25 89% 84%;
+    --color-outrageous-orange-300: 22 90% 72%;
+    --color-outrageous-orange-400: 18 89% 59%;
+    --color-outrageous-orange-500: 14 85% 53%;
+    --color-outrageous-orange-600: 10 85% 49%;
+    --color-outrageous-orange-700: 6 76% 41%;
+    --color-outrageous-orange-800: 3 70% 33%;
+    --color-outrageous-orange-900: 1 66% 28%;
+    --color-outrageous-orange-950: 3 70% 15%;
+
+    --color-sea-buckthorn-50: 36 89% 97%;
+    --color-sea-buckthorn-100: 37 87% 90%;
+    --color-sea-buckthorn-200: 40 89% 76%;
+    --color-sea-buckthorn-300: 38 89% 64%;
+    --color-sea-buckthorn-400: 35 89% 60%;
+    --color-sea-buckthorn-500: 28 86% 51%;
+    --color-sea-buckthorn-600: 22 89% 44%;
+    --color-sea-buckthorn-700: 18 81% 37%;
+    --color-sea-buckthorn-800: 14 76% 32%;
+    --color-sea-buckthorn-900: 12 68% 27%;
+    --color-sea-buckthorn-950: 17 78% 14%;
   }
 
   .dark {
-    --background: 168.89 52.94% 4.9%;
+    /* --background: 168.89 52.94% 10%; */
+    --background: 163 100% 2%;
     --foreground: 210 40% 98%;
-    --card: 168.89 52.94% 4.9% --card-foreground: 210 40% 98%;
+    --card: 168.89 52.94% 10%;
+    --card-foreground: 210 40% 98%;
     --popover: 168 36.08% 19.02%;
     --popover-foreground: 210 40% 98%;
     --primary: 210 40% 98%;
-    --primary-foreground: 168.89 52.94% 4.9%;
+    --primary-foreground: 168.89 52.94% 10%;
     --secondary: 168 36.08% 19.02%;
     --secondary-foreground: 210 40% 98%;
     --muted: 168 36.08% 19.02%;
     --muted-foreground: 215 20.2% 65.1%;
     --accent: 168 36.08% 19.02%;
     --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 3 70% 33%;
     --destructive-foreground: 210 40% 98%;
     --border: 168 36.08% 19.02%;
     --input: 168 36.08% 19.02%;
@@ -644,6 +730,18 @@ https://www.tints.dev
       900: "#283234",
       950: "#21292B",
 
+      '50': '#f4f7f7',
+        '100': '#e3eaea',
+        '200': '#c9d7d8',
+        '300': '#a4babc',
+        '400': '#779699',
+        '500': '#5c7b7e',
+        '600': '#4f676b',
+        '700': '#44565a',
+        '800': '#3d4a4d',
+        '900': '#364043',
+        '950': '#21292b',
+
       --fall_green-50: #f8f8ee;
     --fall_green-100: #eeefd2;
     --fall_green-200: #e1e2ae;
@@ -1004,6 +1102,211 @@ https://www.tints.dev
     '900: #414e6e;
     '950: #262c40;
 },
+
+
+#403D3E #524F59 #A0B4F2 #CEDAF2 #05F29B #F2C1AE
+
+#02ffb7 #fecab4 #9baef2 #2ea1f7 #e6b77d
+
+#0460D9 #023859 #049DD9 #0BBF9E #D99B66 #D9A362
+#3B82BF #4193A6 #167347 #4ED998 #3DF28B #BF8D50 #D9AA71
+#635FD9 #182259 #148DD9 #04BFAD #F28F38 
+
+#3DF28B #3DF2C9 #3DDFF2 #3DA6F2 #3D6CF2 #F2A93D #F26A3D #F2543D
+
+#3DF281 #3DF2BE #3DE9F2 #3DB0F2 #3D76F2 #3D3DF2 #F2A13D #F2653D
+
+#38F27E #38F2BD #38E8F2 #38AEF2 #3873F2 #6478f0 #3838F2 #6478f0 #F26238
+
+'spring-green': {
+    '50': '#eefff3',
+    '100': '#d8ffe6',
+    '200': '#b3ffcf',
+    '300': '#78fdaa',
+    '400': '#38f27e', DEFAULT
+    '500': '#0cdb5a',
+    '600': '#03b647',
+    '700': '#078e3b',
+    '800': '#0b7032',
+    '900': '#0c5b2c',
+    '950': '#003416',
+},
+--color-spring-green-50: #eefff3;
+--color-spring-green-100: #d8ffe6;
+--color-spring-green-200: #b3ffcf;
+--color-spring-green-300: #78fdaa;
+--color-spring-green-400: #38f27e;
+--color-spring-green-500: #0cdb5a;
+--color-spring-green-600: #03b647;
+--color-spring-green-700: #078e3b;
+--color-spring-green-800: #0b7032;
+--color-spring-green-900: #0c5b2c;
+--color-spring-green-950: #003416;
+
+'aquamarine': {
+    '50': '#e9fff7',
+    '100': '#caffe9',
+    '200': '#99ffd9',
+    '300': '#58fdc9',
+    '400': '#38f2bd', DEFAULT
+    '500': '#00d89c',
+    '600': '#00b081',
+    '700': '#008d6b',
+    '800': '#006f56',
+    '900': '#005b48',
+    '950': '#00342a',
+},
+--color-aquamarine-50: #e9fff7;
+--color-aquamarine-100: #caffe9;
+--color-aquamarine-200: #99ffd9;
+--color-aquamarine-300: #58fdc9;
+--color-aquamarine-400: #38f2bd;
+--color-aquamarine-500: #00d89c;
+--color-aquamarine-600: #00b081;
+--color-aquamarine-700: #008d6b;
+--color-aquamarine-800: #006f56;
+--color-aquamarine-900: #005b48;
+--color-aquamarine-950: #00342a;
+
+'turquoise-blue': {
+    '50': '#ecffff',
+    '100': '#cefeff',
+    '200': '#a4fbfd',
+    '300': '#65f5fb',
+    '400': '#38e8f2', DEFAULT
+    '500': '#04c9d6',
+    '600': '#06a0b4',
+    '700': '#0c8092',
+    '800': '#146776',
+    '900': '#155464',
+    '950': '#073845',
+},
+--color-turquoise-blue-50: #ecffff;
+--color-turquoise-blue-100: #cefeff;
+--color-turquoise-blue-200: #a4fbfd;
+--color-turquoise-blue-300: #65f5fb;
+--color-turquoise-blue-400: #38e8f2;
+--color-turquoise-blue-500: #04c9d6;
+--color-turquoise-blue-600: #06a0b4;
+--color-turquoise-blue-700: #0c8092;
+--color-turquoise-blue-800: #146776;
+--color-turquoise-blue-900: #155464;
+--color-turquoise-blue-950: #073845;
+
+'picton-blue': {
+    '50': '#f0f8ff',
+    '100': '#e1f0fd',
+    '200': '#bce1fb',
+    '300': '#81cbf8',
+    '400': '#38aef2', DEFAULT
+    '500': '#1497e3',
+    '600': '#0877c1',
+    '700': '#085f9c',
+    '800': '#0b5181',
+    '900': '#0f446b',
+    '950': '#0a2b47',
+},
+--color-picton-blue-50: #f0f8ff;
+--color-picton-blue-100: #e1f0fd;
+--color-picton-blue-200: #bce1fb;
+--color-picton-blue-300: #81cbf8;
+--color-picton-blue-400: #38aef2;
+--color-picton-blue-500: #1497e3;
+--color-picton-blue-600: #0877c1;
+--color-picton-blue-700: #085f9c;
+--color-picton-blue-800: #0b5181;
+--color-picton-blue-900: #0f446b;
+--color-picton-blue-950: #0a2b47;
+
+'royal-blue': {
+    '50': '#eff5ff',
+    '100': '#dce8fd',
+    '200': '#c0d7fd',
+    '300': '#95bffb',
+    '400': '#639cf7',
+    '500': '#3873f2', DEFAULT
+    '600': '#2958e7',
+    '700': '#2145d4',
+    '800': '#2138ac',
+    '900': '#203588',
+    '950': '#182253',
+},
+'portage': {
+    '50': '#eef4ff',
+    '100': '#e0ebff',
+    '200': '#c7d9fe',
+    '300': '#a6bffb',
+    '400': '#839cf7',
+    '500': '#6478f0',
+    '600': '#4751e4',
+    '700': '#3940c9',
+    '800': '#3138a2',
+    '900': '#2f3680',
+    '950': '#1b1e4b',
+},
+
+--color-royal-blue-50: #eff5ff;
+--color-royal-blue-100: #dce8fd;
+--color-royal-blue-200: #c0d7fd;
+--color-royal-blue-300: #95bffb;
+--color-royal-blue-400: #639cf7;
+--color-royal-blue-500: #3873f2;
+--color-royal-blue-600: #2958e7;
+--color-royal-blue-700: #2145d4;
+--color-royal-blue-800: #2138ac;
+--color-royal-blue-900: #203588;
+--color-royal-blue-950: #182253;
+
+'outrageous-orange': {
+    '50': '#fef3ee',
+    '100': '#fde4d7',
+    '200': '#fac6ae',
+    '300': '#f79e7a',
+    '400': '#f26238', DEFAULT
+    '500': '#ef4720',
+    '600': '#e02e16',
+    '700': '#ba1f14',
+    '800': '#941b18',
+    '900': '#771917',
+    '950': '#400a0b',
+},
+--color-outrageous-orange-50: #fef3ee;
+--color-outrageous-orange-100: #fde4d7;
+--color-outrageous-orange-200: #fac6ae;
+--color-outrageous-orange-300: #f79e7a;
+--color-outrageous-orange-400: #f26238;
+--color-outrageous-orange-500: #ef4720;
+--color-outrageous-orange-600: #e02e16;
+--color-outrageous-orange-700: #ba1f14;
+--color-outrageous-orange-800: #941b18;
+--color-outrageous-orange-900: #771917;
+--color-outrageous-orange-950: #400a0b;
+
+'sea-buckthorn': {
+    '50': '#fef7ec',
+    '100': '#fbe9ca',
+    '200': '#f8d18f',
+    '300': '#f4b455',
+    '400': '#f2a13d', DEFAULT
+    '500': '#ea7716',
+    '600': '#cf5610',
+    '700': '#ac3a11',
+    '800': '#8c2d14',
+    '900': '#732614',
+    '950': '#421106',
+},
+--color-sea-buckthorn-50: #fef7ec;
+--color-sea-buckthorn-100: #fbe9ca;
+--color-sea-buckthorn-200: #f8d18f;
+--color-sea-buckthorn-300: #f4b455;
+--color-sea-buckthorn-400: #f2a13d;
+--color-sea-buckthorn-500: #ea7716;
+--color-sea-buckthorn-600: #cf5610;
+--color-sea-buckthorn-700: #ac3a11;
+--color-sea-buckthorn-800: #8c2d14;
+--color-sea-buckthorn-900: #732614;
+--color-sea-buckthorn-950: #421106;
+
 
 */
   }

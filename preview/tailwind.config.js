@@ -345,6 +345,111 @@ export default {
           DEFAULT: "", //TODO:
           foreground: "", //TODO:
         },
+        spring_green: {
+          50: "hsl(var(--color-spring-green-50))",
+          100: "hsl(var(--color-spring-green-100))",
+          200: "hsl(var(--color-spring-green-200))",
+          300: "hsl(var(--color-spring-green-300))",
+          400: "hsl(var(--color-spring-green-400))",
+          500: "hsl(var(--color-spring-green-500))",
+          600: "hsl(var(--color-spring-green-600))",
+          700: "hsl(var(--color-spring-green-700))",
+          800: "hsl(var(--color-spring-green-800))",
+          900: "hsl(var(--color-spring-green-900))",
+          950: "hsl(var(--color-spring-green-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
+        },
+        aquamarine: {
+          50: "hsl(var(--color-aquamarine-50))",
+          100: "hsl(var(--color-aquamarine-100))",
+          200: "hsl(var(--color-aquamarine-200))",
+          300: "hsl(var(--color-aquamarine-300))",
+          400: "hsl(var(--color-aquamarine-400))",
+          500: "hsl(var(--color-aquamarine-500))",
+          600: "hsl(var(--color-aquamarine-600))",
+          700: "hsl(var(--color-aquamarine-700))",
+          800: "hsl(var(--color-aquamarine-800))",
+          900: "hsl(var(--color-aquamarine-900))",
+          950: "hsl(var(--color-aquamarine-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
+        },
+        turquoise_blue: {
+          50: "hsl(var(--color-turquoise-blue-50))",
+          100: "hsl(var(--color-turquoise-blue-100))",
+          200: "hsl(var(--color-turquoise-blue-200))",
+          300: "hsl(var(--color-turquoise-blue-300))",
+          400: "hsl(var(--color-turquoise-blue-400))",
+          500: "hsl(var(--color-turquoise-blue-500))",
+          600: "hsl(var(--color-turquoise-blue-600))",
+          700: "hsl(var(--color-turquoise-blue-700))",
+          800: "hsl(var(--color-turquoise-blue-800))",
+          900: "hsl(var(--color-turquoise-blue-900))",
+          950: "hsl(var(--color-turquoise-blue-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
+        },
+        picton_blue: {
+          50: "hsl(var(--color-picton-blue-50))",
+          100: "hsl(var(--color-picton-blue-100))",
+          200: "hsl(var(--color-picton-blue-200))",
+          300: "hsl(var(--color-picton-blue-300))",
+          400: "hsl(var(--color-picton-blue-400))",
+          500: "hsl(var(--color-picton-blue-500))",
+          600: "hsl(var(--color-picton-blue-600))",
+          700: "hsl(var(--color-picton-blue-700))",
+          800: "hsl(var(--color-picton-blue-800))",
+          900: "hsl(var(--color-picton-blue-900))",
+          950: "hsl(var(--color-picton-blue-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
+        },
+        royal_blue: {
+          50: "hsl(var(--color-royal-blue-50))",
+          100: "hsl(var(--color-royal-blue-100))",
+          200: "hsl(var(--color-royal-blue-200))",
+          300: "hsl(var(--color-royal-blue-300))",
+          400: "hsl(var(--color-royal-blue-400))",
+          500: "hsl(var(--color-royal-blue-500))",
+          600: "hsl(var(--color-royal-blue-600))",
+          700: "hsl(var(--color-royal-blue-700))",
+          800: "hsl(var(--color-royal-blue-800))",
+          900: "hsl(var(--color-royal-blue-900))",
+          950: "hsl(var(--color-royal-blue-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
+        },
+        outrageous_orange: {
+          50: "hsl(var(--color-outrageous-orange-50))",
+          100: "hsl(var(--color-outrageous-orange-100))",
+          200: "hsl(var(--color-outrageous-orange-200))",
+          300: "hsl(var(--color-outrageous-orange-300))",
+          400: "hsl(var(--color-outrageous-orange-400))",
+          500: "hsl(var(--color-outrageous-orange-500))",
+          600: "hsl(var(--color-outrageous-orange-600))",
+          700: "hsl(var(--color-outrageous-orange-700))",
+          800: "hsl(var(--color-outrageous-orange-800))",
+          900: "hsl(var(--color-outrageous-orange-900))",
+          950: "hsl(var(--color-outrageous-orange-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
+        },
+        sea_buckthorn: {
+          50: "hsl(var(--color-sea-buckthorn-50))",
+          100: "hsl(var(--color-sea-buckthorn-100))",
+          200: "hsl(var(--color-sea-buckthorn-200))",
+          300: "hsl(var(--color-sea-buckthorn-300))",
+          400: "hsl(var(--color-sea-buckthorn-400))",
+          500: "hsl(var(--color-sea-buckthorn-500))",
+          600: "hsl(var(--color-sea-buckthorn-600))",
+          700: "hsl(var(--color-sea-buckthorn-700))",
+          800: "hsl(var(--color-sea-buckthorn-800))",
+          900: "hsl(var(--color-sea-buckthorn-900))",
+          950: "hsl(var(--color-sea-buckthorn-950))",
+          DEFAULT: "", //TODO:
+          foreground: "", //TODO:
+        },
       },
       keyframes: {
         "accordion-down": {
