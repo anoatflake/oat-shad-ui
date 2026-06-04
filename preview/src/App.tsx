@@ -1,7 +1,5 @@
 import type * as React from "react";
-import { GithubIcon } from "./components/github-icon";
 import ColorPreview from "./components/preview/colors";
-import FractalGlassImagePreview from "./components/preview/fractal-glass-image";
 import SmoothAccordionPreview from "./components/preview/ui-smooth/accordion";
 import SmoothAlertPreview from "./components/preview/ui-smooth/alert";
 import SmoothBadgePreview from "./components/preview/ui-smooth/badge";
@@ -53,6 +51,7 @@ import SmoothSheetPreview from "./components/preview/ui-smooth/sheet";
 import SmoothInputOTPPreview from "./components/preview/ui-smooth/input-otp";
 import BaseSheetPreview from "./components/preview/ui-base/sheet";
 import BaseInputOTPPreview from "./components/preview/ui-base/input-otp";
+import { FolderGit2 } from "lucide-react";
 
 function ComparisonPreview({
   name,
@@ -66,13 +65,13 @@ function ComparisonPreview({
   return (
     <section className="grid grid-cols-[minmax(360px,1fr)_minmax(360px,1fr)] gap-3 overflow-x-auto rounded-lg border p-3">
       <div className="min-w-0">
-        <div className="mb-2 text-xs font-bold uppercase tracking-wide text-muted-foreground">
+        <div className="text-muted-foreground mb-2 text-xs font-bold tracking-wide uppercase">
           {name} · smooth neumorphic
         </div>
         {smooth}
       </div>
       <div className="min-w-0">
-        <div className="mb-2 text-xs font-bold uppercase tracking-wide text-muted-foreground">
+        <div className="text-muted-foreground mb-2 text-xs font-bold tracking-wide uppercase">
           {name} · Base UI port
         </div>
         {base}
@@ -113,7 +112,7 @@ function App() {
       <ThemeProvider defaultTheme="dark" storageKey="oat-shad-ui-theme">
         <div className="flex flex-col items-center">
           <header className="flex w-full max-w-screen-lg flex-row items-center justify-between p-4 md:px-8">
-            <h1 className="smooth-panel rounded-3xl bg-teal_background-500/75 px-4 py-2 text-2xl font-semibold text-primary transition-colors md:px-8">
+            <h1 className="smooth-panel bg-teal_background-500/75 text-primary rounded-3xl px-4 py-2 text-2xl font-semibold transition-colors md:px-8">
               oat
               <span aria-hidden>🌾</span>
               shad
@@ -132,7 +131,7 @@ function App() {
                   );
                 }}
               >
-                <GithubIcon />
+                <FolderGit2 />
                 <span className="sr-only">Link to GitHub Repository</span>
               </Button>
               <ThemeToggle />
@@ -140,7 +139,6 @@ function App() {
           </header>
           <main className="flex w-full flex-col flex-wrap gap-4 p-4 md:p-8">
             <ColorPreview />
-            <FractalGlassImagePreview />
             {comparisons.map(([name, smooth, base]) => (
               <ComparisonPreview
                 key={name}

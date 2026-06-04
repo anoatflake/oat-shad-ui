@@ -4,6 +4,11 @@ import {
   ASCIIGraphTitle,
   ASCIIGraphDescription,
   ASCIIGraphFooter,
+  ASCIIGraphContent,
+  ASCIIGraphNodes,
+  ASCIIGraphNode,
+  ASCIIGraphEdges,
+  ASCIIGraphEdge,
 } from "@/components/ui-smooth/ascii-graph";
 
 const ASCIIGraphPreview = () => {
@@ -14,13 +19,13 @@ const ASCIIGraphPreview = () => {
         <ASCIIGraphDescription></ASCIIGraphDescription>
       </ASCIIGraphHeader>
       <ASCIIGraphContent>
-        <Nodes>
-          <Node variant="default" id="A" />
-          <Node variant="secondary" id="B" />
-        </Nodes>
-        <Edges>
-          <Edge variant="arrow" from="A" to="B" />
-        </Edges>
+        <ASCIIGraphNodes>
+          <ASCIIGraphNode variant="default" id="A" />
+          <ASCIIGraphNode variant="secondary" id="B" />
+        </ASCIIGraphNodes>
+        <ASCIIGraphEdges>
+          <ASCIIGraphEdge variant="arrow" from="A" to="B" />
+        </ASCIIGraphEdges>
       </ASCIIGraphContent>
       <ASCIIGraphFooter></ASCIIGraphFooter>
     </ASCIIGraph>

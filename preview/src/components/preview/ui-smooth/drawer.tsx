@@ -127,7 +127,7 @@ const DrawerPreview = () => {
         </Drawer>
         {hues.map((hue) => {
           return (
-            <Drawer>
+            <Drawer key={hue}>
               <DrawerTrigger asChild>
                 <Button variant="outline">Color: {hue}</Button>
               </DrawerTrigger>

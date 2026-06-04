@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui-base/button";
-import { GithubIcon } from "@/components/github-icon";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -28,6 +27,7 @@ import {
   LifeBuoy,
   Cloud,
   LogOut,
+  FolderGit2,
 } from "lucide-react";
 
 const DropdownMenuPreview = () => {
@@ -101,7 +101,7 @@ const DropdownMenuPreview = () => {
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <GithubIcon />
+              <FolderGit2 />
               <span>GitHub</span>
             </DropdownMenuItem>
             <DropdownMenuItem>
