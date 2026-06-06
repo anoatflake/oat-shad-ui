@@ -69,7 +69,7 @@ const SheetPreview = () => {
         </Sheet>
         {hues.map((hue) => {
           return (
-            <Sheet>
+            <Sheet key={hue}>
               <SheetTrigger asChild>
                 <Button variant="outline" className="max-w-min">
                   Color: {hue}

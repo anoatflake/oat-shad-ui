@@ -24,10 +24,10 @@ import {
   MessageSquare,
   PlusCircle,
   Plus,
-  Github,
   LifeBuoy,
   Cloud,
   LogOut,
+  FolderGit2,
 } from "lucide-react";
 
 const DropdownMenuPreview = () => {
@@ -101,7 +101,7 @@ const DropdownMenuPreview = () => {
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <Github />
+              <FolderGit2 />
               <span>GitHub</span>
             </DropdownMenuItem>
             <DropdownMenuItem>

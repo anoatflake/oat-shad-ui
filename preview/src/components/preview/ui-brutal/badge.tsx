@@ -2,10 +2,10 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
+  AccordionTrigger,
 } from "@/components/ui-brutal/accordion";
 import { Badge, BadgeHue, BadgeVariant } from "../../ui-brutal/badge";
 import { type TuplifyUnion } from "../tuplify-union.type";
-import { AccordionTrigger } from "@radix-ui/react-accordion";
 
 const BadgePreview = () => {
   const variants: TuplifyUnion<BadgeVariant> = [

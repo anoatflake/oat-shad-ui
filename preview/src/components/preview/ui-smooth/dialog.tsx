@@ -74,7 +74,7 @@ const DialogPreview = () => {
         </Dialog>
         {hues.map((hue) => {
           return (
-            <Dialog>
+            <Dialog key={hue}>
               <DialogTrigger asChild>
                 <Button variant="outline" className="max-w-min">
                   Color: {hue}

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui-brutal/button";
+import { GithubIcon } from "@/components/github-icon";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,7 +25,6 @@ import {
   MessageSquare,
   PlusCircle,
   Plus,
-  Github,
   LifeBuoy,
   Cloud,
   LogOut,
@@ -101,7 +101,7 @@ const DropdownMenuPreview = () => {
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <Github />
+              <GithubIcon />
               <span>GitHub</span>
             </DropdownMenuItem>
             <DropdownMenuItem>

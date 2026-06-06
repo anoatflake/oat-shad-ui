@@ -42,7 +42,7 @@ const CardPreview = () => {
       <div className="flex flex-wrap justify-center gap-4 md:gap-8">
         {hues.map((hue) => {
           return (
-            <Card className="w-max lg:w-[350px]" hue={hue}>
+            <Card key={hue} className="w-max lg:w-[350px]" hue={hue}>
               <CardHeader>
                 <CardTitle>Color: {hue}</CardTitle>
                 <CardDescription>

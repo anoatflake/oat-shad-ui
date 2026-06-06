@@ -1,0 +1,1339 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+:root {
+--background: 163 100% 50%;
+--foreground: 222.2 84% 4.9%;
+--card: 163 100% 50%;
+--card-foreground: 222.2 84% 4.9%;
+--popover: 163 100% 50%;
+--popover-foreground: 222.2 84% 4.9%;
+--primary: 222.2 47.4% 11.2%;
+--primary-foreground: 210 40% 98%;
+--secondary: 230.13 59.4% 73.92%;
+--secondary-foreground: 222.2 47.4% 11.2%;
+--muted: 168 100% 43%;
+--muted-foreground: 189.23 13.98% 36.47% /_215.4 16.3% 46.9%_/;
+--accent: 230.13 59.4% 73.92%;
+--accent-foreground: 222.2 47.4% 11.2%;
+--destructive: 0 84.2% 60.2%; /_0 72.22% 50.59%_/
+--destructive-foreground: 210 40% 98%; /_ TODO: THIS WHITE WITH THIS RED IS NOT A11Y _/
+--border: 168 100% 43%;
+--input: 168 100% 43%;
+--outline: 222.2 84% 4.9%;
+--ring: 222.2 84% 4.9%;
+--radius: 0.5rem;
+--chart-1: 12 76% 61%;
+--chart-2: 173 58% 39%;
+--chart-3: 197 37% 24%;
+--chart-4: 43 74% 66%;
+--chart-5: 27 87% 67%;
+
+    --blood_shot_eyes-50: 28 94% 94%;
+    --blood_shot_eyes-100: 24 95% 92%;
+    --blood_shot_eyes-200: 22.5 96.55% 88.63%;
+    --blood_shot_eyes-300: 17.84 97.37% 85.1%;
+    --blood_shot_eyes-400: 13.79 54.04% 68.43%;
+    --blood_shot_eyes-500: 9.78 38.66% 53.33%;
+    --blood_shot_eyes-600: 6 44.12% 40%;
+    --blood_shot_eyes-700: 0.7 47.25% 35.69%;
+    --blood_shot_eyes-800: 2.07 56.13% 30.39%;
+    --blood_shot_eyes-900: 1.91 72.31% 25.49%;
+    --blood_shot_eyes-950: 6 100% 15.69%;
+
+    --teal_background-50: 137.14 100% 95.88%;
+    --teal_background-100: 138.82 100% 90%;
+    --teal_background-200: 145.29 100% 80%;
+    --teal_background-300: 151.37 100% 70%;
+    --teal_background-400: 157.07 100% 62.55%;
+    --teal_background-500: 162.99 100% 50.2%;
+    --teal_background-600: 168.77 100% 42.94%;
+    --teal_background-700: 174.75 100% 35.88%;
+    --teal_background-800: 180.41 100% 28.82%;
+    --teal_background-900: 186.39 100% 23.92%;
+    --teal_background-950: 195.52 87.88% 12.94%;
+
+    --skin-50: 223.33 90% 96.08%;
+    --skin-100: 223.33 90% 92.16%;
+    --skin-200: 225.67 80.72% 83.73%;
+    --skin-300: 226.9 76.99% 77.84%;
+    --skin-400: 226.45 60.78% 70%;
+    --skin-500: 229.2 54.35% 63.92%;
+    --skin-600: 234.38 42.86% 56.08%;
+    --skin-700: 230 38.1% 49.41%;
+    --skin-800: 230.77 48.15% 37.06%;
+    --skin-900: 232.41 60% 28.43%;
+    --skin-950: 240 63.64% 17.25%;
+
+    --gold-50: 45 80% 96.08%;
+    --gold-100: 45 77.78% 92.94%;
+    --gold-200: 44.75 76.62% 84.9%;
+    --gold-300: 45.31 76.56% 74.9%;
+    --gold-400: 45.11 76.54% 64.9%;
+    --gold-500: 45 76.67% 52.94%;
+    --gold-600: 45 76.92% 45.88%;
+    --gold-700: 44.81 76.7% 40.39%;
+    --gold-800: 45.11 76.88% 33.92%;
+    --gold-900: 45.32 77.05% 23.92%;
+    --gold-950: 44.78 77.01% 17.06%;
+
+    --eva_danger-50: 14.29 100% 95.88%;
+    --eva_danger-100: 355.56 100% 94.71%;
+    --eva_danger-200: 347.78 100% 89.41%;
+    --eva_danger-300: 342.75 100% 84.31%;
+    --eva_danger-400: 336.6 100% 80.39%;
+    --eva_danger-500: 330.23 100% 73.92%;
+    --eva_danger-600: 324.46 64.36% 60.39%;
+    --eva_danger-700: 318.2 50% 47.84%;
+    --eva_danger-800: 312.11 58.92% 36.27%;
+    --eva_danger-900: 306.06 68.28% 28.43%;
+    --eva_danger-950: 282 73.77% 23.92%;
+
+    --aqua_green-50: 160 100% 95.29%;
+    --aqua_green-100: 157.89 100% 88.82%;
+    --aqua_green-200: 160.18 100% 78.63%;
+    --aqua_green-300: 162.81 100% 65.1%;
+    --aqua_green-400: 162.92 100% 50.39%;
+    --aqua_green-500: 162.41 100% 45.49%;
+    --aqua_green-600: 162.63 100% 37.25%;
+    --aqua_green-700: 164.61 100% 29.8%;
+    --aqua_green-800: 165.5 100% 23.53%;
+    --aqua_green-900: 166.53 100% 19.22%;
+    --aqua_green-950: 167.14 100% 10.98%;
+
+    --evergreen-50: 162.86 41.18% 96.67%;
+    --evergreen-100: 159.31 52.73% 89.22%;
+    --evergreen-200: 160 51.35% 78.24%;
+    --evergreen-300: 161.86 47.25% 64.31%;
+    --evergreen-400: 164.55 39.92% 50.39%;
+    --evergreen-500: 165 48.94% 36.86%;
+    --evergreen-600: 165.54 51.55% 31.57%;
+    --evergreen-700: 166.67 47.37% 26.08%;
+    --evergreen-800: 167.23 42.34% 21.76%;
+    --evergreen-900: 168 36.08% 19.02%;
+    --evergreen-950: 168.89 52.94% 10%;
+
+    --periwinkle-50: 218.18 64.71% 96.67%;
+    --periwinkle-100: 222 66.67% 94.12%;
+    --periwinkle-200: 223.08 63.93% 88.04%;
+    --periwinkle-300: 224.21 61.29% 81.76%;
+    --periwinkle-400: 230.13 59.4% 73.92%;
+    --periwinkle-500: 234.78 54.76% 67.06%;
+    --periwinkle-600: 238.29 49.76% 58.63%;
+    --periwinkle-700: 239.37 38.1% 50.59%;
+    --periwinkle-800: 239.22 36.49% 41.37%;
+    --periwinkle-900: 236.73 31.43% 34.31%;
+    --periwinkle-950: 238.13 31.37% 20%;
+
+    --cornflower-50: 216 88.24% 96.67%;
+    --cornflower-100: 219.23 81.25% 93.73%;
+    --cornflower-200: 219.57 82.46% 88.82%;
+    --cornflower-300: 222.74 78.49% 81.76%;
+    --cornflower-400: 226.74 75.44% 77.65%;
+    --cornflower-500: 231 70.59% 66.67%;
+    --cornflower-600: 236 63.98% 58.63%;
+    --cornflower-700: 237.1 49.21% 50.59%;
+    --cornflower-800: 236.29 45.97% 41.37%;
+    --cornflower-900: 233.91 39.43% 34.31%;
+    --cornflower-950: 235.5 39.22% 20%;
+
+    --apricot-50: 15 85.71% 97.25%;
+    --apricot-100: 16.15 86.67% 94.12%;
+    --apricot-200: 16.8 92.59% 89.41%;
+    --apricot-300: 16.52 89.61% 84.9%;
+    --apricot-400: 16.74 86.58% 70.78%;
+    --apricot-500: 16.56 80.3% 60.2%;
+    --apricot-600: 16.55 69.05% 50.59%;
+    --apricot-700: 16.69 70.89% 41.76%;
+    --apricot-800: 16.5 66.67% 35.29%;
+    --apricot-900: 16.6 60.26% 30.59%;
+    --apricot-950: 16.84 72.15% 15.49%;
+
+    --rust-50: 7.5 57.14% 97.25%;
+    --rust-100: 7.5 53.33% 94.12%;
+    --rust-200: 5.62 59.26% 89.41%;
+    --rust-300: 5.66 56.99% 81.76%;
+    --rust-400: 5.93 54.36% 70.78%;
+    --rust-500: 5.83 50.74% 60.2%;
+    --rust-600: 6.11 42.86% 50.59%;
+    --rust-700: 6 44.12% 40%;
+    --rust-800: 5.68 44.05% 32.94%;
+    --rust-900: 6 44.64% 21.96%;
+    --rust-950: 6.32 44.19% 16.86%;
+
+    --charcoal-50: 240 6.67% 97.06%;
+    --charcoal-100: 270 6.25% 93.73%;
+    --charcoal-200: 260 4.23% 86.08%;
+    --charcoal-300: 264 3.76% 73.92%;
+    --charcoal-400: 255 3.88% 59.61%;
+    --charcoal-500: 260 3.64% 48.43%;
+    --charcoal-600: 260 4.48% 39.41%;
+    --charcoal-700: 260 3.66% 32.16%;
+    --charcoal-800: 260 3.95% 29.8%;
+    --charcoal-900: 255 3.28% 23.92%;
+    --charcoal-950: 260 3.7% 15.88%;
+
+    --outer_space-50: 180 15.79% 96.27%;
+    --outer_space-100: 180 14.29% 90.39%;
+    --outer_space-200: 184.62 13.98% 81.76%;
+    --outer_space-300: 182.73 13.92% 69.02%;
+    --outer_space-400: 185.62 13.45% 53.33%;
+    --outer_space-500: 187.5 14.68% 42.75%;
+    --outer_space-600: 189.23 13.98% 36.47%;
+    --outer_space-700: 190.91 12.94% 33.33%;
+    --outer_space-800: 191.25 11.59% 27.06%;
+    --outer_space-900: 198.46 10.74% 23.73%;
+    --outer_space-950: 198 13.16% 14.9%;
+
+    --fall_green-50: 60 41.67% 95.29%;
+    --fall_green-100: 62.07 47.54% 88.04%;
+    --fall_green-200: 61.15 47.27% 78.43%;
+    --fall_green-300: 58.64 47.31% 63.53%;
+    --fall_green-400: 56.22 46.44% 53.14%;
+    --fall_green-500: 53.89 44.63% 47.45%;
+    --fall_green-600: 48.75 46.6% 40.39%;
+    --fall_green-700: 43.78 44.05% 32.94%;
+    --fall_green-800: 40 38.78% 28.82%;
+    --fall_green-900: 36 34.35% 25.69%;
+    --fall_green-950: 34.29 38.89% 14.12%;
+
+    --mustard-50: 48 100% 96.08%;
+    --mustard-100: 49.47 100% 88.82%;
+    --mustard-200: 48.91 100% 76.67%;
+    --mustard-300: 47.14 100% 67.06%;
+    --mustard-400: 44.39 100% 56.27%;
+    --mustard-500: 38.93 95.28% 50.2%;
+    --mustard-600: 33.15 98.21% 43.73%;
+    --mustard-700: 27.46 93.65% 37.06%;
+    --mustard-800: 23.82 85% 31.37%;
+    --mustard-900: 23.12 80.74% 26.47%;
+    --mustard-950: 22.06 94.44% 14.12%;
+
+    --blue_chill-50: 169.41 100% 96.67%;
+    --blue_chill-100: 174.83 100% 88.63%;
+    --blue_chill-200: 175.34 100% 77.25%;
+    --blue_chill-300: 175.67 98.9% 64.31%;
+    --blue_chill-400: 177.49 84.98% 50.39%;
+    --blue_chill-500: 178.56 100% 40.78%;
+    --blue_chill-600: 179.29 100% 32.94%;
+    --blue_chill-700: 180.41 100% 28.82%;
+    --blue_chill-800: 181.21 89.19% 21.76%;
+    --blue_chill-900: 180.78 79.38% 19.02%;
+    --blue_chill-950: 183.4 100% 10.39%;
+
+    --hopbush-50: 320 60% 97.06%;
+    --hopbush-100: 317.65 62.96% 94.71%;
+    --hopbush-200: 321.18 65.38% 89.8%;
+    --hopbush-300: 322.15 69.89% 81.76%;
+    --hopbush-400: 323.08 68.42% 70.2%;
+    --hopbush-500: 324.46 64.36% 60.39%;
+    --hopbush-600: 327.46 56.35% 50.59%;
+    --hopbush-700: 329.09 61.68% 41.96%;
+    --hopbush-800: 330 58.89% 35.29%;
+    --hopbush-900: 330.35 54.84% 30.39%;
+    --hopbush-950: 329.47 65.52% 17.06%;
+
+    --cotton_candy-50: 347.14 100% 97.25%;
+    --cotton_candy-100: 345 100% 94.51%;
+    --cotton_candy-200: 343.53 100% 90%;
+    --cotton_candy-300: 342.75 100% 84.31%;
+    --cotton_candy-400: 341.25 98.63% 71.37%;
+    --cotton_candy-500: 340 93.1% 60.2%;
+    --cotton_candy-600: 337.06 80.31% 49.8%;
+    --cotton_candy-700: 335.33 86.54% 40.78%;
+    --cotton_candy-800: 333.47 83.05% 34.71%;
+    --cotton_candy-900: 331.71 79.35% 30.39%;
+    --cotton_candy-950: 333.6 92.59% 15.88%;
+
+    --royal_purple-50: 277.5 80% 98.04%;
+    --royal_purple-100: 277.89 82.61% 95.49%;
+    --royal_purple-200: 276.67 85.71% 91.76%;
+    --royal_purple-300: 277.74 81.58% 85.1%;
+    --royal_purple-400: 278.24 80.95% 75.29%;
+    --royal_purple-500: 279.13 77.53% 65.1%;
+    --royal_purple-600: 279.87 68.89% 55.88%;
+    --royal_purple-700: 280.68 60.83% 47.06%;
+    --royal_purple-800: 281.22 57.21% 39.41%;
+    --royal_purple-900: 282.2 55.83% 31.96%;
+    --royal_purple-950: 282 73.77% 23.92%;
+
+    --color-spring-green-50: 146 100% 97%;
+    --color-spring-green-100: 146 100% 91%;
+    --color-spring-green-200: 146 100% 87%;
+    --color-spring-green-300: 146 97% 73%;
+    --color-spring-green-400: 146 89% 59%;
+    --color-spring-green-500: 146 89% 45%;
+    --color-spring-green-600: 146 96% 38%;
+    --color-spring-green-700: 146 87% 29%;
+    --color-spring-green-800: 146 80% 23%;
+    --color-spring-green-900: 146 74% 22%;
+    --color-spring-green-950: 146 100% 10%;
+
+    --color-aquamarine-50: 162 100% 96%;
+    --color-aquamarine-100: 162 100% 87%;
+    --color-aquamarine-200: 162 100% 78%;
+    --color-aquamarine-300: 162 95% 68%;
+    --color-aquamarine-400: 162 70% 59%;
+    --color-aquamarine-500: 162 100% 43%;
+    --color-aquamarine-600: 162 100% 35%;
+    --color-aquamarine-700: 162 100% 28%;
+    --color-aquamarine-800: 162 100% 22%;
+    --color-aquamarine-900: 162 100% 18%;
+    --color-aquamarine-950: 162 100% 10%;
+
+    --color-turquoise-blue-50: 180 100% 98%;
+    --color-turquoise-blue-100: 182 100% 90%;
+    --color-turquoise-blue-200: 183 95% 83%;
+    --color-turquoise-blue-300: 183 89% 70%;
+    --color-turquoise-blue-400: 185 77% 59%;
+    --color-turquoise-blue-500: 185 96% 43%;
+    --color-turquoise-blue-600: 186 94% 41%;
+    --color-turquoise-blue-700: 187 85% 32%;
+    --color-turquoise-blue-800: 189 74% 28%;
+    --color-turquoise-blue-900: 191 74% 25%;
+    --color-turquoise-blue-950: 196 82% 16%;
+
+    --color-picton-blue-50: 208 100% 98%;
+    --color-picton-blue-100: 208 77% 95%;
+    --color-picton-blue-200: 206 85% 89%;
+    --color-picton-blue-300: 204 86% 74%;
+    --color-picton-blue-400: 204 87% 59%;
+    --color-picton-blue-500: 205 82% 48%;
+    --color-picton-blue-600: 206 87% 39%;
+    --color-picton-blue-700: 207 86% 33%;
+    --color-picton-blue-800: 208 80% 28%;
+    --color-picton-blue-900: 210 74% 24%;
+    --color-picton-blue-950: 212 70% 16%;
+
+    --color-royal-blue-50: 215 100% 97%;
+    --color-royal-blue-100: 215 77% 94%;
+    --color-royal-blue-200: 215 74% 88%;
+    --color-royal-blue-300: 215 82% 77%;
+    --color-royal-blue-400: 217 87% 64%;
+    --color-royal-blue-500: 221 80% 57%;
+    --color-royal-blue-600: 224 77% 53%;
+    --color-royal-blue-700: 227 73% 47%;
+    --color-royal-blue-800: 229 68% 41%;
+    --color-royal-blue-900: 230 62% 33%;
+    --color-royal-blue-950: 233 54% 21%;
+
+    --color-outrageous-orange-50: 18 87% 98%;
+    --color-outrageous-orange-100: 20 85% 93%;
+    --color-outrageous-orange-200: 25 89% 84%;
+    --color-outrageous-orange-300: 22 90% 72%;
+    --color-outrageous-orange-400: 18 89% 59%;
+    --color-outrageous-orange-500: 14 85% 53%;
+    --color-outrageous-orange-600: 10 85% 49%;
+    --color-outrageous-orange-700: 6 76% 41%;
+    --color-outrageous-orange-800: 3 70% 33%;
+    --color-outrageous-orange-900: 1 66% 28%;
+    --color-outrageous-orange-950: 3 70% 15%;
+
+    --color-sea-buckthorn-50: 36 89% 97%;
+    --color-sea-buckthorn-100: 37 87% 90%;
+    --color-sea-buckthorn-200: 40 89% 76%;
+    --color-sea-buckthorn-300: 38 89% 64%;
+    --color-sea-buckthorn-400: 35 89% 60%;
+    --color-sea-buckthorn-500: 28 86% 51%;
+    --color-sea-buckthorn-600: 22 89% 44%;
+    --color-sea-buckthorn-700: 18 81% 37%;
+    --color-sea-buckthorn-800: 14 76% 32%;
+    --color-sea-buckthorn-900: 12 68% 27%;
+    --color-sea-buckthorn-950: 17 78% 14%;
+
+}
+
+.dark {
+/_ --background: 168.89 52.94% 10%; _/
+--background: 163 100% 2%;
+--foreground: 210 40% 98%;
+--card: 168.89 52.94% 10%;
+--card-foreground: 210 40% 98%;
+--popover: 168 36.08% 19.02%;
+--popover-foreground: 210 40% 98%;
+--primary: 210 40% 98%;
+--primary-foreground: 168.89 52.94% 10%;
+--secondary: 168 36.08% 19.02%;
+--secondary-foreground: 210 40% 98%;
+--muted: 168 36.08% 19.02%;
+--muted-foreground: 215 20.2% 65.1%;
+--accent: 168 36.08% 19.02%;
+--accent-foreground: 210 40% 98%;
+--destructive: 3 70% 33%;
+--destructive-foreground: 210 40% 98%;
+--border: 168 36.08% 19.02%;
+--input: 168 36.08% 19.02%;
+--outline: 212.7 26.8% 83.9%;
+--ring: 212.7 26.8% 83.9%;
+--chart-1: 220 70% 50%;
+--chart-2: 160 60% 45%;
+--chart-3: 30 80% 55%;
+--chart-4: 280 65% 60%;
+--chart-5: 340 75% 55%;
+/\*
+--background: #1c1b1a;
+--foreground: #f8faff;
+--card: #1c1b1a;
+--card-foreground: #f8faff;
+--popover: #1c1b1a;
+--popover-foreground: #f8faff;
+--primary: #f8faff;
+--primary-foreground: #0f0e17;
+--secondary: #2e3740;
+--secondary-foreground: #f8faff;
+--muted: #2e3740;
+--muted-foreground: #a4c2d3;
+--accent: #2e3740;
+--accent-foreground: #f8faff;
+--destructive: #993f3f;
+--destructive-foreground: #f8faff;
+--border: #2e3740;
+--input: #2e3740;
+--ring: #c0c5d9;
+--chart-1: #4c66b6;
+--chart-2: #2a6f69;
+--chart-3: #e69928;
+--chart-4: #914ce6;
+--chart-5: #c63993;
+
+    blood_shot_eyes: {
+      50: "#FEF0E1"
+      100: "#FEE5D2"
+      200: "#FEDBC6"
+      300: "#FECAB4"
+      400: "#DA9783"
+      500: "#B6695A"
+      600: "#934239"
+      700: "#863130"
+      800: "#792522"
+      900: "#701512"
+      950: "#500800"
+      DEFAULT: "#B6695A"
+      foreground: "#000000"
+    },
+    teal_background: {
+      50: "#eafff0"
+      100: "#CCFFDC"
+      200: "#99FFC4"
+      300: "#66FFB6"
+      400: "#40FFB6"
+      500: "#01ffb7"
+      600: "#00DBB2"
+      700: "#00B7A7"
+      800: "#009293"
+      900: "#006D7A"
+      950: "#042f3e"
+      DEFAULT: "#01ffb7"
+      foreground: "#000000"
+    },
+    skin: {
+      50: "#ECF1FE"
+      100: "#D9E3FD"
+      200: "#B4C4F7"
+      300: "#9baef2"
+      400: "#8499e1"
+      500: "#7183D5"
+      600: "#5f68bf"
+      700: "#4E5EAE"
+      800: "#313F8C"
+      900: "#1D2874"
+      950: "#101048"
+    },
+    gold: {
+      50: "#FDF9ED"
+      100: "#FBF4DF"
+      200: "#F6E7BB"
+      300: "#F0D88E"
+      400: "#EAC861"
+      500: "#E3B52B"
+      600: "#CFA21B"
+      700: "#B68E18"
+      800: "#997814"
+      900: "#6C550E"
+      950: "#4D3C0A"
+    },
+
+    eva_danger: {
+      50: "#ffefea"
+      100: "#FFE4E6"
+      200: "#FFC9D4"
+      300: "#FFAFC6"
+      400: "#FF9BC2"
+      500: "#FF7ABC"
+      600: "#DB59A6"
+      700: "#B73D92"
+      800: "#93267D"
+      900: "#7A1770"
+      950: "#4F106a"
+    },
+
+
+    adobe color wheel:
+    #03ff0c #03ff62 #02ffb7 #03f2ff #03a2ff
+    #58ffd0
+
+    #9be5f2 #9bc9f2 #9baef1 #a49bf2 #c19bf2
+    #c8d1f2
+
+    #fab6c6 #fabeb6 #fbc9b6 #fad5b6 #fae0b6
+    #facbb8
+
+
+
+    image color picker
+    #f9c8b5 #4e4d56 #02ffb7 #308c75 #CDD7F3
+
+\*/
+
+    /* CSS HEX */
+    --aquamarine: #02ffb7;
+    --sage: #308c75;
+    --lavender-web: #cdd8f4;
+    --vista-blue: #9baef1;
+    --apricot: #fbc9b6;
+    --rust: #934239;
+    --davys-gray: #4b494f;
+    --outer_space: #4a5c60;
+
+    --aqua_green: #02ffb7;
+    --teal_green: #308c75;
+    --periwinkle: #cdd8f4;
+    --cornflower-blue: #9baef1;
+    --peach-blush: #fbc9b6;
+    --rust: #934239;
+    --davys-gray: #4b494f;
+    --outer_space: #4a5c60;
+
+    /*
+
+#FBC9B6
+#02FFB7
+#25847B
+#639198
+#25212E
+#c7f0bd
+#00ffa2
+
+#02FFB7
+#2676A2
+#535A6D
+#57616F
+#1A151A
+
+#F6EDF3
+#75C1D1
+#02FFB7
+#86785E
+#2F3A4D
+
+#aaffda
+#00ff8f
+#009f59
+
+#aaff92
+#02ffb7
+#029f80
+\*/
+
+    /* CSS HSL */
+    --aquamarine: hsla(163, 100%, 50%, 1);
+    --sage: hsla(165, 49%, 37%, 1);
+    --lavender-web: hsla(223, 64%, 88%, 1);
+    --vista-blue: hsla(227, 75%, 78%, 1);
+    --apricot: hsla(17, 90%, 85%, 1);
+    --rust: hsla() --davys-gray: hsla(260, 4%, 30%, 1);
+    --outer_space: hsla(191, 13%, 33%, 1);
+
+    /*
+
+https://uicolors.app/create
+https://www.tints.dev
+50: "#e7fff7",
+100: "#c6ffea",
+200: "#92ffdb",
+300: "#4dffcc",
+-400: "#02ffb7",
+500: "#00e8a4",
+600: "#00be87",
+700: "#009871",
+800: "#00785b",
+900: "#00624c",
+950: "#00382c",
+50: "#F0FFFB",
+100: "#E0FFF6",
+200: "#B3FFE9",
+300: "#80FFDB",
+400: "#02FFB7",
+500: "#00EBA8",
+600: "#00D69A",
+700: "#00B884",
+800: "#009E71",
+900: "#007050",
+950: "#00523A",
+
+    50: "#f3faf8",
+    100: "#d5f2e8",
+    200: "#abe4d1",
+    300: "#79cfb5",
+    400: "#4eb399",
+    -500: "#308c75",
+    600: "#277a66",
+    700: "#236254",
+    800: "#204f45",
+    900: "#1f423b",
+    950: "#0c2722",
+      50: "#ECF8F5",
+      100: "#D9F2EC",
+      200: "#ABE2D5",
+      300: "#73CFB8",
+      400: "#3FB698",
+      500: "#308C75",
+      600: "#2C816C",
+      700: "#266E5C",
+      800: "#1F5B4C",
+      900: "#164136",
+      950: "#0E2A23",
+
+    50: "#f1f5fc",
+    100: "#e6ecfa",
+    -200: "#CDD8F4",
+    300: "#b4c3ed",
+    400: "#95a2e4",
+    500: "#7d85d9",
+    600: "#6164ca",
+    700: "#5152b1",
+    800: "#434490",
+    900: "#3c3f73",
+    950: "#232443",
+      50: "#F2F5FC",
+      100: "#E6EBF9",
+      200: "#CDD8F4",
+      300: "#BCCBF0",
+      400: "#ABBEED",
+      500: "#97AEE8",
+      600: "#829DE3",
+      700: "#698ADE",
+      800: "#436CD6",
+      900: "#274DB0",
+      950: "#1A3475",
+
+    50: "#eff5fe",
+    100: "#e2ebfc",
+    200: "#cbdbfa",
+    300: "#acc1f5",
+    -400: "#9baef1",
+    500: "#6e80e6",
+    600: "#525bd9",
+    700: "#4349bf",
+    800: "#393f9a",
+    900: "#353c7a",
+    950: "#1f2247",
+      50: "#F6F8FE",
+      100: "#E9EDFC",
+      200: "#D2DBF9",
+      300: "#BCC8F6",
+      400: "#9BAEF1",
+      500: "#869DEE",
+      600: "#748EEC",
+      700: "#5A78E8",
+      800: "#3A5FE3",
+      900: "#1A3CB7",
+      950: "#132D8B",
+
+    50: "#fef5f2",
+    100: "#fdeae3",
+    200: "#fdd9cb",
+    -300: "#fbc9b6",
+    400: "#f59874",
+    500: "#eb7548",
+    600: "#d85a2a",
+    700: "#b6491f",
+    800: "#963f1e",
+    900: "#7d391f",
+    950: "#441b0b",
+      50: "#FEF8F5",
+      100: "#FEF1EC",
+      200: "#FCDCCF",
+      300: "#FBC9B6",
+      400: "#F9B599",
+      500: "#F8A381",
+      600: "#F6875B",
+      700: "#F3632A",
+      800: "#DA460C",
+      900: "#9B3208",
+      950: "#742506",
+
+    50: "#fcf5f4",
+    100: "#f8eae8",
+    200: "#f4d7d4",
+    300: "#ebbbb6",
+    400: "#dd948c",
+    500: "#cd7066",
+    600: "#b7564b",
+    -700: "#934239",
+    800: "#803c34",
+    900: "#6b3731",
+    950: "#391916",
+      50: "#FCF8F8",
+      100: "#F8EEED",
+      200: "#EFD9D7",
+      300: "#E8C8C4",
+      400: "#DEB0AA",
+      500: "#D19189",
+      600: "#C26B61",
+      700: "#934239",
+      800: "#79362F",
+      900: "#51241F",
+      950: "#3E1C18",
+
+    50: "#f7f7f8",
+    100: "#efeef0",
+    200: "#dbdadd",
+    300: "#bcbabf",
+    400: "#96949c",
+    500: "#7a7780",
+    600: "#636069",
+    700: "#514f55",
+    -800: "#4b494f",
+    900: "#3c3b3f",
+    950: "#28272a",
+      50: "#F7F7F8",
+      100: "#F2F2F3",
+      200: "#E3E2E4",
+      300: "#D3D2D5",
+      400: "#C1BFC4",
+      500: "#AFADB3",
+      600: "#98959D",
+      700: "#76737D",
+      800: "#4B494F",
+      900: "#302F32",
+      950: "#28272A",
+
+    50: "#f4f7f7",
+    100: "#e3eaea",
+    200: "#cad6d7",
+    300: "#a5babb",
+    400: "#789598",
+    500: "#5d797d",
+    600: "#50666a",
+    -700: "#4a5c60",
+    800: "#3d4a4d",
+    900: "#363f43",
+    950: "#21282b",
+      50: "#F6F8F8",
+      100: "#EEF1F2",
+      200: "#DAE1E2",
+      300: "#C5D0D3",
+      400: "#AEBDC1",
+      500: "#92A6AB",
+      600: "#6D878D",
+      700: "#4A5C60",
+      800: "#3E4D51",
+      900: "#283234",
+      950: "#21292B",
+
+      '50': '#f4f7f7',
+        '100': '#e3eaea',
+        '200': '#c9d7d8',
+        '300': '#a4babc',
+        '400': '#779699',
+        '500': '#5c7b7e',
+        '600': '#4f676b',
+        '700': '#44565a',
+        '800': '#3d4a4d',
+        '900': '#364043',
+        '950': '#21292b',
+
+      --fall_green-50: #f8f8ee;
+    --fall_green-100: #eeefd2;
+    --fall_green-200: #e1e2ae;
+    --fall_green-300: #cecc76;
+    --fall_green-400: #bfb850;
+    --fall_green-500: #afa443;
+    --fall_green-600: #978537;
+    --fall_green-700: #79652f;
+    --fall_green-800: #66532d;
+    --fall_green-900: #58462b;
+    --fall_green-950: #322616;
+
+    --mustard-50: #fffbeb;
+    --mustard-100: #fff5c6;
+    --mustard-200: #ffe988;
+    --mustard-300: #ffdb57;
+    --mustard-400: #ffc520;
+    --mustard-500: #f9a407;
+    --mustard-600: #dd7b02;
+    --mustard-700: #b75706;
+    --mustard-800: #94420c;
+    --mustard-900: #7a370d;
+    --mustard-950: #461b02;
+
+    --blue_chill-50: #eefffc;
+    --blue_chill-100: #c5fffa;
+    --blue_chill-200: #8bfff6;
+    --blue_chill-300: #4afef1;
+    --blue_chill-400: #15ece3;
+    --blue_chill-500: #00d0cb;
+    --blue_chill-600: #00a8a6;
+    --blue_chill-700: #009293;
+    --blue_chill-800: #066769;
+    --blue_chill-900: #0a5657;
+    --blue_chill-950: #003235;
+
+    --hopbush-50: #fcf3f9;
+    --hopbush-100: #fae9f5;
+    --hopbush-200: #f6d4ea;
+    --hopbush-300: #f1b0d9;
+    --hopbush-400: #e77fbf;
+    --hopbush-500: #db59a6;
+    --hopbush-600: #c83a87;
+    --hopbush-700: #ad296d;
+    --hopbush-800: #8f255a;
+    --hopbush-900: #78234d;
+    --hopbush-950: #480f2c;
+
+    --cotton_candy-50: #fff1f4;
+    --cotton_candy-100: #ffe3ea;
+    --cotton_candy-200: #ffccda;
+    --cotton_candy-300: #ffafc6;
+    --cotton_candy-400: #fe6e9b;
+    --cotton_candy-500: #f83b7a;
+    --cotton_candy-600: #e51967;
+    --cotton_candy-700: #c20e58;
+    --cotton_candy-800: #a20f50;
+    --cotton_candy-900: #8b104a;
+    --cotton_candy-950: #4e0324;
+
+    --royal_purple-50: #fbf6fe;
+    --royal_purple-100: #f6eafd;
+    --royal_purple-200: #eed8fc;
+    --royal_purple-300: #e1baf8;
+    --royal_purple-400: #ce8df3;
+    --royal_purple-500: #bb61eb;
+    --royal_purple-600: #a841dc;
+    --royal_purple-700: #922fc1;
+    --royal_purple-800: #7a2b9e;
+    --royal_purple-900: #64247f;
+    --royal_purple-950: #4f106a;
+
+// Complementary Colors according to canvas
+'mandy': {
+'50: #fef2f3;
+'100: #fde6e7;
+'200: #fbd0d5;
+'300: #f7aab2;
+'400: #f27a8a;
+'500: #ea546c;
+'600: #d5294d;
+'700: #b31d3f;
+'800: #961b3c;
+'900: #811a39;
+'950: #48091a;
+},
+
+'aquamarine': {
+'50: #e7fff7;
+'100: #c6ffea;
+'200: #92ffdb;
+'300: #4dffcc;
+'400: #02ffb7;
+'500: #00e8a4;
+'600: #00be87;
+'700: #009871;
+'800: #00785b;
+'900: #00624c;
+'950: #00382c;
+},
+
+'red-ribbon': {
+'50: #ffeff1;
+'100: #ffe0e5;
+'200: #ffc6d2;
+'300: #ff97ac;
+'400: #ff5d81;
+'500: #ff245a;
+'600: #fd0048; --> complementary to #02ffb7
+'700: #d7003d;
+'800: #b4003c;
+'900: #99023a;
+'950: #57001a;
+},
+'red-ribbon': {
+'50: #ffeff1;
+'100: #ffe0e5;
+'200: #ffc6d2;
+'300: #ff97ac;
+'400: #ff5d81;
+'500: #ff245a;
+'600: #ff024a;--> complementary to #02ffb7
+'700: #d7003d;
+'800: #b4003c;
+'900: #99023a;
+'950: #57001a;
+},
+
+'caribbean-green': {
+'50: #eafff6;
+'100: #cdfee7;
+'200: #a0fad5;
+'300: #63f2bf;
+'400: #25e2a5;
+'500: #00ce93; --> monocromatic
+'600: #00a475;
+'700: #008362;
+'800: #00674f;
+'900: #005542;
+'950: #003026;
+},
+
+'malibu': {
+'50: #effbff;
+'100: #def5ff;
+'200: #b6eeff;
+'300: #75e3ff;
+'400: #2cd6ff;
+'500: #02c9ff; --> analogus
+'600: #009dd4;
+'700: #007dab;
+'800: #00698d;
+'900: #065774;
+'950: #04374d;
+},
+'green': {
+'50: #e4ffe7;
+'100: #c4ffcb;
+'200: #90ffa0;
+'300: #50ff6f;
+'400: #02ff38; --> analogus
+'500: #00e637;
+'600: #00b831;
+'700: #008b25;
+'800: #076d23;
+'900: #0b5c23;
+'950: #003411;
+},
+
+'purple-pizzazz': {
+'50: #fff0fd',
+'100: #ffe3fd',
+'200: #ffc6fc',
+'300: #ff98f8',
+'400: #ff58ef',
+'500: #ff27e2',
+'600: #ff02c8', --> split (figma)
+'700: #df00a2',
+'800: #b80086',
+'900: #980371',
+'950: #5f0041',
+},
+'scarlet': {
+'50: #fff5ec',
+'100: #ffe7d3',
+'200: #ffcba5',
+'300: #ffa76d',
+'400: #ff7732',
+'500: #ff510a',
+'600: #ff3802', --> split (figma)
+'700: #cc2302',
+'800: #a11d0b',
+'900: #821b0c',
+'950: #460904',
+},
+
+'electric-violet': {
+'50: #fcf3ff;
+'100: #f8e3ff;
+'200: #f2cdff;
+'300: #e8a5ff;
+'400: #db6cff;
+'500: #cd35ff;
+'600: #c00fff;
+'700: #b702ff; --> triadic
+'800: #9006c3;
+'900: #76079c;
+'950: #520076;
+},
+'selective-yellow': {
+'50: #fffeea;
+'100: #fff9c5;
+'200: #fff485;
+'300: #ffe746;
+'400: #ffd71b;
+'500: #ffb702; --> triadic
+'600: #e28c00;
+'700: #bb6202;
+'800: #984c08;
+'900: #7c3e0b;
+'950: #481f00;
+},
+
+'blue': {
+'50: #f0f0ff;
+'100: #e5e4ff;
+'200: #cecdff;
+'300: #aba6ff;
+'400: #8273ff;
+'500: #5b3bff;
+'600: #4914ff;
+'700: #3802ff; --> tetradic
+'800: #2e01d6;
+'900: #2803af;
+'950: #140077;
+},
+'red-ribbon': {
+'50: #ffeff1;
+'100: #ffe0e5;
+'200: #ffc6d2;
+'300: #ff97ac;
+'400: #ff5d81;
+'500: #ff245a;
+'600: #ff024a;--> tetradic
+'700: #d7003d;
+'800: #b4003c;
+'900: #99023a;
+'950: #57001a;
+},
+'electric-lime': {
+'50: #fcffe4;
+'100: #f8ffc4;
+'200: #efff90;
+'300: #dfff50;
+'400: #c8ff02; --> tetradic
+'500: #aee600;
+'600: #87b800;
+'700: #658b00;
+'800: #506d07;
+'900: #445c0b;
+'950: #223400;
+},
+
+'sisal': {
+'50: #f8f7f4;
+'100: #efede5;
+'200: #d7d0c0;
+'300: #c8bea9;
+'400: #b1a086;
+'500: #a18b6e;
+'600: #947b62;
+'700: #7c6552;
+'800: #665346;
+'900: #53453b;
+'950: #2c231e;
+},
+
+'parchment': {
+'50: #f9f6ed;
+'100: #f0e9d1;
+'200: #e2d3a6;
+'300: #d2b572;
+'400: #c49a4b;
+'500: #b4863e;
+'600: #9b6a33;
+'700: #7c502c;
+'800: #69422a;
+'900: #5a3929;
+'950: #341d14;
+},
+
+// uicolors.app predefined
+'wewak': {
+'50: #fdf3f4',
+'100: #fbe8eb',
+'200: #f6d5da',
+'300: #ea9daa',
+'400: #e58799',
+'500: #d75c77',
+'600: #c13d60',
+'700: #a22e4f',
+'800: #882947',
+'900: #752642',
+'950: #411020',
+},
+'contessa': {
+'50: #fbf6f5;
+'100: #f6ecea;
+'200: #f0dcd8;
+'300: #e4c3bd;
+'400: #d3a096;
+'500: #ba7264;
+'600: #aa6558;
+'700: #8e5347;
+'800: #77463d;
+'900: #643f38;
+'950: #351e1a;
+'jade': {
+'50: #effef7;
+'100: #dafeef;
+'200: #b8fadd;
+'300: #81f4c3;
+'400: #43e5a0;
+'500: #1acd81;
+'600: #0fa968;
+'700: #108554;
+'800: #126945;
+'900: #11563a;
+'950: #03301f;
+},
+'mantis': {
+'50: #f6faf3;
+'100: #e9f5e3;
+'200: #d3eac8;
+'300: #afd89d;
+'400: #82bd69;
+'500: #61a146;
+'600: #4c8435;
+'700: #3d692c;
+'800: #345427;
+'900: #2b4522;
+'950: #13250e;
+},
+'waikawa-gray': {
+'50: #f2f7fb;
+'100: #e7f0f8;
+'200: #d3e2f2;
+'300: #b9cfe8;
+'400: #9cb6dd;
+'500: #839dd1;
+'600: #6a7fc1;
+'700: #6374ae;
+'800: #4a5989;
+'900: #414e6e;
+'950: #262c40;
+},
+
+#403D3E #524F59 #A0B4F2 #CEDAF2 #05F29B #F2C1AE
+
+#02ffb7 #fecab4 #9baef2 #2ea1f7 #e6b77d
+
+#0460D9 #023859 #049DD9 #0BBF9E #D99B66 #D9A362
+#3B82BF #4193A6 #167347 #4ED998 #3DF28B #BF8D50 #D9AA71
+#635FD9 #182259 #148DD9 #04BFAD #F28F38
+
+#3DF28B #3DF2C9 #3DDFF2 #3DA6F2 #3D6CF2 #F2A93D #F26A3D #F2543D
+
+#3DF281 #3DF2BE #3DE9F2 #3DB0F2 #3D76F2 #3D3DF2 #F2A13D #F2653D
+
+#38F27E #38F2BD #38E8F2 #38AEF2 #3873F2 #6478f0 #3838F2 #6478f0 #F26238
+
+'spring-green': {
+'50': '#eefff3',
+'100': '#d8ffe6',
+'200': '#b3ffcf',
+'300': '#78fdaa',
+'400': '#38f27e', DEFAULT
+'500': '#0cdb5a',
+'600': '#03b647',
+'700': '#078e3b',
+'800': '#0b7032',
+'900': '#0c5b2c',
+'950': '#003416',
+},
+--color-spring-green-50: #eefff3;
+--color-spring-green-100: #d8ffe6;
+--color-spring-green-200: #b3ffcf;
+--color-spring-green-300: #78fdaa;
+--color-spring-green-400: #38f27e;
+--color-spring-green-500: #0cdb5a;
+--color-spring-green-600: #03b647;
+--color-spring-green-700: #078e3b;
+--color-spring-green-800: #0b7032;
+--color-spring-green-900: #0c5b2c;
+--color-spring-green-950: #003416;
+
+'aquamarine': {
+'50': '#e9fff7',
+'100': '#caffe9',
+'200': '#99ffd9',
+'300': '#58fdc9',
+'400': '#38f2bd', DEFAULT
+'500': '#00d89c',
+'600': '#00b081',
+'700': '#008d6b',
+'800': '#006f56',
+'900': '#005b48',
+'950': '#00342a',
+},
+--color-aquamarine-50: #e9fff7;
+--color-aquamarine-100: #caffe9;
+--color-aquamarine-200: #99ffd9;
+--color-aquamarine-300: #58fdc9;
+--color-aquamarine-400: #38f2bd;
+--color-aquamarine-500: #00d89c;
+--color-aquamarine-600: #00b081;
+--color-aquamarine-700: #008d6b;
+--color-aquamarine-800: #006f56;
+--color-aquamarine-900: #005b48;
+--color-aquamarine-950: #00342a;
+
+'turquoise-blue': {
+'50': '#ecffff',
+'100': '#cefeff',
+'200': '#a4fbfd',
+'300': '#65f5fb',
+'400': '#38e8f2', DEFAULT
+'500': '#04c9d6',
+'600': '#06a0b4',
+'700': '#0c8092',
+'800': '#146776',
+'900': '#155464',
+'950': '#073845',
+},
+--color-turquoise-blue-50: #ecffff;
+--color-turquoise-blue-100: #cefeff;
+--color-turquoise-blue-200: #a4fbfd;
+--color-turquoise-blue-300: #65f5fb;
+--color-turquoise-blue-400: #38e8f2;
+--color-turquoise-blue-500: #04c9d6;
+--color-turquoise-blue-600: #06a0b4;
+--color-turquoise-blue-700: #0c8092;
+--color-turquoise-blue-800: #146776;
+--color-turquoise-blue-900: #155464;
+--color-turquoise-blue-950: #073845;
+
+'picton-blue': {
+'50': '#f0f8ff',
+'100': '#e1f0fd',
+'200': '#bce1fb',
+'300': '#81cbf8',
+'400': '#38aef2', DEFAULT
+'500': '#1497e3',
+'600': '#0877c1',
+'700': '#085f9c',
+'800': '#0b5181',
+'900': '#0f446b',
+'950': '#0a2b47',
+},
+--color-picton-blue-50: #f0f8ff;
+--color-picton-blue-100: #e1f0fd;
+--color-picton-blue-200: #bce1fb;
+--color-picton-blue-300: #81cbf8;
+--color-picton-blue-400: #38aef2;
+--color-picton-blue-500: #1497e3;
+--color-picton-blue-600: #0877c1;
+--color-picton-blue-700: #085f9c;
+--color-picton-blue-800: #0b5181;
+--color-picton-blue-900: #0f446b;
+--color-picton-blue-950: #0a2b47;
+
+'royal-blue': {
+'50': '#eff5ff',
+'100': '#dce8fd',
+'200': '#c0d7fd',
+'300': '#95bffb',
+'400': '#639cf7',
+'500': '#3873f2', DEFAULT
+'600': '#2958e7',
+'700': '#2145d4',
+'800': '#2138ac',
+'900': '#203588',
+'950': '#182253',
+},
+'portage': {
+'50': '#eef4ff',
+'100': '#e0ebff',
+'200': '#c7d9fe',
+'300': '#a6bffb',
+'400': '#839cf7',
+'500': '#6478f0',
+'600': '#4751e4',
+'700': '#3940c9',
+'800': '#3138a2',
+'900': '#2f3680',
+'950': '#1b1e4b',
+},
+
+--color-royal-blue-50: #eff5ff;
+--color-royal-blue-100: #dce8fd;
+--color-royal-blue-200: #c0d7fd;
+--color-royal-blue-300: #95bffb;
+--color-royal-blue-400: #639cf7;
+--color-royal-blue-500: #3873f2;
+--color-royal-blue-600: #2958e7;
+--color-royal-blue-700: #2145d4;
+--color-royal-blue-800: #2138ac;
+--color-royal-blue-900: #203588;
+--color-royal-blue-950: #182253;
+
+'outrageous-orange': {
+'50': '#fef3ee',
+'100': '#fde4d7',
+'200': '#fac6ae',
+'300': '#f79e7a',
+'400': '#f26238', DEFAULT
+'500': '#ef4720',
+'600': '#e02e16',
+'700': '#ba1f14',
+'800': '#941b18',
+'900': '#771917',
+'950': '#400a0b',
+},
+--color-outrageous-orange-50: #fef3ee;
+--color-outrageous-orange-100: #fde4d7;
+--color-outrageous-orange-200: #fac6ae;
+--color-outrageous-orange-300: #f79e7a;
+--color-outrageous-orange-400: #f26238;
+--color-outrageous-orange-500: #ef4720;
+--color-outrageous-orange-600: #e02e16;
+--color-outrageous-orange-700: #ba1f14;
+--color-outrageous-orange-800: #941b18;
+--color-outrageous-orange-900: #771917;
+--color-outrageous-orange-950: #400a0b;
+
+'sea-buckthorn': {
+'50': '#fef7ec',
+'100': '#fbe9ca',
+'200': '#f8d18f',
+'300': '#f4b455',
+'400': '#f2a13d', DEFAULT
+'500': '#ea7716',
+'600': '#cf5610',
+'700': '#ac3a11',
+'800': '#8c2d14',
+'900': '#732614',
+'950': '#421106',
+},
+--color-sea-buckthorn-50: #fef7ec;
+--color-sea-buckthorn-100: #fbe9ca;
+--color-sea-buckthorn-200: #f8d18f;
+--color-sea-buckthorn-300: #f4b455;
+--color-sea-buckthorn-400: #f2a13d;
+--color-sea-buckthorn-500: #ea7716;
+--color-sea-buckthorn-600: #cf5610;
+--color-sea-buckthorn-700: #ac3a11;
+--color-sea-buckthorn-800: #8c2d14;
+--color-sea-buckthorn-900: #732614;
+--color-sea-buckthorn-950: #421106;
+
+\*/
+}
+}
+
+@layer base {
+
+- {
+  @apply border-border;
+  }
+  body {
+  @apply bg-background text-foreground;
+  }
+
+.scalloped {
+--mask: linear-gradient(#000 0 0) 50% / calc(100% - 22.2px)
+calc(100% - 22.2px) no-repeat,
+radial-gradient(farthest-side, #000 98%, #0000) 0 0/24px 24px round;
+-webkit-mask: var(--mask);
+mask: var(--mask);
+background-color: white; /_ or any other color _/
+/_ box-shadow: 0 0 0 2px white inset; _/
+}
+.nobs-t {
+--mask: linear-gradient(to bottom, #0000 30px, #000 0),
+radial-gradient(farthest-side, #000 98%, #0000) 0 0/24px 24px round;
+-webkit-mask: var(--mask);
+mask: var(--mask);
+background-color: white; /_ or any other color _/
+/_ box-shadow: 0 0 0 2px white inset; _/
+}
+}
