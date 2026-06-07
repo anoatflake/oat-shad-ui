@@ -1,0 +1,174 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "oat-shad-ui",
+  "homepage": "https://github.com/anoatflake/oat-shad-ui",
+  "items": [
+    {
+      "name": "oat-theme",
+      "type": "registry:theme",
+      "title": "Oat Theme",
+      "description": "Custom oat shad ui theme tokens.",
+      "cssVars": {
+        "light": {
+          "background": "163 100% 50%",
+          "foreground": "222.2 84% 4.9%",
+          "card": "163 100% 50%",
+          "card-foreground": "222.2 84% 4.9%",
+          "popover": "163 100% 50%",
+          "popover-foreground": "222.2 84% 4.9%",
+          "primary": "222.2 47.4% 11.2%",
+          "primary-foreground": "210 40% 98%",
+          "secondary": "168 100% 43%",
+          "secondary-foreground": "222.2 47.4% 11.2%",
+          "muted": "168 100% 43%",
+          "muted-foreground": "215.4 16.3% 46.9%",
+          "accent": "168 100% 43%",
+          "accent-foreground": "222.2 47.4% 11.2%",
+          "destructive": "0 84.2% 60.2%",
+          "destructive-foreground": "210 40% 98%"
+        },
+        "dark": {
+          "background": "222.2 84% 4.9%",
+          "foreground": "210 40% 98%",
+          "card": "222.2 84% 4.9%",
+          "card-foreground": "210 40% 98%",
+          "popover": "163 100% 50%",
+          "popover-foreground": "222.2 84% 4.9%",
+          "primary": "222.2 47.4% 11.2%",
+          "primary-foreground": "210 40% 98%",
+          "secondary": "168 100% 43%",
+          "secondary-foreground": "222.2 47.4% 11.2%",
+          "muted": "168 100% 43%",
+          "muted-foreground": "215.4 16.3% 46.9%",
+          "accent": "168 100% 43%",
+          "accent-foreground": "222.2 47.4% 11.2%",
+          "destructive": "0 84.2% 60.2%",
+          "destructive-foreground": "210 40% 98%"
+        }
+      }
+    },
+    {
+      "name": "brutal-alert",
+      "type": "registry:ui",
+      "title": "Brutal Alert",
+      "description": "A scalloped alert component with title, description, and action slots.",
+      "dependencies": [
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/ui-brutal/alert.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert.tsx"
+        },
+        {
+          "path": "src/registry/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "brutal-badge",
+      "type": "registry:ui",
+      "title": "Brutal Badge",
+      "description": "A compact badge component with semantic variants and generated hues.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/ui-brutal/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        },
+        {
+          "path": "src/registry/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "brutal-button",
+      "type": "registry:ui",
+      "title": "Brutal Button",
+      "description": "A Base UI button primitive with variants, hues, and icon sizes.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/ui-brutal/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        },
+        {
+          "path": "src/registry/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "brutal-card",
+      "type": "registry:ui",
+      "title": "Brutal Card",
+      "description": "A card component with header, content, footer, action, and hue support.",
+      "dependencies": [
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/ui-brutal/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
+        },
+        {
+          "path": "src/registry/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "brutal-input",
+      "type": "registry:ui",
+      "title": "Brutal Input",
+      "description": "A Base UI input primitive with shared hue variants.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/ui-brutal/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        },
+        {
+          "path": "src/registry/lib/hue-variants.ts",
+          "type": "registry:lib",
+          "target": "@lib/hue-variants.ts"
+        },
+        {
+          "path": "src/registry/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    }
+  ]
+}
