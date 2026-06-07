@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "brutal-input",
+  "title": "Brutal Input",
+  "description": "A Base UI input primitive with shared hue variants.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/ui-brutal/input.tsx",
+      "content": "import * as React from \"react\"\nimport { Input as InputPrimitive } from \"@base-ui/react/input\"\nimport { type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\nimport { hueVariants } from \"@/lib/hue-variants\"\n\nfunction Input({\n  className,\n  type,\n  hue,\n  ...props\n}: React.ComponentProps<\"input\"> & VariantProps<typeof hueVariants>) {\n  return (\n    <InputPrimitive\n      type={type}\n      data-slot=\"input\"\n      className={cn(\n        \"flex h-10 w-full min-w-0 rounded-md border-2 border-outline bg-transparent px-3 py-2 text-sm ring-offset-background outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\",\n        hueVariants({ hue }),\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Input }\n",
+      "type": "registry:ui",
+      "target": "@ui/input.tsx"
+    },
+    {
+      "path": "src/registry/lib/hue-variants.ts",
+      "content": "import { cva, type VariantProps } from \"class-variance-authority\";\n\r\nconst hueVariants = cva(\"\", {\r\n  variants: {\r\n    hue: {\r\n      none: \"bg-transparent\",\r\n      background: \"bg-background\",\r\n      white: \"bg-white dark:bg-black\",\r\n      lightblue: \"bg-blue_chill-300 dark:bg-blue_chill-700\",\r\n      blue: \"bg-blue_chill-500 dark:bg-blue_chill-900\",\r\n      aqua: \"bg-aqua_green-600 dark:bg-aqua_green-900\",\r\n      greenish: \"bg-evergreen-300 dark:bg-evergreen-700\",\r\n      pollen: \"bg-gold-300\",\r\n      yellow: \"bg-gold-500\",\r\n      apricot: \"bg-apricot-400\",\r\n      orange: \"bg-apricot-500\",\r\n      rust: \"bg-rust-500\",\r\n      blush: \"bg-cotton_candy-300\",\r\n      pink: \"bg-cotton_candy-400\",\r\n      periwinkle: \"bg-periwinkle-400\",\r\n    },\r\n  },\r\n  defaultVariants: {\r\n    hue: \"none\",\r\n  },\r\n});\r\n\r\nconst hueChildVariants = cva(\"\", {\r\n  variants: {\r\n    hue: {\r\n      none: \"*:bg-transparent\",\r\n      background: \"*:bg-background\",\r\n      white: \"*:bg-white dark:bg-black\",\r\n      lightblue: \"*:bg-blue_chill-300 *:dark:bg-blue_chill-700\",\r\n      blue: \"*:bg-blue_chill-500 *:dark:bg-blue_chill-900\",\r\n      aqua: \"*:bg-aqua_green-600 *:dark:bg-aqua_green-900\",\r\n      greenish: \"*:bg-evergreen-300 *:dark:bg-evergreen-700\",\r\n      pollen: \"*:bg-gold-300\",\r\n      yellow: \"*:bg-gold-500\",\r\n      apricot: \"*:bg-apricot-400\",\r\n      orange: \"*:bg-apricot-500\",\r\n      rust: \"*:bg-rust-500\",\r\n      blush: \"*:bg-cotton_candy-300\",\r\n      pink: \"*:bg-cotton_candy-400\",\r\n      periwinkle: \"*:bg-periwinkle-400\",\r\n    },\r\n  },\r\n  defaultVariants: {\r\n    hue: \"none\",\r\n  },\r\n});\r\n\r\ntype Hue = NonNullable<VariantProps<typeof hueVariants>[\"hue\"]>;\r\n\r\nexport { hueVariants, hueChildVariants };\r\nexport type { Hue };\r\n",
+      "type": "registry:lib",
+      "target": "@lib/hue-variants.ts"
+    },
+    {
+      "path": "src/registry/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib",
+      "target": "@lib/utils.ts"
+    }
+  ],
+  "type": "registry:ui"
+}

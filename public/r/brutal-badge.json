@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "brutal-badge",
+  "title": "Brutal Badge",
+  "description": "A compact badge component with semantic variants and generated hues.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/ui-brutal/badge.tsx",
+      "content": "import { mergeProps } from \"@base-ui/react/merge-props\"\nimport { useRender } from \"@base-ui/react/use-render\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst badgeVariants = cva(\n  \"group/badge inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-full border px-2.5 py-0.5 text-xs font-semibold whitespace-nowrap transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3!\",\n  {\n    variants: {\n      variant: {\n        default:\n          \"border-black bg-white text-black shadow-[3px_3px_rgb(0,0,0,1)] transition-shadow hover:shadow-[5px_5px_rgb(0,0,0,1)]\",\n        secondary:\n          \"border-transparent bg-secondary text-secondary-foreground shadow-[3px_3px_rgb(0,0,0,1)] transition-shadow hover:shadow-[5px_5px_rgb(0,0,0,1)] [a]:hover:bg-secondary/80\",\n        destructive:\n          \"border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40\",\n        outline:\n          \"border-2 border-dashed border-foreground text-foreground [a]:hover:bg-muted [a]:hover:text-muted-foreground\",\n        ghost:\n          \"hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      hue: {\n        none: \"\",\n        lightblue: \"bg-blue_chill-300\",\n        blue: \"bg-blue_chill-500\",\n        aqua: \"bg-aqua_green-600\",\n        greenish: \"bg-evergreen-300\",\n        pollen: \"bg-gold-300\",\n        yellow: \"bg-gold-500\",\n        apricot: \"bg-apricot-400\",\n        orange: \"bg-apricot-500\",\n        rust: \"bg-rust-500\",\n        blush: \"bg-cotton_candy-300\",\n        pink: \"bg-cotton_candy-400\",\n        periwinkle: \"bg-periwinkle-400\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      hue: \"none\",\n    },\n  }\n)\n\nfunction Badge({\n  className,\n  variant = \"default\",\n  hue,\n  render,\n  ...props\n}: useRender.ComponentProps<\"span\"> & VariantProps<typeof badgeVariants>) {\n  const resolvedHue =\n    hue ?? determineHue(typeof props.children === \"string\" ? props.children : \"\")\n\n  return useRender({\n    defaultTagName: \"span\",\n    props: mergeProps<\"span\">(\n      {\n        className: cn(badgeVariants({ variant, hue: resolvedHue }), className),\n      },\n      props\n    ),\n    render,\n    state: {\n      slot: \"badge\",\n      variant,\n      hue: resolvedHue,\n    },\n  })\n}\n\ntype BadgeVariant = NonNullable<VariantProps<typeof badgeVariants>[\"variant\"]>\ntype BadgeHue = NonNullable<VariantProps<typeof badgeVariants>[\"hue\"]>\n\nfunction determineHue(text: string): BadgeHue {\n  const allHues: BadgeHue[] = [\n    \"none\",\n    \"lightblue\",\n    \"blue\",\n    \"aqua\",\n    \"greenish\",\n    \"pollen\",\n    \"yellow\",\n    \"apricot\",\n    \"orange\",\n    \"rust\",\n    \"blush\",\n    \"pink\",\n    \"periwinkle\",\n  ]\n\n  const hash = generateHash(text)\n  return allHues[hash % allHues.length]\n}\n\nfunction generateHash(input: string): number {\n  let hash = 5381\n  for (let i = 0; i < input.length; i++) {\n    hash = (hash * 33) ^ input.charCodeAt(i)\n  }\n  return hash >>> 0\n}\n\nexport { Badge, badgeVariants, determineHue }\nexport type { BadgeVariant, BadgeHue }\n",
+      "type": "registry:ui",
+      "target": "@ui/badge.tsx"
+    },
+    {
+      "path": "src/registry/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib",
+      "target": "@lib/utils.ts"
+    }
+  ],
+  "type": "registry:ui"
+}
