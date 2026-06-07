@@ -10,25 +10,25 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-white text-black shadow-[5px_5px_rgb(0,0,0,1)] hover:shadow-[3px_3px_rgb(0,0,0,1)] border-2 border-outline dark:border-[rgb(50,50,50,1)] dark:bg-black dark:text-white dark:shadow-[5px_5px_rgb(50,50,50,1)] dark:hover:shadow-[3px_3px_rgb(50,50,50,1)] transition-shadow",
+          "border-2 border-outline bg-brutal-surface text-brutal-surface-foreground shadow-[5px_5px_hsl(var(--outline))] transition-shadow hover:shadow-[3px_3px_hsl(var(--outline))]",
         secondary:
-          "text-secondary-foreground hover:bg-secondary/80 shadow-[3px_3px_rgb(0,0,0,1)] hover:shadow-[5px_5px_rgb(0,0,0,1)] dark:shadow-[3px_3px_rgb(50,50,50,1)] dark:hover:shadow-[5px_5px_rgb(50,50,50,1)] border-2 border-outline transition-shadow",
+          "border-2 border-outline text-secondary-foreground shadow-[3px_3px_hsl(var(--outline))] transition-shadow hover:bg-secondary/80 hover:shadow-[5px_5px_hsl(var(--outline))]",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
           "border-2 border-primary hover:border-dashed bg-transparent hover:bg-accent transition-all",
         ghost:
-          "border-2 border-transparent hover:border-[rgb(100,100,100,0.5)] hover:shadow-[3px_3px_rgb(100,100,100,0.5)]",
+          "border-2 border-transparent hover:border-outline/50 hover:shadow-[3px_3px_hsl(var(--outline))]",
         link: "underline-offset-4 hover:underline focus-visible:underline decoration-dashed decoration-2 transition-shadow",
       },
       hue: {
         none: "",
-        teal: "bg-teal_background-200 hover:bg-teal_background-300 border-teal_background-800 text-teal_background-800 decoration-teal_background-800",
-        blue: "bg-skin-400 hover:bg-skin-500 border-skin-700 text-skin-700 decoration-skin-700",
-        pink: "bg-eva_danger-500 hover:bg-eva_danger-600 border-eva_danger-800 text-eva_danger-800 decoration-eva_danger-700",
-        red: "bg-blood_shot_eyes-400 hover:bg-blood_shot_eyes-500 border-blood_shot_eyes-800 text-blood_shot_eyes-800 decoration-blood_shot_eyes-600",
+        teal: "bg-teal_background-200 hover:bg-teal_background-300 border-teal_background-800 text-teal_background-800 decoration-teal_background-800 dark:bg-teal_background-800 dark:hover:bg-teal_background-700 dark:border-teal_background-200 dark:text-teal_background-100 dark:decoration-teal_background-100",
+        blue: "bg-skin-400 hover:bg-skin-500 border-skin-700 text-skin-700 decoration-skin-700 dark:bg-skin-800 dark:hover:bg-skin-700 dark:border-skin-200 dark:text-skin-100 dark:decoration-skin-100",
+        pink: "bg-eva_danger-500 hover:bg-eva_danger-600 border-eva_danger-800 text-eva_danger-800 decoration-eva_danger-700 dark:bg-eva_danger-800 dark:hover:bg-eva_danger-700 dark:border-eva_danger-200 dark:text-eva_danger-100 dark:decoration-eva_danger-100",
+        red: "bg-blood_shot_eyes-400 hover:bg-blood_shot_eyes-500 border-blood_shot_eyes-800 text-blood_shot_eyes-800 decoration-blood_shot_eyes-600 dark:bg-blood_shot_eyes-800 dark:hover:bg-blood_shot_eyes-700 dark:border-blood_shot_eyes-200 dark:text-blood_shot_eyes-100 dark:decoration-blood_shot_eyes-100",
         yellow:
-          "bg-gold-400 hover:bg-gold-500 border-gold-900 text-gold-900 decoration-gold-700",
+          "bg-gold-400 hover:bg-gold-500 border-gold-900 text-gold-900 decoration-gold-700 dark:bg-gold-800 dark:hover:bg-gold-700 dark:border-gold-200 dark:text-gold-100 dark:decoration-gold-100",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -49,8 +49,7 @@ const buttonVariants = cva(
       {
         variant: "secondary",
         hue: ["none", "teal", "blue", "pink", "red", "yellow"],
-        className:
-          "text-primary border-primary dark:border-[rgb(50,50,50,1)] bg-transparent",
+        className: "text-primary border-primary bg-transparent",
       },
       {
         variant: "destructive",
