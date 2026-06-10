@@ -7,7 +7,7 @@ import { Button } from "@/components/ui-brutal/button"
 import { XIcon } from "lucide-react"
 
 const surfaceVariants = cva(
-  "border-2 border-outline shadow-[7px_7px_hsl(var(--outline))]",
+  "border-2 border-outline shadow-[7px_7px_oklch(var(--outline))]",
   {
     variants: {
       hue: {

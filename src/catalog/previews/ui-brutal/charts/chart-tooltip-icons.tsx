@@ -31,12 +31,12 @@ const chartData = [
 const chartConfig = {
   running: {
     label: "Running",
-    color: "hsl(var(--chart-1))",
+    color: "oklch(var(--chart-1))",
     icon: Footprints,
   },
   swimming: {
     label: "Swimming",
-    color: "hsl(var(--chart-2))",
+    color: "oklch(var(--chart-2))",
     icon: Waves,
   },
 } satisfies ChartConfig;

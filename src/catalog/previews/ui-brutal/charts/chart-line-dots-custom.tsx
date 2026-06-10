@@ -32,11 +32,11 @@ const chartData = [
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "hsl(var(--chart-1))",
+    color: "oklch(var(--chart-1))",
   },
   mobile: {
     label: "Mobile",
-    color: "hsl(var(--chart-2))",
+    color: "oklch(var(--chart-2))",
   },
 } satisfies ChartConfig;
 
@@ -87,7 +87,7 @@ export default function Component() {
                     y={cy - r / 2}
                     width={r}
                     height={r}
-                    fill="hsl(var(--background))"
+                    fill="oklch(var(--background))"
                     stroke="var(--color-desktop)"
                   />
                 );

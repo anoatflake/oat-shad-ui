@@ -10,9 +10,9 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default:
-          "border-outline bg-brutal-surface text-brutal-surface-foreground shadow-[3px_3px_hsl(var(--outline))] transition-shadow hover:shadow-[5px_5px_hsl(var(--outline))]",
+          "border-outline bg-brutal-surface text-brutal-surface-foreground shadow-[3px_3px_oklch(var(--outline))] transition-shadow hover:shadow-[5px_5px_oklch(var(--outline))]",
         secondary:
-          "border-transparent bg-secondary text-secondary-foreground shadow-[3px_3px_hsl(var(--outline))] transition-shadow hover:shadow-[5px_5px_hsl(var(--outline))] [a]:hover:bg-secondary/80",
+          "border-transparent bg-secondary text-secondary-foreground shadow-[3px_3px_oklch(var(--outline))] transition-shadow hover:shadow-[5px_5px_oklch(var(--outline))] [a]:hover:bg-secondary/80",
         destructive:
           "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
         outline:

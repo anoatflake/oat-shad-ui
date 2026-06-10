@@ -6,7 +6,7 @@
     ],
     "cssVars": { //aka global.css
         "light": {
-            "primary": "222.2 83.2% 53.3%"
+            "primary": "0.5397 0.2192 263.45"
         }
     },
     "registryDependencies": [

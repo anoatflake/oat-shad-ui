@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 import { XIcon } from "lucide-react"
 
 const surfaceVariants = cva(
-  "border-2 border-outline shadow-[5px_5px_hsl(var(--outline))]",
+  "border-2 border-outline shadow-[5px_5px_oklch(var(--outline))]",
   {
     variants: {
       hue: {
