@@ -300,11 +300,7 @@
       "type": "registry:ui",
       "title": "Brutal Alert",
       "description": "A scalloped alert component with title, description, and action slots.",
-      "dependencies": [
-        "class-variance-authority",
-        "clsx",
-        "tailwind-merge"
-      ],
+      "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
       "files": [
         {
           "path": "src/registry/components/ui-brutal/alert.tsx",
@@ -371,11 +367,7 @@
       "type": "registry:ui",
       "title": "Brutal Card",
       "description": "A card component with header, content, footer, action, and hue support.",
-      "dependencies": [
-        "class-variance-authority",
-        "clsx",
-        "tailwind-merge"
-      ],
+      "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
       "files": [
         {
           "path": "src/registry/components/ui-brutal/card.tsx",
@@ -415,6 +407,20 @@
           "path": "src/registry/lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "brutal-route-map",
+      "type": "registry:block",
+      "title": "Brutal Route Map",
+      "description": "A MapLibre route-view block for straight paths, GPS markers, and brutal controls.",
+      "dependencies": ["lucide-react", "maplibre-gl"],
+      "files": [
+        {
+          "path": "src/registry/blocks/ui-brutal/route-map.tsx",
+          "type": "registry:component",
+          "target": "@components/route-map.tsx"
         }
       ]
     }

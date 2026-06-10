@@ -4,7 +4,7 @@ export type PreviewModule = {
   default: ComponentType;
 };
 
-export type CatalogKind = "component" | "theme";
+export type CatalogKind = "block" | "component" | "theme";
 export type CatalogVariant = "tokens" | "ui-brutal";
 
 export type CatalogItem = {
