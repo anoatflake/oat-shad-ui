@@ -107,7 +107,7 @@ const DrawerPreview = () => {
                         dataKey="goal"
                         style={
                           {
-                            fill: "oklch(var(--foreground))",
+                            fill: "var(--foreground)",
                             opacity: 0.9,
                           } as React.CSSProperties
                         }
@@ -177,7 +177,7 @@ const DrawerPreview = () => {
                             dataKey="goal"
                             style={
                               {
-                                fill: "oklch(var(--foreground))",
+                                fill: "var(--foreground)",
                                 opacity: 0.9,
                               } as React.CSSProperties
                             }

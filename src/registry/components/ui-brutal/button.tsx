@@ -10,15 +10,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "border-2 border-outline bg-brutal-surface text-brutal-surface-foreground shadow-[5px_5px_oklch(var(--outline))] transition-shadow hover:shadow-[3px_3px_oklch(var(--outline))]",
+          "border-2 border-outline bg-brutal-surface text-brutal-surface-foreground shadow-[5px_5px_var(--outline)] transition-shadow hover:shadow-[3px_3px_var(--outline)]",
         secondary:
-          "border-2 border-outline text-secondary-foreground shadow-[3px_3px_oklch(var(--outline))] transition-shadow hover:bg-secondary/80 hover:shadow-[5px_5px_oklch(var(--outline))]",
+          "border-2 border-outline text-secondary-foreground shadow-[3px_3px_var(--outline)] transition-shadow hover:bg-secondary/80 hover:shadow-[5px_5px_var(--outline)]",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
           "border-2 border-primary hover:border-dashed bg-transparent hover:bg-accent transition-all",
         ghost:
-          "border-2 border-transparent hover:border-outline/50 hover:shadow-[3px_3px_oklch(var(--outline))]",
+          "border-2 border-transparent hover:border-outline/50 hover:shadow-[3px_3px_var(--outline)]",
         link: "underline-offset-4 hover:underline focus-visible:underline decoration-dashed decoration-2 transition-shadow",
       },
       hue: {

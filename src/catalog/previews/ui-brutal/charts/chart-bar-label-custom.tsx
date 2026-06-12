@@ -39,14 +39,14 @@ const chartData = [
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "oklch(var(--chart-1))",
+    color: "var(--chart-1)",
   },
   mobile: {
     label: "Mobile",
-    color: "oklch(var(--chart-2))",
+    color: "var(--chart-2)",
   },
   label: {
-    color: "oklch(var(--background))",
+    color: "var(--background)",
   },
 } satisfies ChartConfig;
 

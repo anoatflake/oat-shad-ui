@@ -31,7 +31,7 @@ export default function Component() {
             config={{
               steps: {
                 label: "Steps",
-                color: "oklch(var(--chart-1))",
+                color: "var(--chart-1)",
               },
             }}
             className="aspect-auto h-[32px] w-full"
@@ -82,7 +82,7 @@ export default function Component() {
             config={{
               steps: {
                 label: "Steps",
-                color: "oklch(var(--muted))",
+                color: "var(--muted)",
               },
             }}
             className="aspect-auto h-[32px] w-full"
@@ -114,7 +114,7 @@ export default function Component() {
                   dataKey="date"
                   offset={8}
                   fontSize={12}
-                  fill="oklch(var(--muted-foreground))"
+                  fill="var(--muted-foreground)"
                 />
               </Bar>
               <YAxis dataKey="date" type="category" tickCount={1} hide />

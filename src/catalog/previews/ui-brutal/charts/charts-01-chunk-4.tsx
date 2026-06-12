@@ -13,15 +13,15 @@ export default function Component() {
           config={{
             move: {
               label: "Move",
-              color: "oklch(var(--chart-1))",
+              color: "var(--chart-1)",
             },
             stand: {
               label: "Stand",
-              color: "oklch(var(--chart-2))",
+              color: "var(--chart-2)",
             },
             exercise: {
               label: "Exercise",
-              color: "oklch(var(--chart-3))",
+              color: "var(--chart-3)",
             },
           }}
           className="h-[140px] w-full"

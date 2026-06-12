@@ -7,7 +7,7 @@ import { Drawer as DrawerPrimitive } from "vaul"
 import { cn } from "@/lib/utils"
 
 const surfaceVariants = cva(
-  "border-2 border-outline shadow-[7px_7px_oklch(var(--outline))]",
+  "border-2 border-outline shadow-[7px_7px_var(--outline)]",
   {
     variants: {
       hue: {

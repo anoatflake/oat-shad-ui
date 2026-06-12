@@ -43,7 +43,7 @@ export default function Component() {
           config={{
             resting: {
               label: "Resting",
-              color: "oklch(var(--chart-1))",
+              color: "var(--chart-1)",
             },
           }}
           className="w-full"
@@ -89,7 +89,7 @@ export default function Component() {
             <CartesianGrid
               strokeDasharray="4 4"
               vertical={false}
-              stroke="oklch(var(--muted-foreground))"
+              stroke="var(--muted-foreground)"
               strokeOpacity={0.5}
             />
             <YAxis hide domain={["dataMin - 10", "dataMax + 10"]} />

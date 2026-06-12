@@ -48,23 +48,23 @@ const chartConfig = {
   },
   january: {
     label: "January",
-    color: "oklch(var(--chart-1))",
+    color: "var(--chart-1)",
   },
   february: {
     label: "February",
-    color: "oklch(var(--chart-2))",
+    color: "var(--chart-2)",
   },
   march: {
     label: "March",
-    color: "oklch(var(--chart-3))",
+    color: "var(--chart-3)",
   },
   april: {
     label: "April",
-    color: "oklch(var(--chart-4))",
+    color: "var(--chart-4)",
   },
   may: {
     label: "May",
-    color: "oklch(var(--chart-5))",
+    color: "var(--chart-5)",
   },
 } satisfies ChartConfig;
 

@@ -40,7 +40,7 @@ export default function Component() {
           config={{
             steps: {
               label: "Steps",
-              color: "oklch(var(--chart-1))",
+              color: "var(--chart-1)",
             },
           }}
         >
@@ -117,7 +117,7 @@ export default function Component() {
             />
             <ReferenceLine
               y={1200}
-              stroke="oklch(var(--muted-foreground))"
+              stroke="var(--muted-foreground)"
               strokeDasharray="3 3"
               strokeWidth={1}
             >
@@ -125,13 +125,13 @@ export default function Component() {
                 position="insideBottomLeft"
                 value="Average Steps"
                 offset={10}
-                fill="oklch(var(--foreground))"
+                fill="var(--foreground)"
               />
               <Label
                 position="insideTopLeft"
                 value="12,343"
                 className="text-lg"
-                fill="oklch(var(--foreground))"
+                fill="var(--foreground)"
                 offset={10}
                 startOffset={100}
               />

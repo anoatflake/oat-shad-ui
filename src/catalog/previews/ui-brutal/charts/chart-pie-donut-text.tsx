@@ -35,23 +35,23 @@ const chartConfig = {
   },
   chrome: {
     label: "Chrome",
-    color: "oklch(var(--chart-1))",
+    color: "var(--chart-1)",
   },
   safari: {
     label: "Safari",
-    color: "oklch(var(--chart-2))",
+    color: "var(--chart-2)",
   },
   firefox: {
     label: "Firefox",
-    color: "oklch(var(--chart-3))",
+    color: "var(--chart-3)",
   },
   edge: {
     label: "Edge",
-    color: "oklch(var(--chart-4))",
+    color: "var(--chart-4)",
   },
   other: {
     label: "Other",
-    color: "oklch(var(--chart-5))",
+    color: "var(--chart-5)",
   },
 } satisfies ChartConfig;
 

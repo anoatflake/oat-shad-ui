@@ -30,7 +30,7 @@ export default function Component() {
           config={{
             calories: {
               label: "Calories",
-              color: "oklch(var(--chart-1))",
+              color: "var(--chart-1)",
             },
           }}
           className="ml-auto w-[64px]"

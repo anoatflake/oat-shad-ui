@@ -41,15 +41,15 @@ export default function Component() {
           config={{
             move: {
               label: "Move",
-              color: "oklch(var(--chart-1))",
+              color: "var(--chart-1)",
             },
             exercise: {
               label: "Exercise",
-              color: "oklch(var(--chart-2))",
+              color: "var(--chart-2)",
             },
             stand: {
               label: "Stand",
-              color: "oklch(var(--chart-3))",
+              color: "var(--chart-3)",
             },
           }}
           className="mx-auto aspect-square w-full max-w-[80%]"
