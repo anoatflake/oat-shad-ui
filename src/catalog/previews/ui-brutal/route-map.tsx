@@ -12,13 +12,9 @@ const lisbonFlightPath: RouteMapPath = {
     { latitude: 38.7122, longitude: -9.1507 },
     { latitude: 38.7198, longitude: -9.0973 },
   ],
-  color: "#111827",
-  outlineColor: "#ffffff",
   width: 5,
   outlineWidth: 2,
-  pointColor: "#f9a8d4",
   pointRadius: 7,
-  pointStrokeColor: "#111827",
   pointStrokeWidth: 3,
 };
 
@@ -27,21 +23,21 @@ const routeMarkers: RouteMapMarker[] = [
     id: "start",
     label: "Start",
     coordinate: lisbonFlightPath.coordinates[0],
-    color: "#c4b5fd",
+    color: "hsl(230.13, 59.4%, 73.92%)", // periwinkle-400
     size: "md",
   },
   {
     id: "checkpoint",
     label: "Checkpoint",
     coordinate: lisbonFlightPath.coordinates[2],
-    color: "#fde68a",
+    color: "hsl(45.31, 76.56%, 74.9%)", // gold-300
     size: "sm",
   },
   {
     id: "end",
     label: "End",
     coordinate: lisbonFlightPath.coordinates[4],
-    color: "#99f6e4",
+    color: "hsl(175.67, 98.9%, 64.31%)", // blue_chill-300
     size: "md",
   },
 ];

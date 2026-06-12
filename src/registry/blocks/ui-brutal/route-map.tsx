@@ -58,6 +58,8 @@ export type RouteMapControlsPosition =
   | "bottom-left"
   | "bottom-right";
 
+export type RouteMapBasemapDetail = "standard" | "minimal";
+
 export interface RouteMapControlsConfig {
   zoom?: boolean;
   recenter?: boolean;
@@ -77,38 +79,286 @@ export type RouteMapProps = Omit<
   autoFitPath?: boolean;
   fitPadding?: number | PaddingOptions;
   controls?: boolean | RouteMapControlsConfig;
+  basemapDetail?: RouteMapBasemapDetail;
   onMapClick?: (event: RouteMapClickEvent) => void;
   onMarkerClick?: (marker: RouteMapMarker) => void;
   onViewChange?: (view: RouteMapView) => void;
   onError?: (error: unknown) => void;
 };
 
-const MAP_STYLE: StyleSpecification = {
-  version: 8,
-  sources: {
-    "openstreetmap-tiles": {
-      type: "raster",
-      tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
-      tileSize: 256,
-      attribution:
-        '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
-    },
-  },
-  layers: [
-    {
-      id: "route-map-background",
-      type: "background",
-      paint: {
-        "background-color": "#d7ebe9",
+// MapLibre paints render in WebGL and cannot resolve CSS var(), so the
+// brutal palette tokens from global.css are inlined as literals here.
+const BRUTAL_MAP_COLORS = {
+  background: "hsl(169.41, 100%, 96.67%)", // blue_chill-50
+  water: "hsl(175.67, 98.9%, 64.31%)", // blue_chill-300
+  waterway: "hsl(178.56, 100%, 40.78%)", // blue_chill-500
+  waterLabel: "hsl(180.78, 79.38%, 19.02%)", // blue_chill-900
+  green: "hsl(161.86, 47.25%, 64.31%)", // evergreen-300
+  wood: "hsl(164.55, 39.92%, 50.39%)", // evergreen-400
+  building: "hsl(223.08, 63.93%, 88.04%)", // periwinkle-200
+  buildingOutline: "hsl(230.13, 59.4%, 73.92%)", // periwinkle-400
+  roadMinor: "#ffffff", // brutal-surface
+  roadMid: "hsl(45.31, 76.56%, 74.9%)", // gold-300
+  roadMajor: "hsl(45, 76.67%, 52.94%)", // gold-500
+  outline: "hsl(222.2, 84%, 4.9%)", // outline
+  halo: "#ffffff", // brutal-surface
+} as const;
+
+const DETAIL_LAYER_IDS = [
+  "route-map-boundary",
+  "route-map-road-labels",
+  "route-map-water-labels",
+  "route-map-place-labels",
+] as const;
+
+function createMapStyle(detail: RouteMapBasemapDetail): StyleSpecification {
+  const detailVisibility = detail === "minimal" ? "none" : "visible";
+
+  return {
+    version: 8,
+    glyphs: "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf",
+    sources: {
+      openfreemap: {
+        type: "vector",
+        url: "https://tiles.openfreemap.org/planet",
+        attribution:
+          '<a href="https://openfreemap.org">OpenFreeMap</a> <a href="https://www.openmaptiles.org/">© OpenMapTiles</a> Data from <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       },
     },
-    {
-      id: "openstreetmap-tiles",
-      type: "raster",
-      source: "openstreetmap-tiles",
-    },
-  ],
-};
+    layers: [
+      {
+        id: "route-map-background",
+        type: "background",
+        paint: {
+          "background-color": BRUTAL_MAP_COLORS.background,
+        },
+      },
+      {
+        id: "route-map-landcover",
+        type: "fill",
+        source: "openfreemap",
+        "source-layer": "landcover",
+        filter: [
+          "in",
+          ["get", "class"],
+          ["literal", ["grass", "park", "farmland", "scrub"]],
+        ],
+        paint: {
+          "fill-color": BRUTAL_MAP_COLORS.green,
+          "fill-opacity": 0.7,
+        },
+      },
+      {
+        id: "route-map-wood",
+        type: "fill",
+        source: "openfreemap",
+        "source-layer": "landcover",
+        filter: ["==", ["get", "class"], "wood"],
+        paint: {
+          "fill-color": BRUTAL_MAP_COLORS.wood,
+          "fill-opacity": 0.6,
+        },
+      },
+      {
+        id: "route-map-park",
+        type: "fill",
+        source: "openfreemap",
+        "source-layer": "park",
+        paint: {
+          "fill-color": BRUTAL_MAP_COLORS.green,
+          "fill-opacity": 0.75,
+        },
+      },
+      {
+        id: "route-map-water",
+        type: "fill",
+        source: "openfreemap",
+        "source-layer": "water",
+        paint: {
+          "fill-color": BRUTAL_MAP_COLORS.water,
+        },
+      },
+      {
+        id: "route-map-waterway",
+        type: "line",
+        source: "openfreemap",
+        "source-layer": "waterway",
+        paint: {
+          "line-color": BRUTAL_MAP_COLORS.waterway,
+          "line-width": ["interpolate", ["linear"], ["zoom"], 8, 0.5, 14, 2.5],
+        },
+      },
+      {
+        id: "route-map-building",
+        type: "fill",
+        source: "openfreemap",
+        "source-layer": "building",
+        minzoom: 13,
+        paint: {
+          "fill-color": BRUTAL_MAP_COLORS.building,
+          "fill-outline-color": BRUTAL_MAP_COLORS.buildingOutline,
+        },
+      },
+      {
+        id: "route-map-road-minor-casing",
+        type: "line",
+        source: "openfreemap",
+        "source-layer": "transportation",
+        minzoom: 12,
+        filter: [
+          "in",
+          ["get", "class"],
+          ["literal", ["tertiary", "minor", "service"]],
+        ],
+        layout: { "line-cap": "round", "line-join": "round" },
+        paint: {
+          "line-color": BRUTAL_MAP_COLORS.outline,
+          "line-width": ["interpolate", ["linear"], ["zoom"], 12, 2, 16, 8],
+        },
+      },
+      {
+        id: "route-map-road-mid-casing",
+        type: "line",
+        source: "openfreemap",
+        "source-layer": "transportation",
+        filter: ["in", ["get", "class"], ["literal", ["primary", "secondary"]]],
+        layout: { "line-cap": "round", "line-join": "round" },
+        paint: {
+          "line-color": BRUTAL_MAP_COLORS.outline,
+          "line-width": ["interpolate", ["linear"], ["zoom"], 8, 2, 16, 12],
+        },
+      },
+      {
+        id: "route-map-road-major-casing",
+        type: "line",
+        source: "openfreemap",
+        "source-layer": "transportation",
+        filter: ["in", ["get", "class"], ["literal", ["motorway", "trunk"]]],
+        layout: { "line-cap": "round", "line-join": "round" },
+        paint: {
+          "line-color": BRUTAL_MAP_COLORS.outline,
+          "line-width": ["interpolate", ["linear"], ["zoom"], 6, 2.5, 16, 14],
+        },
+      },
+      {
+        id: "route-map-road-minor",
+        type: "line",
+        source: "openfreemap",
+        "source-layer": "transportation",
+        minzoom: 12,
+        filter: [
+          "in",
+          ["get", "class"],
+          ["literal", ["tertiary", "minor", "service"]],
+        ],
+        layout: { "line-cap": "round", "line-join": "round" },
+        paint: {
+          "line-color": BRUTAL_MAP_COLORS.roadMinor,
+          "line-width": ["interpolate", ["linear"], ["zoom"], 12, 1, 16, 6],
+        },
+      },
+      {
+        id: "route-map-road-mid",
+        type: "line",
+        source: "openfreemap",
+        "source-layer": "transportation",
+        filter: ["in", ["get", "class"], ["literal", ["primary", "secondary"]]],
+        layout: { "line-cap": "round", "line-join": "round" },
+        paint: {
+          "line-color": BRUTAL_MAP_COLORS.roadMid,
+          "line-width": ["interpolate", ["linear"], ["zoom"], 8, 1, 16, 9],
+        },
+      },
+      {
+        id: "route-map-road-major",
+        type: "line",
+        source: "openfreemap",
+        "source-layer": "transportation",
+        filter: ["in", ["get", "class"], ["literal", ["motorway", "trunk"]]],
+        layout: { "line-cap": "round", "line-join": "round" },
+        paint: {
+          "line-color": BRUTAL_MAP_COLORS.roadMajor,
+          "line-width": ["interpolate", ["linear"], ["zoom"], 6, 1.5, 16, 11],
+        },
+      },
+      {
+        id: "route-map-boundary",
+        type: "line",
+        source: "openfreemap",
+        "source-layer": "boundary",
+        filter: [
+          "all",
+          ["<=", ["get", "admin_level"], 4],
+          ["==", ["get", "maritime"], 0],
+        ],
+        layout: { visibility: detailVisibility },
+        paint: {
+          "line-color": BRUTAL_MAP_COLORS.outline,
+          "line-width": 1.2,
+          "line-dasharray": [3, 2],
+        },
+      },
+      {
+        id: "route-map-road-labels",
+        type: "symbol",
+        source: "openfreemap",
+        "source-layer": "transportation_name",
+        minzoom: 13,
+        layout: {
+          visibility: detailVisibility,
+          "symbol-placement": "line",
+          "text-field": ["get", "name"],
+          "text-font": ["Noto Sans Regular"],
+          "text-size": 11,
+        },
+        paint: {
+          "text-color": BRUTAL_MAP_COLORS.outline,
+          "text-halo-color": BRUTAL_MAP_COLORS.halo,
+          "text-halo-width": 1.5,
+        },
+      },
+      {
+        id: "route-map-water-labels",
+        type: "symbol",
+        source: "openfreemap",
+        "source-layer": "water_name",
+        layout: {
+          visibility: detailVisibility,
+          "text-field": ["get", "name"],
+          "text-font": ["Noto Sans Italic"],
+          "text-size": 12,
+        },
+        paint: {
+          "text-color": BRUTAL_MAP_COLORS.waterLabel,
+          "text-halo-color": BRUTAL_MAP_COLORS.halo,
+          "text-halo-width": 1,
+        },
+      },
+      {
+        id: "route-map-place-labels",
+        type: "symbol",
+        source: "openfreemap",
+        "source-layer": "place",
+        filter: [
+          "in",
+          ["get", "class"],
+          ["literal", ["city", "town", "village"]],
+        ],
+        layout: {
+          visibility: detailVisibility,
+          "text-field": ["get", "name"],
+          "text-font": ["Noto Sans Bold"],
+          "text-size": ["match", ["get", "class"], "city", 15, "town", 13, 11],
+        },
+        paint: {
+          "text-color": BRUTAL_MAP_COLORS.outline,
+          "text-halo-color": BRUTAL_MAP_COLORS.halo,
+          "text-halo-width": 1.5,
+        },
+      },
+    ],
+  };
+}
 const PATH_SOURCE_ID = "route-map-path";
 const PATH_OUTLINE_LAYER_ID = "route-map-path-outline";
 const PATH_LAYER_ID = "route-map-path-line";
@@ -125,12 +375,12 @@ const DEFAULT_INITIAL_VIEW: RouteMapView = {
   pitch: 0,
 };
 
-const DEFAULT_PATH_COLOR = "#111827";
-const DEFAULT_PATH_OUTLINE_COLOR = "#ffffff";
-const DEFAULT_POINT_COLOR = "#f9a8d4";
-const DEFAULT_POINT_STROKE_COLOR = "#111827";
-const DEFAULT_CURRENT_COLOR = "#14b8a6";
-const DEFAULT_CURRENT_RING_COLOR = "rgba(20, 184, 166, 0.32)";
+const DEFAULT_PATH_COLOR = BRUTAL_MAP_COLORS.outline;
+const DEFAULT_PATH_OUTLINE_COLOR = "#ffffff"; // brutal-surface
+const DEFAULT_POINT_COLOR = "hsl(342.75, 100%, 84.31%)"; // cotton_candy-300
+const DEFAULT_POINT_STROKE_COLOR = BRUTAL_MAP_COLORS.outline;
+const DEFAULT_CURRENT_COLOR = "hsl(162.63, 100%, 37.25%)"; // aqua_green-600
+const DEFAULT_CURRENT_RING_COLOR = "hsla(162.63, 100%, 37.25%, 0.32)";
 const DEFAULT_FIT_PADDING = 72;
 
 const CONTROL_POSITION_CLASSES: Record<RouteMapControlsPosition, string> = {
@@ -161,6 +411,7 @@ function RouteMap({
   autoFitPath = true,
   fitPadding = DEFAULT_FIT_PADDING,
   controls = true,
+  basemapDetail = "standard",
   onMapClick,
   onMarkerClick,
   onViewChange,
@@ -171,6 +422,7 @@ function RouteMap({
   const mapRef = React.useRef<MapLibreMap | null>(null);
   const markerRefs = React.useRef<MapLibreMarker[]>([]);
   const initialViewRef = React.useRef(resolveInitialView(initialView));
+  const initialBasemapDetailRef = React.useRef(basemapDetail);
   const autoFitKeyRef = React.useRef<string | null>(null);
   const onMapClickRef = useLatest(onMapClick);
   const onMarkerClickRef = useLatest(onMarkerClick);
@@ -257,7 +509,7 @@ function RouteMap({
         const view = initialViewRef.current;
         const map = new maplibregl.Map({
           container: containerRef.current,
-          style: MAP_STYLE,
+          style: createMapStyle(initialBasemapDetailRef.current),
           center: toLngLat(view.center),
           zoom: view.zoom,
           bearing: view.bearing ?? 0,
@@ -329,6 +581,24 @@ function RouteMap({
 
     syncPathLayers(map, path, showPathPoints);
   }, [isMapReady, path, showPathPoints]);
+
+  React.useEffect(() => {
+    const map = mapRef.current;
+
+    if (!map || !isMapReady) {
+      return;
+    }
+
+    // Toggling visibility instead of map.setStyle() keeps the route/point
+    // sources added by syncPathLayers intact.
+    const visibility = basemapDetail === "minimal" ? "none" : "visible";
+
+    for (const layerId of DETAIL_LAYER_IDS) {
+      if (map.getLayer(layerId)) {
+        map.setLayoutProperty(layerId, "visibility", visibility);
+      }
+    }
+  }, [basemapDetail, isMapReady]);
 
   React.useEffect(() => {
     const map = mapRef.current;
@@ -686,7 +956,7 @@ function createMarkerElement(marker: RouteMapMarker, onClick: () => void) {
     marker.ariaLabel ?? marker.label ?? marker.id,
   );
   element.className =
-    "pointer-events-auto relative z-10 flex items-center justify-center rounded-full border-4 border-outline bg-transparent p-0 text-brutal-surface-foreground shadow-[3px_3px_0_rgba(17,24,39,0.85)] focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-outline";
+    "pointer-events-auto relative z-10 flex items-center justify-center rounded-full border-4 border-outline bg-transparent p-0 text-brutal-surface-foreground shadow-[3px_3px_hsl(var(--outline))] focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-outline";
   element.style.width = `${size}px`;
   element.style.height = `${size}px`;
   element.style.cursor = "pointer";
@@ -695,7 +965,7 @@ function createMarkerElement(marker: RouteMapMarker, onClick: () => void) {
     ring.className = "absolute rounded-full";
     ring.style.inset = marker.pulse ? "-10px" : "-6px";
     ring.style.backgroundColor =
-      marker.ringColor ?? "rgba(249, 168, 212, 0.32)";
+      marker.ringColor ?? "hsla(342.75, 100%, 84.31%, 0.32)"; // cotton_candy-300
 
     if (marker.pulse) {
       ring.className = `${ring.className} animate-ping`;
