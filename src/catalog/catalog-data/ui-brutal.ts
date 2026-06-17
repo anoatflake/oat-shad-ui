@@ -67,6 +67,22 @@ export const uiBrutalItems: CatalogItem[] = [
     loadPreview: () => import("@catalog/previews/ui-brutal/button"),
   },
   {
+    id: "route-map",
+    name: "Route Map",
+    kind: "block",
+    variant: "ui-brutal",
+    description:
+      "A MapLibre route-view block for straight paths and GPS markers.",
+    tags: ["map", "route", "gps", "flight"],
+    sourcePath: "src/registry/blocks/ui-brutal/route-map.tsx",
+    previewPath: "src/catalog/previews/ui-brutal/route-map.tsx",
+    dependencies: ["lucide-react", "maplibre-gl"],
+    registryUrl: "/r/brutal-route-map.json",
+    installCommand: getInstallCommand("brutal-route-map"),
+    heavy: true,
+    loadPreview: () => import("@catalog/previews/ui-brutal/route-map"),
+  },
+  {
     id: "calendar",
     name: "Calendar",
     kind: "component",
@@ -146,7 +162,8 @@ export const uiBrutalItems: CatalogItem[] = [
     name: "Dialog",
     kind: "component",
     variant: "ui-brutal",
-    description: "Modal dialog structure with header, footer, and close action.",
+    description:
+      "Modal dialog structure with header, footer, and close action.",
     tags: ["modal", "overlay"],
     sourcePath: "src/registry/components/ui-brutal/dialog.tsx",
     previewPath: "src/catalog/previews/ui-brutal/dialog.tsx",

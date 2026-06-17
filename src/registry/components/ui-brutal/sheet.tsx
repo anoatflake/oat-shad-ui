@@ -8,24 +8,24 @@ import { cn } from "@/lib/utils"
 import { XIcon } from "lucide-react"
 
 const surfaceVariants = cva(
-  "border-2 border-outline shadow-[5px_5px_rgb(0,0,0,1)] dark:border-[rgb(50,50,50,1)] dark:shadow-[5px_5px_rgb(50,50,50,1)]",
+  "border-2 border-outline shadow-[5px_5px_hsl(var(--outline))]",
   {
     variants: {
       hue: {
         none: "bg-background",
-        white: "bg-white dark:bg-black",
+        white: "bg-brutal-surface text-brutal-surface-foreground",
         lightblue: "bg-blue_chill-300 dark:bg-blue_chill-700",
         blue: "bg-blue_chill-500 dark:bg-blue_chill-900",
         aqua: "bg-aqua_green-600 dark:bg-aqua_green-900",
         greenish: "bg-evergreen-300 dark:bg-evergreen-700",
-        pollen: "bg-gold-300",
-        yellow: "bg-gold-500",
-        apricot: "bg-apricot-400",
-        orange: "bg-apricot-500",
-        rust: "bg-rust-500",
-        blush: "bg-cotton_candy-300",
-        pink: "bg-cotton_candy-400",
-        periwinkle: "bg-periwinkle-400",
+        pollen: "bg-gold-300 dark:bg-gold-700",
+        yellow: "bg-gold-500 dark:bg-gold-800",
+        apricot: "bg-apricot-400 dark:bg-apricot-700",
+        orange: "bg-apricot-500 dark:bg-apricot-800",
+        rust: "bg-rust-500 dark:bg-rust-800",
+        blush: "bg-cotton_candy-300 dark:bg-cotton_candy-700",
+        pink: "bg-cotton_candy-400 dark:bg-cotton_candy-800",
+        periwinkle: "bg-periwinkle-400 dark:bg-periwinkle-800",
       },
     },
     defaultVariants: {
@@ -79,7 +79,7 @@ function SheetOverlay({ className, ...props }: SheetPrimitive.Backdrop.Props) {
     <SheetPrimitive.Backdrop
       data-slot="sheet-overlay"
       className={cn(
-        "fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
+        "fixed inset-0 isolate z-50 bg-foreground/10 duration-100 supports-backdrop-filter:backdrop-blur-xs data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
         className
       )}
       {...props}

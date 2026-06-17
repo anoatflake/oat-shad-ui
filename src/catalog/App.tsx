@@ -7,6 +7,7 @@ import {
   FolderGit2,
   Loader2,
   Package,
+  Blocks,
   Search,
 } from "lucide-react";
 
@@ -28,6 +29,7 @@ const REPO_TREE_URL = "https://github.com/anOatFlake/oat-shad-ui/tree/main";
 
 const kindFilters: Array<{ value: KindFilter; label: string }> = [
   { value: "all", label: "All" },
+  { value: "block", label: "Blocks" },
   { value: "component", label: "Components" },
   { value: "theme", label: "Themes" },
 ];
@@ -80,10 +82,7 @@ function App() {
     null;
 
   const selectedPreview = React.useMemo(
-    () =>
-      selectedItem
-        ? React.lazy(() => selectedItem.loadPreview())
-        : null,
+    () => (selectedItem ? React.lazy(() => selectedItem.loadPreview()) : null),
     [selectedItem],
   );
 
@@ -99,14 +98,14 @@ function App() {
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="oat-shad-ui-theme">
-      <div className="min-h-screen bg-background text-foreground">
-        <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur">
+      <div className="bg-background text-foreground min-h-screen">
+        <header className="bg-background/95 sticky top-0 z-40 border-b backdrop-blur">
           <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between gap-3 px-4 py-3 md:px-6">
             <div className="min-w-0">
               <h1 className="text-xl font-semibold tracking-normal md:text-2xl">
                 oat shad ui
               </h1>
-              <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+              <div className="text-muted-foreground mt-1 flex flex-wrap items-center gap-2 text-xs">
                 <span>{catalogItems.length} catalog items</span>
                 <span aria-hidden="true">/</span>
                 <span>{filteredItems.length} visible</span>
@@ -135,13 +134,13 @@ function App() {
           <aside className="min-w-0 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-hidden">
             <div className="space-y-3">
               <label className="relative block">
-                <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+                <Search className="text-muted-foreground pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2" />
                 <span className="sr-only">Search catalog</span>
                 <input
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
                   placeholder="Search catalog"
-                  className="h-10 w-full rounded-md border bg-background pl-9 pr-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30"
+                  className="bg-background placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/30 h-10 w-full rounded-md border pr-3 pl-9 text-sm transition-colors outline-none focus-visible:ring-2"
                 />
               </label>
 
@@ -169,7 +168,7 @@ function App() {
                 />
               ))}
               {filteredItems.length === 0 ? (
-                <div className="rounded-md border border-dashed p-4 text-sm text-muted-foreground">
+                <div className="text-muted-foreground rounded-md border border-dashed p-4 text-sm">
                   No catalog items matched.
                 </div>
               ) : null}
@@ -185,7 +184,7 @@ function App() {
                 onCopyInstall={() => void copyInstallCommand(selectedItem)}
               />
             ) : (
-              <div className="rounded-md border border-dashed p-8 text-sm text-muted-foreground">
+              <div className="text-muted-foreground rounded-md border border-dashed p-8 text-sm">
                 No preview selected.
               </div>
             )}
@@ -211,7 +210,7 @@ function FilterGroup<T extends string>({
 }) {
   return (
     <div className="space-y-1.5">
-      <div className="text-xs font-medium uppercase tracking-normal text-muted-foreground">
+      <div className="text-muted-foreground text-xs font-medium tracking-normal uppercase">
         {label}
       </div>
       <div className="flex flex-wrap gap-1.5">
@@ -263,7 +262,7 @@ function CatalogListItem({
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <div className="truncate text-sm font-semibold">{item.name}</div>
-          <div className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">
+          <div className="text-muted-foreground mt-1 line-clamp-2 text-xs leading-5">
             {item.description}
           </div>
         </div>
@@ -302,7 +301,7 @@ function CatalogDetail({
               <Pill>{item.kind}</Pill>
               <Pill>{item.variant}</Pill>
             </div>
-            <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
+            <p className="text-muted-foreground mt-2 max-w-3xl text-sm leading-6">
               {item.description}
             </p>
           </div>
@@ -311,7 +310,7 @@ function CatalogDetail({
               href={sourceUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex h-9 items-center gap-2 rounded-md border px-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+              className="hover:bg-accent hover:text-accent-foreground inline-flex h-9 items-center gap-2 rounded-md border px-3 text-sm font-medium transition-colors"
             >
               <Code2 className="size-4" />
               Source
@@ -345,7 +344,7 @@ function CatalogDetail({
         </div>
 
         {item.installCommand ? (
-          <pre className="mt-3 overflow-x-auto rounded-md border bg-muted/30 px-3 py-2 text-xs">
+          <pre className="bg-muted/30 mt-3 overflow-x-auto rounded-md border px-3 py-2 text-xs">
             <code>{item.installCommand}</code>
           </pre>
         ) : null}
@@ -353,7 +352,7 @@ function CatalogDetail({
 
       <React.Suspense
         fallback={
-          <div className="flex min-h-[360px] items-center justify-center rounded-md border border-dashed text-sm text-muted-foreground">
+          <div className="text-muted-foreground flex min-h-[360px] items-center justify-center rounded-md border border-dashed text-sm">
             <Loader2 className="mr-2 size-4 animate-spin" />
             Loading preview
           </div>
@@ -369,8 +368,8 @@ function CatalogDetail({
 
 function MetaBlock({ label, value }: { label: string; value: string }) {
   return (
-    <div className="min-w-0 rounded-md border bg-background px-3 py-2">
-      <div className="text-xs font-medium uppercase tracking-normal text-muted-foreground">
+    <div className="bg-background min-w-0 rounded-md border px-3 py-2">
+      <div className="text-muted-foreground text-xs font-medium tracking-normal uppercase">
         {label}
       </div>
       <div className="mt-1 truncate text-sm">{value}</div>
@@ -379,10 +378,11 @@ function MetaBlock({ label, value }: { label: string; value: string }) {
 }
 
 function ItemKindIcon({ item }: { item: CatalogItem }) {
-  const Icon = item.kind === "theme" ? Package : Code2;
+  const Icon =
+    item.kind === "theme" ? Package : item.kind === "block" ? Blocks : Code2;
 
   return (
-    <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-md border bg-background text-muted-foreground">
+    <span className="bg-background text-muted-foreground inline-flex size-8 shrink-0 items-center justify-center rounded-md border">
       <Icon className="size-4" />
     </span>
   );
@@ -390,7 +390,7 @@ function ItemKindIcon({ item }: { item: CatalogItem }) {
 
 function Pill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex h-6 items-center rounded-md border px-2 text-xs font-medium text-muted-foreground">
+    <span className="text-muted-foreground inline-flex h-6 items-center rounded-md border px-2 text-xs font-medium">
       {children}
     </span>
   );
