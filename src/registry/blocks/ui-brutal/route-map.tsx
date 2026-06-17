@@ -687,7 +687,7 @@ function RouteMap({
     <div
       data-slot="route-map"
       className={cx(
-        "border-outline bg-muted relative isolate h-[640px] min-h-[420px] w-full overflow-hidden rounded-md border-2 shadow-[8px_8px_hsl(var(--outline))]",
+        "border-outline bg-muted relative isolate h-160 min-h-105 w-full overflow-hidden rounded-md border-2 shadow-[8px_8px_hsl(var(--outline))]",
         "[&_.maplibregl-ctrl-attrib]:border-outline [&_.maplibregl-ctrl-attrib]:bg-brutal-surface/90 [&_.maplibregl-ctrl-attrib]:text-brutal-surface-foreground [&_.maplibregl-ctrl-attrib]:rounded-sm [&_.maplibregl-ctrl-attrib]:border-2 [&_.maplibregl-ctrl-attrib]:px-1.5 [&_.maplibregl-ctrl-attrib]:py-0.5 [&_.maplibregl-ctrl-attrib]:text-[10px] [&_.maplibregl-ctrl-attrib]:font-semibold",
         className,
       )}
