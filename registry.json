@@ -142,6 +142,28 @@
       ]
     },
     {
+      "name": "brutal-hand-of-cards",
+      "type": "registry:ui",
+      "title": "Brutal Hand Of Cards",
+      "description": "An overlapping card fan layout for grouped surfaces.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/ui-brutal/hand-of-cards.tsx",
+          "type": "registry:ui",
+          "target": "@ui/hand-of-cards.tsx"
+        },
+        {
+          "path": "src/registry/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
       "name": "brutal-input",
       "type": "registry:ui",
       "title": "Brutal Input",

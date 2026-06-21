@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "brutal-hand-of-cards",
+  "title": "Brutal Hand Of Cards",
+  "description": "An overlapping card fan layout for grouped surfaces.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/ui-brutal/hand-of-cards.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ntype HandOfCardsCSSProperties = React.CSSProperties & {\n  \"--hand-card-width\"?: string\n  \"--hand-card-height\"?: string\n  \"--hand-card-overlap\"?: string\n}\n\ntype HandOfCardsItemCSSProperties = React.CSSProperties & {\n  \"--hand-card-margin\"?: string\n  \"--hand-card-rotate\"?: string\n  \"--hand-card-y\"?: string\n  \"--hand-card-z\"?: number\n}\n\ntype HandOfCardsChildProps = {\n  className?: string\n}\n\ntype HandOfCardsProps = React.ComponentProps<\"div\"> & {\n  cardClassName?: string\n  cardHeight?: string\n  cardWidth?: string\n  lift?: number\n  overlap?: number\n  spread?: number\n}\n\nfunction getCardPosition({\n  count,\n  index,\n  lift,\n  spread,\n}: {\n  count: number\n  index: number\n  lift: number\n  spread: number\n}) {\n  if (count <= 1) {\n    return {\n      rotate: 0,\n      y: 0,\n    }\n  }\n\n  const center = (count - 1) / 2\n  const distance = (index - center) / center\n\n  return {\n    rotate: distance * spread,\n    y: Math.abs(distance) * lift,\n  }\n}\n\nfunction HandOfCards({\n  cardClassName,\n  cardHeight = \"24rem\",\n  cardWidth = \"18rem\",\n  children,\n  className,\n  lift = 28,\n  overlap = 112,\n  spread = 10,\n  style,\n  ...props\n}: HandOfCardsProps) {\n  const cards = React.Children.toArray(children)\n  const containerStyle: HandOfCardsCSSProperties = {\n    \"--hand-card-height\": cardHeight,\n    \"--hand-card-overlap\": `${overlap}px`,\n    \"--hand-card-width\": cardWidth,\n    ...style,\n  }\n\n  return (\n    <div\n      data-slot=\"hand-of-cards\"\n      role=\"list\"\n      className={cn(\n        \"flex w-full items-center justify-center overflow-visible px-4 py-14 [perspective:1200px]\",\n        className\n      )}\n      style={containerStyle}\n      {...props}\n    >\n      {cards.map((child, index) => {\n        const { rotate, y } = getCardPosition({\n          count: cards.length,\n          index,\n          lift,\n          spread,\n        })\n        const itemStyle: HandOfCardsItemCSSProperties = {\n          \"--hand-card-margin\":\n            index === 0 ? \"0px\" : \"calc(var(--hand-card-overlap) * -1)\",\n          \"--hand-card-rotate\": `${rotate}deg`,\n          \"--hand-card-y\": `${y}px`,\n          \"--hand-card-z\": index + 1,\n        }\n\n        return (\n          <div\n            data-slot=\"hand-of-cards-item\"\n            data-index={index}\n            key={index}\n            role=\"listitem\"\n            className=\"relative z-[var(--hand-card-z)] ml-[var(--hand-card-margin)] shrink-0 origin-bottom translate-y-[var(--hand-card-y)] rotate-[var(--hand-card-rotate)] transition-transform duration-300 ease-out hover:z-50 hover:-translate-y-3 hover:rotate-0 focus-within:z-50 focus-within:-translate-y-3 focus-within:rotate-0 motion-reduce:transition-none\"\n            style={itemStyle}\n          >\n            {React.isValidElement<HandOfCardsChildProps>(child)\n              ? React.cloneElement(child, {\n                  className: cn(\n                    \"h-[var(--hand-card-height)] w-[min(74vw,var(--hand-card-width))] shrink-0 overflow-hidden\",\n                    cardClassName,\n                    child.props.className\n                  ),\n                })\n              : child}\n          </div>\n        )\n      })}\n    </div>\n  )\n}\n\nexport { HandOfCards }\nexport type { HandOfCardsProps }\n",
+      "type": "registry:ui",
+      "target": "@ui/hand-of-cards.tsx"
+    },
+    {
+      "path": "src/registry/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib",
+      "target": "@lib/utils.ts"
+    }
+  ],
+  "type": "registry:ui"
+}
