@@ -203,6 +203,9 @@ export default function Component() {
                   className="w-[150px]"
                   nameKey="views"
                   labelFormatter={(value) => {
+                    if (typeof value !== "string" && typeof value !== "number") {
+                      return value;
+                    }
                     return new Date(value).toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",

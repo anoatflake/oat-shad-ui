@@ -75,6 +75,9 @@ export default function Component() {
               content={
                 <ChartTooltipContent
                   labelFormatter={(value) => {
+                    if (typeof value !== "string" && typeof value !== "number") {
+                      return value;
+                    }
                     return new Date(value).toLocaleDateString("en-US", {
                       day: "numeric",
                       month: "long",

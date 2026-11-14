@@ -126,6 +126,9 @@ export default function Charts() {
                     <ChartTooltipContent
                       hideIndicator
                       labelFormatter={(value) => {
+                        if (typeof value !== "string" && typeof value !== "number") {
+                          return value;
+                        }
                         return new Date(value).toLocaleDateString("en-US", {
                           day: "numeric",
                           month: "long",
@@ -280,6 +283,9 @@ export default function Charts() {
                     <ChartTooltipContent
                       indicator="line"
                       labelFormatter={(value) => {
+                        if (typeof value !== "string" && typeof value !== "number") {
+                          return value;
+                        }
                         return new Date(value).toLocaleDateString("en-US", {
                           day: "numeric",
                           month: "long",
