@@ -5,11 +5,11 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  publicDir: path.resolve(__dirname, "public"),
+  publicDir: path.resolve(import.meta.dirname, "public"),
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src/registry"),
-      "@catalog": path.resolve(__dirname, "./src/catalog"),
+      "@": path.resolve(import.meta.dirname, "./src/registry"),
+      "@catalog": path.resolve(import.meta.dirname, "./src/catalog"),
     },
   },
 });
