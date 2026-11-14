@@ -35,7 +35,7 @@ export default function Component() {
           config={{
             time: {
               label: "Time",
-              color: "hsl(var(--chart-2))",
+              color: "var(--chart-2)",
             },
           }}
         >

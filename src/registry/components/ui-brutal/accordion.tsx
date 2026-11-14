@@ -25,10 +25,7 @@ function AccordionItem({ className, ...props }: AccordionPrimitive.Item.Props) {
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      className={cn(
-        "border-b-2 border-black dark:border-[rgb(50,50,50,1)]",
-        className
-      )}
+      className={cn("border-b-2 border-outline", className)}
       {...props}
     />
   )

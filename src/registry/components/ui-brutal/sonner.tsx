@@ -25,7 +25,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
         unstyled: true,
         classNames: {
           toast:
-            "scalloped toast group w-full p-6 md:max-w-[420px] first:bg-white [&:nth-child(2)]:bg-slate-100 [&:nth-child(3)]:bg-slate-200 [&:nth-child(4)]:bg-slate-300 bg-slate-300 dark:first:bg-black dark:[&:nth-child(2)]:bg-stone-950 dark:[&:nth-child(3)]:bg-stone-900 dark:[&:nth-child(4)]:bg-stone-800 dark:bg-stone-800 flex items-center gap-4",
+            "scalloped toast group flex w-full items-center gap-4 bg-accent p-6 text-foreground first:bg-brutal-surface [&:nth-child(2)]:bg-card [&:nth-child(3)]:bg-muted [&:nth-child(4)]:bg-accent md:max-w-[420px]",
           title: "text-md",
           description: "group-[.toast]:text-muted-foreground text-sm",
           content: "order-0 flex-1",
@@ -44,7 +44,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
         success: <CircleCheckBig className="text-green-600" />,
         info: <Info />,
         warning: (
-          <TriangleAlert className="fill-gold-400 dark:fill-black dark:text-gold-400" />
+          <TriangleAlert className="fill-gold-400 text-gold-900 dark:fill-brutal-surface dark:text-gold-400" />
         ),
         error: <CircleX className="text-red-500" />,
         loading: <Loader2Icon className="animate-spin" />,
